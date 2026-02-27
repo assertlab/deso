@@ -144,9 +144,7 @@ cin0136-2026-1/
 ├── semanas/
 │   ├── sem01/                 ← Uma pasta por semana
 │   │   ├── README.md          ← Visão da semana (objetivos, leituras, entregáveis)
-│   │   ├── seg-guia-professor.md
 │   │   ├── seg-material-aluno.md
-│   │   ├── ter-guia-professor.md
 │   │   └── ter-material-aluno.md
 │   └── ...
 │
