@@ -1,9 +1,11 @@
 # CIN0136 — Desenvolvimento de Software
 
 **Centro de Informática · Universidade Federal de Pernambuco**
+
 **Curso:** Sistemas de Informação · **Semestre:** 2026.1
-**Professores:** Kiev Santos da Gama & Vinicius Cardoso Garcia
-**Horários:** Segunda 17:00–18:40 (E132) · Terça 18:50–20:30 (E132) · Quinta 17:00–20:30 (Grad04)
+
+**Professor:** Kiev Santos da Gama e Vinicius Cardoso Garcia
+**Horários:** Segunda 17:00–18:40 (E132) · Terça 18:50–20:30 (E232) · Quinta 17:00–20:30 (Grad04)
 
 ---
 
@@ -97,9 +99,11 @@ flowchart TB
 
 | Componente | Peso |
 |-----------|------|
-| Participação, Exercícios Individuais e Missões | 10% (Extra) |
 | Projeto em Equipe | 60% |
 | Provas (2 × 20%) | 40% |
+| Participação, Exercícios Individuais e Missões | +10% *(extra)* |
+
+> Detalhamento completo em [docs/avaliacao.md](docs/avaliacao.md).
 
 ---
 
@@ -204,7 +208,7 @@ cin0136-2026-1/
 
 1. **GARCIA, V. C.** *Engenharia de Software em Dimensões: Da base conceitual à prática profissional.* ASSERT Lab, 2025. *(livro-texto principal)*
 2. **GARCIA, V. C.; MEDEIROS, R. P.** *Sinfonia: Metodologia para Desenvolvimento de Produtos de IA.* TDS Books, 2025. *(referência metodológica do projeto)*
-3. MARTIN, R. C. *Clean Code: A Handbook of Agile Software Craftsmanship.* Prentice Hall, 2008.
+3. MARTIN, R. C. *Clean Code.* Prentice Hall, 2008.
 4. FORSGREN, N.; HUMBLE, J.; KIM, G. *Accelerate.* IT Revolution Press, 2018.
 5. VALENTE, M. T. _Engenharia de Software Moderna_. 2022.
 6. MARTIN, R. C. _Clean Architecture: A Craftsman's Guide to Software Structure and Design_. Pearson, 1st ed.
@@ -215,4 +219,4 @@ cin0136-2026-1/
 ---
 
 *CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
-*Última atualização: março de 2026*
+*Última atualização: março de 2026*---
