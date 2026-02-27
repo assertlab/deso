@@ -36,29 +36,32 @@ flowchart TB
     DISC --> E2
     DISC --> E3
 
-    subgraph E1["Eixo 1 — Sala de Aula Invertida"]
+    subgraph E1["Eixo 1"]
         direction TB
+        L0("Sala de Aula Invertida")
         L1("📖 Leitura prévia<br>livro-texto + fontes curadas")
         L2("💬 Tempo presencial<br>debates · análise crítica<br>questões estruturantes")
         L3("🎯 Professor<br>Curador · Facilitador · Provocador")
-        L1 --> L2 --> L3
+        L0 --> L1 --> L2 --> L3
     end
 
-    subgraph E2["Eixo 2 — Projeto com Stakeholder Real"]
+    subgraph E2["Eixo 2"]
         direction TB
+        P0("Projeto com Stakeholder Real")
         P1("🤝 Parceiro externo real<br>problema autêntico · escopo viável")
         P2("🔄 Vivência profissional<br>comunicação · negociação · entregas")
         P3("📋 Curricularização da Extensão<br>Resolução CNE/CES nº 7/2018")
-        P1 --> P2 --> P3
+        P0 --> P1 --> P2 --> P3
     end
 
-    subgraph E3["Eixo 3 — Mini-Sinfonia"]
+    subgraph E3["Eixo 3"]
         direction LR
+        M0("Mini-Sinfonia")
         M1("🔍 Exposição<br>Descobrir")
         M2("🎨 Composição<br>Projetar")
         M3("🔨 Ensaio<br>Construir")
         M4("🎵 Ressonância<br>Entregar")
-        M1 --> M2 --> M3 --> M4
+        M0 --> M1 --> M2 --> M3 --> M4
     end
 
     E1 & E2 & E3 --> OUT("✅ Produto funcional · Aprendizado profundo · Impacto real")
