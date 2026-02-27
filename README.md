@@ -5,6 +5,7 @@
 **Curso:** Sistemas de Informação · **Semestre:** 2026.1
 
 **Professor:** Kiev Santos da Gama e Vinicius Cardoso Garcia
+
 **Horários:** Segunda 17:00–18:40 (E132) · Terça 18:50–20:30 (E232) · Quinta 17:00–20:30 (Grad04)
 
 ---
