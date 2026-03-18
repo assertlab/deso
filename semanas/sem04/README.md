@@ -2,6 +2,8 @@
 
 **CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
 
+> **Fase:** Sprint 0 — Descoberta e Preparação | **Sinfonia:** Composição → Ensaio (transição)
+
 ---
 
 ## Aulas da Semana
