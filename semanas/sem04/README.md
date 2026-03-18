@@ -1,8 +1,6 @@
-# Semana 6 — Princípios de Design e Arquitetura
+# Semana 4 — Princípios de Design e Arquitetura
 
 **CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
-
-> 🎼 **Sprint 1 · Movimento: Ensaio** — Esta semana marca a transição da preparação para a construção. O Sprint 0 ficou para trás: vocês já conhecem o stakeholder, fecharam o escopo e dominam as ferramentas de versionamento e colaboração. Agora é hora de transformar o backlog em código. Mas código que será mantido por 4 pessoas durante 8 semanas precisa de organização intencional — e é exatamente isso que esta semana ensina. As decisões de design e arquitetura tomadas aqui vão determinar se o desenvolvimento dos próximos sprints será fluido ou doloroso.
 
 ---
 
@@ -38,7 +36,7 @@ Sem leitura prévia — aula prática. Traga o rascunho dos diagramas C4 feitos 
 
 ## Objetivos da Semana
 
-Ao final da Semana 6, você deve ser capaz de:
+Ao final da Semana 4, você deve ser capaz de:
 
 1. **Argumentar** por que a organização do código é tão importante quanto seu funcionamento
 2. **Aplicar** princípios de separação de responsabilidades, coesão e acoplamento ao projeto real
@@ -52,10 +50,10 @@ Ao final da Semana 6, você deve ser capaz de:
 
 | Entregável | Prazo | Onde entregar |
 |------------|-------|---------------|
-| Diagramas C4 (Nível 1, 2 e 3) | Quinta 09/04 — até o final da aula | No repositório do projeto, pasta `docs/` |
-| Estrutura arquitetural implementada (scaffold) | Quinta 09/04 — até o final da aula | Repositório do projeto (branch `main`) |
-| Decisões arquiteturais documentadas | Quinta 09/04 — até o final da aula | `docs/decisoes-arquiteturais.md` no repositório |
-| Primeiros PRs com features do Sprint 1 | Quinta 09/04 — abertos durante a aula | Repositório do projeto |
+| Diagramas C4 (Nível 1, 2 e 3) | Quinta 26/03 — até o final da aula | No repositório do projeto, pasta `docs/` |
+| Estrutura arquitetural implementada (scaffold) | Quinta 26/03 — até o final da aula | Repositório do projeto (branch `main`) |
+| Decisões arquiteturais documentadas | Quinta 26/03 — até o final da aula | `docs/decisoes-arquiteturais.md` no repositório |
+| Primeiros PRs com features do Sprint 1 | Quinta 26/03 — abertos durante a aula | Repositório do projeto |
 
 ---
 
@@ -79,13 +77,13 @@ Ao final da Semana 6, você deve ser capaz de:
 
 ---
 
-## Por que esta semana importa para o Sprint 1
+## 💡 Por que esta semana importa
 
-O Sprint 1 (Semanas 6–7) é o primeiro ciclo de construção real. Ele termina na Semana 7 com a Sprint Review perante o stakeholder — vocês precisarão demonstrar funcionalidades concretas.
+Vocês acabam de sair de 3 semanas intensas: entenderam o problema do stakeholder, prototiparam soluções, fecharam escopo, priorizaram backlog. Tudo isso está na cabeça e em documentos — mas nada disso está em código ainda.
 
-A Semana 6 é a fundação técnica desse sprint. Sem uma arquitetura combinada, 4 pessoas codificando ao mesmo tempo geram conflitos de merge, estruturas incompatíveis e retrabalho. Os diagramas C4 e o scaffold implementado nesta semana são o "mapa" que permite que a equipe se divida sem se perder.
+Esta semana é a **fundação técnica da solução**. Sem uma arquitetura combinada, 4 pessoas codificando ao mesmo tempo geram conflitos de merge, estruturas incompatíveis e retrabalho. Os diagramas C4 e o scaffold implementado nesta semana são o "mapa" que permite que a equipe se divida sem se perder.
 
-Na prática: as equipes que investem tempo em organizar a arquitetura antes de codar entregam mais — e com menos estresse — do que as que pulam direto para a implementação. Esta semana é a diferença entre construir sobre uma base sólida e construir sobre areia.
+Na prática: as equipes que investem tempo em organizar a arquitetura antes de codar entregam mais, e com menos estresse, do que as que pulam direto para a implementação. Esta semana é a diferença entre construir sobre uma base sólida e construir sobre areia.
 
 ---
 
