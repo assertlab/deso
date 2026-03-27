@@ -1,18 +1,16 @@
 # Semana 4 — Segunda-feira
 
-## Por que a organização do código importa
+## Strateegia: visão do escopo do projeto
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **23/03/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** | **23/03/2026 | E132 | 18:50–20:30**
 
 ---
 
-## Leitura Prévia
+## Sem leitura prévia formal para hoje
 
-📖 _Engenharia de Software em Dimensões_ — Cap. 14, seções 14.1.1 e 14.1.2 (Princípios fundamentais; Integração no design)
+Você não precisa chegar com nenhuma leitura nova — o insumo desta aula é o que você já sabe: as conversas com o stakeholder, os requisitos levantados na semana passada e a visão que você tem do projeto da sua equipe.
 
-📖 _Engenharia de Software Moderna_ (Valente) — Cap. 5: Princípios de Projeto (Integridade Conceitual; Ocultamento de Informação; Coesão; Acoplamento)
-
-Se você não leu antes de vir, tudo bem — mas leia antes da próxima aula.
+Se quiser revisar antes de vir, releia os slides das aulas L07 (Requisitos) e L08 (User Stories) da Semana 3.
 
 ---
 
@@ -20,18 +18,104 @@ Se você não leu antes de vir, tudo bem — mas leia antes da próxima aula.
 
 Ao final desta aula, você deve ser capaz de:
 
-- Explicar por que a organização interna do código afeta diretamente a capacidade de uma equipe trabalhar junto
-- Diferenciar coesão alta de coesão baixa com exemplos concretos em JavaScript
-- Reconhecer acoplamento excessivo e explicar por que ele dificulta a manutenção
-- Aplicar o princípio de separação de responsabilidades ao projeto da sua equipe
+- Descrever em até 5 frases o escopo essencial do seu projeto, identificando o problema, as personas e o valor entregue
+- Reconhecer as divergências de visão dentro da sua equipe como informação útil, não como problema
+- Conectar o que você sabe sobre requisitos funcionais, não funcionais e técnicas de elicitação ao contexto real do seu projeto
 
 ---
 
-## 1. Uma pergunta antes de começar
+## 1. Por que começar pela visão, não pelas funcionalidades?
 
-> _"Se o código funciona, por que importa como ele está organizado?"_
+Fred Brooks escreveu em 1975 que a parte mais difícil da construção de um software é definir o que construir. Cinquenta anos depois, a afirmação continua sendo o maior fonte de retrabalho em projetos de software.
 
-Use este espaço para anotar sua resposta antes da discussão:
+O erro mais comum nas primeiras semanas de um projeto não é técnico. É este: cada membro da equipe tem uma imagem ligeiramente diferente do que está sendo construído — e ninguém percebe. O desenvolvimento começa, as divergências aparecem só quando as peças precisam se encaixar, e o retrabalho é caro.
+
+A dinâmica de hoje existe para surfacar essas divergências enquanto ainda é barato corrigi-las.
+
+---
+
+## 2. O que é escopo?
+
+Escopo é o conjunto de decisões que definem o que o sistema **faz** e o que ele **não faz**. Um escopo bem definido responde a três perguntas:
+
+| Pergunta | O que define |
+|---|---|
+| **Para quem?** | As personas — quem usa o sistema e com que objetivos |
+| **Qual problema?** | O problema central que o sistema resolve |
+| **Qual valor?** | O benefício concreto que a organização parceira recebe |
+
+Um escopo mal definido é reconhecível: ele usa "usuário" genérico, descreve funcionalidades técnicas em vez de valor, e não menciona o que fica **fora** do sistema.
+
+**Exemplo fraco de escopo:**
+> "Um sistema web para gerenciar informações."
+
+**Exemplo forte de escopo:**
+> "Um sistema que permite à coordenação do projeto X registrar, acompanhar e exportar relatórios de presença dos participantes, eliminando o controle manual em planilhas e reduzindo o tempo de consolidação de dados de 3 horas para menos de 15 minutos por evento."
+
+A diferença? O segundo tem persona identificada, problema concreto, valor mensurável.
+
+---
+
+## 3. A dinâmica de hoje: Ponto de Debate no Strateegia
+
+Você vai acessar a plataforma **strateegia.digital** e responder à **Questão 1** do ponto de debate da sua equipe.
+
+### O que você precisa responder
+
+> *Descreva, com suas próprias palavras e em até 5 frases, o escopo essencial do nosso projeto: qual problema ele resolve, para quem, e qual é o valor principal que deve entregar ao stakeholder. Seja específico — "usuário" genérico não conta.*
+
+### Como responder bem
+
+Antes de digitar, pense nas três perguntas do escopo:
+
+```
+Para quem é o sistema?
+→ Não escreva "usuário". Pense nas personas reais que conversaram com vocês.
+
+
+Qual é o problema central?
+→ O que acontece hoje sem o sistema? Qual é o custo desse problema?
+
+
+Qual é o valor entregue?
+→ O que muda concretamente para o parceiro depois que o sistema existir?
+
+
+```
+
+### O que NÃO fazer
+
+- Não descreva funcionalidades técnicas ("terá tela de login, cadastro e dashboard")
+- Não use linguagem vaga ("vai melhorar os processos da organização")
+- Não repita o que o parceiro pediu palavra por palavra — traduza com suas palavras
+
+---
+
+## 4. Depois de todos responderem: leitura coletiva
+
+Quando o professor sinalizar, a turma vai ler as respostas de todos os membros da equipe juntos.
+
+Use este espaço para anotar o que chamou sua atenção:
+
+```
+O que apareceu na minha resposta e não apareceu nas outras?
+
+
+O que apareceu nas respostas dos colegas e eu não havia pensado?
+
+
+Qual é a maior divergência de visão dentro da equipe?
+
+
+```
+
+---
+
+## 5. Questão estruturante para reflexão
+
+> *"Se cada pessoa da sua equipe tem uma imagem ligeiramente diferente do que está sendo construído, qual é o risco concreto para o desenvolvimento? O que precisaria acontecer para que vocês saíssem desta aula com uma visão alinhada?"*
+
+Anote sua perspectiva antes da discussão:
 
 ```
 Sua resposta inicial:
@@ -41,185 +125,29 @@ Sua resposta inicial:
 
 ---
 
-## 2. Dois códigos, um problema
+## 6. Conexão com as semanas anteriores
 
-Considere estes dois trechos de JavaScript que fazem a mesma coisa — cadastrar um usuário e enviar um e-mail de boas-vindas:
+Nas últimas três semanas, você praticou técnicas que alimentam diretamente o que acontece hoje:
 
-### Versão A — Tudo junto
-
-```javascript
-app.post('/register', async (req, res) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) return res.status(400).json({ error: 'Campos obrigatórios' });
-  if (password.length < 8) return res.status(400).json({ error: 'Senha fraca' });
-  const existing = await db.query('SELECT * FROM users WHERE email = $1', [email]);
-  if (existing.rows.length > 0) return res.status(409).json({ error: 'Email já cadastrado' });
-  const hash = await bcrypt.hash(password, 10);
-  const result = await db.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id', [name, email, hash]);
-  const userId = result.rows[0].id;
-  await transporter.sendMail({
-    from: 'noreply@app.com', to: email,
-    subject: 'Bem-vindo!', html: `<h1>Olá ${name}!</h1><p>Sua conta foi criada.</p>`
-  });
-  res.status(201).json({ id: userId, name, email });
-});
-```
-
-### Versão B — Responsabilidades separadas
-
-```javascript
-// userValidator.js
-function validateRegistration({ name, email, password }) {
-  if (!name || !email || !password) return 'Campos obrigatórios';
-  if (password.length < 8) return 'Senha fraca';
-  return null;
-}
-
-// userService.js
-async function registerUser({ name, email, password }) {
-  const exists = await userRepository.findByEmail(email);
-  if (exists) throw new ConflictError('Email já cadastrado');
-  const hash = await bcrypt.hash(password, 10);
-  return userRepository.create({ name, email, password: hash });
-}
-
-// emailService.js
-async function sendWelcome(user) {
-  await transporter.sendMail({
-    from: 'noreply@app.com', to: user.email,
-    subject: 'Bem-vindo!', html: templates.welcome(user)
-  });
-}
-
-// userController.js
-app.post('/register', async (req, res) => {
-  const error = validateRegistration(req.body);
-  if (error) return res.status(400).json({ error });
-  const user = await registerUser(req.body);
-  await sendWelcome(user);
-  res.status(201).json(user);
-});
-```
-
-**Reflexão — anote aqui:**
-
-Qual versão você prefere manter? Por quê?
-
-```
-Sua resposta:
-
-
-```
-
-Se um membro da sua equipe precisa mudar como o e-mail é enviado, em qual versão ele consegue fazer isso sem risco de quebrar o cadastro?
-
-```
-Sua resposta:
-
-
-```
+| Semana | O que você fez | Como se conecta hoje |
+|---|---|---|
+| Semana 1 | Primeiro contato com o stakeholder | As personas que aparecem no escopo vieram desse encontro |
+| Semana 3 (Seg) | Levantamento de requisitos funcionais e não funcionais | O escopo delimita quais requisitos entram no sistema |
+| Semana 3 (Ter) | User stories com critérios INVEST e MoSCoW | Amanhã vocês vão escrever as primeiras stories do backlog real |
 
 ---
 
-## 3. Princípios fundamentais de design de software
+## 7. Para amanhã (Terça-feira)
 
-O capítulo 14 do livro apresenta princípios que guiam decisões sobre como organizar o código. Para o 2º período, os mais importantes são:
+Não há leitura prévia formal — mas há uma tarefa de reflexão:
 
-### Separação de Responsabilidades
+Antes de vir para a aula de terça, responda mentalmente:
 
-Cada módulo, função ou classe deve ter **uma única razão para mudar**. Se um arquivo faz validação, acesso ao banco e envio de e-mail ao mesmo tempo, qualquer mudança em uma dessas partes pode quebrar as outras.
+- Quais são os **3 Épicos** principais do seu projeto? (as grandes áreas funcionais)
+- Qual funcionalidade, se entregue sozinha, já entregaria valor ao parceiro?
+- Alguma user story que você escreveu na Semana 3 se aplica ao projeto real da equipe?
 
-Na prática do projeto: separar rotas, controllers, services e models.
-
-### Coesão
-
-Um módulo é **coeso** quando tudo dentro dele está relacionado ao mesmo propósito. Uma função `registerUser` que também envia e-mail tem baixa coesão — ela mistura dois propósitos distintos.
-
-| Coesão alta | Coesão baixa |
-|---|---|
-| `userService.js` cuida só de lógica de usuário | `utils.js` com 40 funções sobre assuntos diferentes |
-| `emailService.js` cuida só de envio de e-mail | Um controller que faz validação, consulta ao banco e envio de e-mail |
-
-### Acoplamento
-
-Dois módulos são **acoplados** quando uma mudança em um exige mudança no outro. O objetivo é minimizar acoplamento — cada módulo deve depender o mínimo possível dos detalhes internos de outros módulos.
-
-**Exemplo concreto:** se o `userController.js` acessar diretamente o banco de dados em vez de chamar o `userService.js`, qualquer mudança na estrutura do banco obriga a mudar o controller também. Com o service no meio, a mudança fica isolada.
-
-### Abstração e nomes significativos
-
-Bons nomes eliminam a necessidade de comentários. Compare:
-
-```javascript
-// Ruim
-const d = new Date();
-const x = d.getTime() - s.getTime();
-if (x > 86400000) { ... }
-
-// Bom
-const now = new Date();
-const elapsedMs = now.getTime() - sessionStart.getTime();
-const ONE_DAY_MS = 24 * 60 * 60 * 1000;
-if (elapsedMs > ONE_DAY_MS) { ... }
-```
-
----
-
-## 4. Conexão com o seu projeto
-
-A partir desta semana, sua equipe começa a construir código de verdade. As decisões de organização que vocês tomarem agora vão definir se vocês conseguem trabalhar juntos nas próximas 8 semanas — ou se cada merge vai ser uma dor de cabeça.
-
-**Perguntas para discutir com a equipe (na quinta-feira):**
-
-- Como vamos organizar as pastas do projeto?
-- Quem é responsável por cada módulo?
-- Como evitamos que duas pessoas mexam na mesma coisa ao mesmo tempo?
-
-**Estrutura sugerida para o projeto:**
-
-```
-projeto/
-├── backend/
-│   ├── src/
-│   │   ├── routes/         ← definição de rotas
-│   │   ├── controllers/    ← recebe request, chama service, retorna response
-│   │   ├── services/       ← lógica de negócio
-│   │   ├── repositories/   ← acesso ao banco de dados
-│   │   └── utils/          ← funções auxiliares genéricas
-│   └── tests/
-├── frontend/
-│   ├── src/
-│   │   ├── pages/          ← páginas/telas da aplicação
-│   │   ├── components/     ← componentes reutilizáveis
-│   │   ├── hooks/          ← hooks customizados
-│   │   └── services/       ← chamadas à API
-│   └── tests/
-└── docs/                   ← diagramas C4, ADRs, README
-```
-
----
-
-## 5. Questão estruturante para reflexão
-
-> _"Como a organização interna de um sistema de software influencia a capacidade de uma equipe de mantê-lo e evoluí-lo ao longo do tempo?"_
-
-Esta pergunta não tem resposta única. O que importa é que você consiga argumentar com exemplos concretos.
-
-```
-Sua resposta:
-
-
-```
-
----
-
-## 6. Para a próxima aula (Terça-feira)
-
-📖 **Leitura obrigatória:** Cap. 14, seções 14.3.1 a 14.3.3 (Estrutura hierárquica do C4 Model) e seção 14.4 (C4 vs UML)
-
-📖 **Leitura complementar:** Valente, Cap. 7 — Arquitetura (seções: Camadas; MVC)
-
-**Traga para a aula:** um rascunho mental (ou no papel) de quem são os "atores" que interagem com o sistema do seu projeto e quais são os grandes blocos técnicos que vão existir.
+Na terça, você vai escrever user stories reais — uma por resposta no Strateegia.
 
 ---
 
@@ -235,4 +163,5 @@ Sua resposta:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14, seções 14.1.1–14.1.2._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 5._
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 6 e 7. | Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3.*
