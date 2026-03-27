@@ -1,18 +1,16 @@
 # Semana 4 — Terça-feira
 
-## C4 Model: desenhando a arquitetura do nosso projeto
+## Strateegia: construção inicial do backlog do produto
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **23/03/2026 | E232 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** | **24/03/2026 | E132 | 17:00–18:40**
 
 ---
 
-## Leitura Prévia
+## Sem leitura prévia formal para hoje
 
-📖 _Engenharia de Software em Dimensões_ — Cap. 14, seções 14.3.1 a 14.3.3 (Estrutura hierárquica do C4) e seção 14.4 (C4 vs UML)
+O insumo desta aula é o que você já tem: a visão de escopo construída ontem, as user stories e critérios INVEST estudados na Semana 3, e o Gherkin que você praticou nos slides L08.
 
-📖 _Engenharia de Software Moderna_ (Valente) — Cap. 7: Arquitetura (seções: Camadas; MVC)
-
-**Traga para a aula:** um rascunho dos atores e blocos técnicos do projeto da sua equipe.
+Se quiser revisar antes de vir, releia os slides L08 — especialmente as seções sobre critérios de aceitação e o formato Dado/Quando/Então.
 
 ---
 
@@ -20,217 +18,166 @@
 
 Ao final desta aula, você deve ser capaz de:
 
-- Explicar o que é o C4 Model e por que ele é útil para documentar arquitetura
-- Desenhar diagramas de Contexto (Nível 1) e Contêiner (Nível 2) do seu projeto
-- Justificar por que documentar a arquitetura importa mesmo quando ela pode mudar
-- Usar Mermaid ou draw.io para criar diagramas que podem ser versionados no GitHub
+- Escrever user stories no formato padrão com persona identificada e benefício claro
+- Avaliar cada story com os critérios INVEST e identificar o que precisaria mudar
+- Escrever pelo menos um critério de aceitação em formato Gherkin para cada story, incluindo um caso de falha
+- Identificar a qual Épico cada story pertence
 
 ---
 
-## 1. Por que documentar a arquitetura?
+## 1. Da visão ao backlog: o que muda?
 
-> _"Por que documentamos a arquitetura se ela pode mudar?"_
+Ontem vocês descreveram o escopo do projeto em linguagem natural — problema, personas, valor. Hoje, esse escopo se transforma em itens de trabalho: as **user stories**.
 
-Anote sua resposta antes da discussão:
-
-```
-Sua resposta inicial:
-
+A diferença entre visão e backlog não é de conteúdo — é de **granularidade e testabilidade**. Uma visão de escopo diz *o quê* e *para quem*. Uma user story desce um nível: diz *qual funcionalidade específica*, de *qual persona específica*, e define *como saberemos que está pronto*.
 
 ```
-
-A resposta curta: **porque decisões esquecidas se repetem, e decisões mal comunicadas geram retrabalho.** Documentar a arquitetura não é criar um contrato imutável — é criar um mapa compartilhado que a equipe pode consultar e atualizar.
-
----
-
-## 2. O C4 Model — 4 níveis de zoom
-
-O C4 Model foi criado por Simon Brown como uma forma simples e prática de documentar a arquitetura de software. A ideia central é: **diferentes públicos precisam de diferentes níveis de detalhe.**
-
-```
-Nível 1: CONTEXTO      → Quem usa o sistema? Com que sistemas ele se conecta?
-                            (público: stakeholder, qualquer pessoa)
-
-Nível 2: CONTÊINER      → Quais são os grandes blocos técnicos?
-                            (público: equipe de desenvolvimento)
-
-Nível 3: COMPONENTE     → Dentro de cada contêiner, quais são os módulos?
-                            (público: desenvolvedores do módulo)
-
-Nível 4: CÓDIGO         → Classes, funções, detalhes de implementação
-                            (raramente documentado — o código é a documentação)
-```
-
-Para o nosso projeto, vamos focar nos **Níveis 1, 2 e 3**.
-
----
-
-## 3. Nível 1 — Diagrama de Contexto
-
-O diagrama de contexto responde: **quem interage com o nosso sistema e com o que ele se conecta?**
-
-### Exemplo: Sistema de Gestão de Tarefas para uma ONG
-
-```
-┌─────────────┐        ┌───────────────────────┐        ┌─────────────────┐
-│  Voluntário │───────→│   Sistema de Gestão   │←───────│  Coordenador    │
-│  (usuário)  │        │     de Tarefas        │        │  da ONG         │
-└─────────────┘        └───────────┬───────────┘        └─────────────────┘
-                                   │
-                                   ↓
-                       ┌───────────────────────┐
-                       │  Serviço de e-mail    │
-                       │  (API externa)        │
-                       └───────────────────────┘
-```
-
-**Elementos do Nível 1:**
-- **Pessoas** (atores que usam o sistema) — em caixas com formato distinto
-- **O sistema** (o que estamos construindo) — caixa central
-- **Sistemas externos** (APIs, serviços de terceiros) — caixas com indicação "externo"
-
-### Rascunhe o Nível 1 do seu projeto
-
-```
-[Desenhe aqui os atores e conexões do seu sistema]
-
-
-
-
+Visão de escopo → Épicos → Features → User Stories → Critérios de Aceitação
+     (hoje)                              (hoje)              (hoje)
 ```
 
 ---
 
-## 4. Nível 2 — Diagrama de Contêiner
-
-O diagrama de contêiner responde: **de que blocos técnicos o sistema é feito?**
-
-Um "contêiner" no C4 é qualquer coisa que precisa estar rodando para o sistema funcionar: uma aplicação web, uma API, um banco de dados, um servidor de arquivos.
-
-### Exemplo: mesmo sistema, agora com contêineres
+## 2. Revisão rápida: o formato da user story
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                  Sistema de Gestão de Tarefas              │
-│                                                            │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐ │
-│  │  Frontend     │    │  Backend API  │    │  Banco de    │ │
-│  │  (React/Vite) │───→│  (Node.js/   │───→│  Dados       │ │
-│  │               │    │   Express)   │    │  (SQLite)    │ │
-│  └──────────────┘    └──────┬───────┘    └──────────────┘ │
-│                              │                              │
-└──────────────────────────────┼──────────────────────────────┘
-                               ↓
-                    ┌──────────────────┐
-                    │  Serviço de      │
-                    │  e-mail externo  │
-                    └──────────────────┘
+Como [persona específica],
+eu quero [ação/funcionalidade],
+para que [benefício/valor concreto].
 ```
 
-**Elementos do Nível 2:**
-- **Contêineres** (frontend, backend, banco, etc.) — com tecnologia indicada
-- **Setas** — indicam comunicação (HTTP, SQL, etc.)
-- **Sistemas externos** — fora da caixa do sistema
+**As três armadilhas mais comuns:**
 
-### Rascunhe o Nível 2 do seu projeto
-
-```
-[Desenhe aqui os contêineres do seu sistema]
-
-
-
-
-```
-
----
-
-## 5. Nível 3 — Diagrama de Componentes
-
-O diagrama de componentes responde: **dentro de cada contêiner, quais são os módulos?**
-
-### Exemplo: componentes do Backend API
-
-```
-┌────────────────────────────────────────────────┐
-│              Backend API (Node.js/Express)       │
-│                                                  │
-│  ┌──────────┐  ┌──────────┐  ┌──────────────┐  │
-│  │  Routes   │→│Controllers│→│  Services     │  │
-│  │           │  │           │  │  (lógica de  │  │
-│  │           │  │           │  │   negócio)   │  │
-│  └──────────┘  └──────────┘  └──────┬───────┘  │
-│                                      ↓          │
-│                              ┌──────────────┐   │
-│                              │ Repositories  │   │
-│                              │ (acesso a DB) │   │
-│                              └──────────────┘   │
-└────────────────────────────────────────────────┘
-```
-
-Repare como os componentes do Nível 3 correspondem diretamente às pastas que discutimos ontem: routes, controllers, services, repositories.
-
----
-
-## 6. C4 vs UML — quando usar o quê?
-
-|Aspecto|C4 Model|UML|
+| Armadilha | Exemplo problemático | Por que é ruim |
 |---|---|---|
-|**Público-alvo**|Qualquer pessoa (do stakeholder ao dev)|Principalmente desenvolvedores|
-|**Curva de aprendizado**|Baixa — 4 tipos de diagramas intuitivos|Alta — 14 tipos de diagramas com notação formal|
-|**Foco**|Comunicação e decisão|Especificação e precisão|
-|**Para o nosso projeto**|✅ Ideal|Desnecessário neste momento|
-
-> O C4 não substitui a UML — ele resolve um problema diferente. Quando você precisa comunicar arquitetura para alguém que não é técnico (como o stakeholder), o C4 é mais eficaz. Quando você precisa especificação técnica detalhada, a UML tem mais rigor.
+| Persona genérica | "Como usuário..." | "Usuário" pode ser qualquer pessoa — a story não tem foco |
+| Ação técnica | "...quero que o sistema salve no banco de dados..." | Isso é implementação, não valor para o usuário |
+| Benefício vago | "...para ter uma melhor experiência." | Impossível verificar — como você saberia que funcionou? |
 
 ---
 
-## 7. Ferramentas para criar diagramas C4
+## 3. Revisão rápida: INVEST
 
-### Mermaid (recomendado — integra com GitHub)
+Antes de considerar uma story pronta para entrar no backlog, ela precisa passar em seis critérios:
 
-Mermaid permite criar diagramas como código, versionáveis no repositório:
+| Letra | Critério | A pergunta a fazer |
+|---|---|---|
+| **I** | Independent | Pode ser desenvolvida sem depender de outra story? |
+| **N** | Negotiable | Os detalhes de implementação estão em aberto para discussão? |
+| **V** | Valuable | Entrega valor real para o usuário — não apenas para o dev? |
+| **E** | Estimable | É possível estimar o esforço necessário? |
+| **S** | Small | Cabe dentro de um sprint? Se não, quebre. |
+| **T** | Testable | Existe um critério verificável para saber que está pronta? |
 
-```mermaid
-graph TD
-    A[Voluntário] -->|usa| B[Sistema de Gestão de Tarefas]
-    C[Coordenador] -->|administra| B
-    B -->|envia notificações via| D[API de Email]
-```
-
-Vantagem: o diagrama mora no repositório junto com o código. Quando a arquitetura muda, o diagrama pode ser atualizado no mesmo PR.
-
-### draw.io (alternativa visual)
-
-Para quem prefere arrastar e soltar. Gera arquivos `.drawio` que podem ser comitados no repositório. O GitHub renderiza nativamente.
+**Regra prática:** se uma story falha no **T**, ela falha em tudo. Sem testabilidade, não há como saber se foi entregue.
 
 ---
 
-## 8. Questão estruturante para reflexão
+## 4. Revisão rápida: Gherkin (Dado / Quando / Então)
 
-> _"Considerando que a arquitetura de um software evolui ao longo do desenvolvimento, qual é o valor de documentá-la desde o início do projeto?"_
+O formato Gherkin transforma um critério de aceitação vago em uma especificação verificável:
 
 ```
-Sua resposta:
+Dado que [contexto / pré-condição]
+Quando [ação do usuário]
+Então [resultado esperado e verificável]
+```
+
+**Regra importante:** todo critério de aceitação precisa de pelo menos **dois cenários**:
+- O **caminho feliz** — o que acontece quando tudo dá certo
+- O **caso de falha** — o que acontece quando algo dá errado
+
+**Exemplo completo:**
+
+*Story:* "Como coordenadora do projeto, eu quero registrar a presença de um participante, para que o relatório de frequência seja atualizado automaticamente."
+
+*Critério 1 — Caminho feliz:*
+```
+Dado que a coordenadora está autenticada no sistema
+E o evento do dia está aberto para registro
+Quando ela registra a presença de um participante pelo CPF
+Então o participante aparece como "presente" no relatório do evento
+```
+
+*Critério 2 — Caso de falha:*
+```
+Dado que a coordenadora está autenticada no sistema
+Quando ela tenta registrar um CPF que não existe no cadastro
+Então o sistema exibe a mensagem "Participante não encontrado" e não altera o relatório
+```
+
+---
+
+## 5. A dinâmica de hoje: Questão 2 no Strateegia
+
+Você vai continuar no ponto de debate da sua equipe e responder à **Questão 2**.
+
+> *Escreva **uma user story por resposta**, no formato padrão: "Como [persona], eu quero [funcionalidade], para que [benefício]." Para cada story, inclua também: (a) o Épico ao qual ela pertence, (b) uma avaliação rápida do INVEST — ela passa? o que precisaria mudar? — e (c) pelo menos um critério de aceitação no formato Gherkin (Dado / Quando / Então), incluindo um caso de falha. Responda quantas vezes achar necessário para cobrir o escopo do projeto. Cada resposta = uma story.*
+
+### Template para cada resposta
+
+```
+Épico: [nome do épico ao qual esta story pertence]
+
+User Story:
+Como [persona específica],
+eu quero [funcionalidade],
+para que [benefício concreto].
+
+Avaliação INVEST:
+- I (Independent): [ ] Sim [ ] Não — justificativa:
+- N (Negotiable): [ ] Sim [ ] Não — justificativa:
+- V (Valuable): [ ] Sim [ ] Não — justificativa:
+- E (Estimable): [ ] Sim [ ] Não — justificativa:
+- S (Small): [ ] Sim [ ] Não — justificativa:
+- T (Testable): [ ] Sim [ ] Não — justificativa:
+
+Critério de aceitação — Caminho feliz:
+Dado que
+Quando
+Então
+
+Critério de aceitação — Caso de falha:
+Dado que
+Quando
+Então
+```
+
+---
+
+## 6. Dinâmica de revisão coletiva
+
+Depois que todos tiverem escrito pelo menos 2–3 stories, o professor vai conduzir uma revisão coletiva das respostas. O objetivo não é corrigir — é identificar padrões.
+
+Use este espaço para anotar durante a revisão:
+
+```
+Stories que parecem duplicadas (mesma funcionalidade descrita de formas diferentes):
+
+
+Stories que parecem grandes demais (provavelmente são Features ou Épicos):
+
+
+Stories com persona genérica ou benefício vago:
+
+
+Stories que cobrem casos de falha de forma especialmente boa:
 
 
 ```
 
 ---
 
-## 9. Para a próxima aula (Quinta-feira)
+## 7. O que acontece na quinta?
 
-📖 **Não há leitura prévia** — a quinta-feira é prática.
+Na quinta-feira, cada equipe vai apresentar os resultados das dinâmicas de segunda e terça aos seus respectivos stakeholders e coletar feedback estruturado. Depois, o backlog será refinado com base nesse feedback.
 
-**Na quinta você vai:**
+O material que você está produzindo hoje é o insumo direto para essa sessão.
 
-- **Bloco 1 (2h) — Workshop de Arquitetura:** desenhar os diagramas C4 reais do projeto da sua equipe (Níveis 1, 2 e 3), definir a estrutura de pastas e documentar decisões arquiteturais
-- **Bloco 2 (2h) — Início do desenvolvimento:** implementar o scaffold no repositório, dividir features do Sprint 1, começar pair programming e abrir os primeiros PRs
-
-**Prepare-se:**
-
-- Revise o backlog do projeto — quais features são prioridade para o Sprint 1?
-- Traga o rascunho de Nível 1 e Nível 2 que você fez nesta aula
-- Certifique-se de que tem o repositório clonado e o ambiente de desenvolvimento funcionando
+**Antes de encerrar, pergunte a si mesmo:**
+- As stories que escrevi cobrem o escopo que descrevi ontem?
+- Há alguma área do projeto que ficou sem nenhuma story?
+- Alguma story que eu escrevi seria melhor descrita como Épico ou Feature?
 
 ---
 
@@ -246,4 +193,5 @@ Sua resposta:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14, seções 14.3.1–14.3.3 e 14.4._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 7._
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 6 (seções 6.1–6.2) e Cap. 7 (seções 7.1.2–7.2.4). | Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3.*
