@@ -1,92 +1,94 @@
-# Semana 4 — Princípios de Design e Arquitetura
+# Semana 4 — Strateegia: escopo e backlog do produto
 
 **CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
-
-> **Fase:** Sprint 0 — Descoberta e Preparação | **Sinfonia:** Composição → Ensaio (transição)
-
----
-
-## Aulas da Semana
-
-| Dia | Horário | Tema | Material |
-|-----|---------|------|----------|
-| 🔵 Segunda 23/03 | 17:00–18:40 | Por que a organização do código importa | [Material do aluno](semana_06-seg-material-aluno.md) |
-| 🟢 Terça 24/03 | 18:50–20:30 | C4 Model: desenhando a arquitetura do projeto | [Material do aluno](semana_06-ter-material-aluno.md) |
-| 🟠 Quinta 26/03 | 17:00–20:30 | Workshop de Arquitetura + Início do Desenvolvimento | _(prática em laboratório)_ |
+**Período:** 23 a 26 de março de 2026
 
 ---
 
-## Leituras Prévias
+## Aulas desta semana
 
-### Segunda-feira
-
-📖 **Garcia** — Cap. 14, seções 14.1.1 e 14.1.2 (Princípios fundamentais de design; Integração no design)
-
-📖 **Valente** — Cap. 5: Princípios de Projeto (Integridade Conceitual; Ocultamento de Informação; Coesão; Acoplamento)
-
-### Terça-feira
-
-📖 **Garcia** — Cap. 14, seções 14.3.1 a 14.3.3 (Estrutura hierárquica do C4 Model) e seção 14.4 (C4 vs UML)
-
-📖 **Valente** — Cap. 7: Arquitetura (seções: Camadas; MVC)
-
-### Quinta-feira
-
-Sem leitura prévia — aula prática. Traga o rascunho dos diagramas C4 feitos na terça e o repositório clonado com ambiente funcionando.
+| Dia | Data | Tipo | Tema | Materiais |
+|---|---|---|---|---|
+| Segunda | 23/03 | Teórica (2h) | Strateegia: visão do escopo do projeto | [Material do aluno](semana_04-seg-material-aluno.md) · [Guia do professor](semana_04-seg-material-professor.md) |
+| Terça | 24/03 | Teórica (2h) | Strateegia: construção inicial do backlog | [Material do aluno](semana_04-ter-material-aluno.md) · [Guia do professor](semana_04-ter-material-professor.md) |
+| Quinta | 26/03 | Lab (4h) | Refinamento do backlog com feedback dos stakeholders | — *(sessão prática com stakeholder, sem material de aula)* |
 
 ---
 
-## Objetivos da Semana
+## O que você vai fazer esta semana
 
-Ao final da Semana 4, você deve ser capaz de:
+Esta semana não tem aula expositiva. Em vez disso, você vai trabalhar diretamente no seu projeto, usando a plataforma **strateegia.digital** como espaço colaborativo de reflexão e construção.
 
-1. **Argumentar** por que a organização do código é tão importante quanto seu funcionamento
-2. **Aplicar** princípios de separação de responsabilidades, coesão e acoplamento ao projeto real
-3. **Documentar** a arquitetura do projeto com diagramas C4 (Níveis 1, 2 e 3)
-4. **Implementar** a estrutura arquitetural no repositório (scaffold de pastas e módulos)
-5. **Iniciar** o desenvolvimento das features do Sprint 1 com PRs reais
+O ponto de debate da sua equipe tem duas questões:
+
+**Questão 1 — Segunda-feira**
+> Descreva, em até 5 frases, o escopo essencial do projeto: qual problema ele resolve, para quem, e qual valor entrega ao stakeholder.
+
+**Questão 2 — Terça-feira**
+> Escreva user stories do projeto real — uma por resposta. Cada story deve incluir o épico, avaliação INVEST e critério de aceitação em Gherkin com caminho feliz e caso de falha.
+
+Na quinta, cada equipe apresenta os resultados ao stakeholder e refina o backlog com base no feedback.
 
 ---
 
-## Entregáveis e Prazos
+## Leituras prévias por dia
+
+| Dia | Leitura prévia |
+|---|---|
+| Segunda | Nenhuma leitura nova — revise os slides L07 (Requisitos) e L08 (User Stories) da Semana 3 se precisar |
+| Terça | Nenhuma leitura nova — revise os slides L08, especialmente a seção de critérios de aceitação e Gherkin |
+| Quinta | Nenhuma — prepare a síntese da visão de escopo (Questão 1) e selecione as 5–8 stories mais representativas para apresentar ao stakeholder |
+
+---
+
+## Objetivos da semana
+
+Ao final desta semana, você deve ser capaz de:
+
+- Articular em até 5 frases o escopo essencial do projeto com persona identificada, problema concreto e valor verificável
+- Escrever user stories no formato padrão com avaliação INVEST e critérios de aceitação em Gherkin
+- Identificar e reconciliar divergências de visão dentro da equipe
+- Apresentar o backlog inicial ao stakeholder e coletar feedback estruturado
+
+---
+
+## Entregável da semana
 
 | Entregável | Prazo | Onde entregar |
-|------------|-------|---------------|
-| Diagramas C4 (Nível 1, 2 e 3) | Quinta 26/03 — até o final da aula | No repositório do projeto, pasta `docs/` |
-| Estrutura arquitetural implementada (scaffold) | Quinta 26/03 — até o final da aula | Repositório do projeto (branch `main`) |
-| Decisões arquiteturais documentadas | Quinta 26/03 — até o final da aula | `docs/decisoes-arquiteturais.md` no repositório |
-| Primeiros PRs com features do Sprint 1 | Quinta 26/03 — abertos durante a aula | Repositório do projeto |
+|---|---|---|
+| Backlog refinado e priorizado no Jira, com feedback do stakeholder registrado | Domingo, 29/03 | Jira da equipe + registro de reunião no repositório |
+
+O backlog deve conter:
+- Ao menos 8 user stories com persona, INVEST e critérios de aceitação em Gherkin
+- Priorização MoSCoW inicial (pelo menos Must Have e Won't Have identificados)
+- Registro das divergências identificadas nas dinâmicas e como foram resolvidas
+- Registro do feedback do stakeholder na quinta-feira
 
 ---
 
-## Recursos Relevantes
+## Recursos relevantes
 
-### Livros-texto
-
-- Garcia, V. C. _Engenharia de Software em Dimensões_. ASSERT Lab, 2025. **Cap. 14**
-- Valente, M. T. _Engenharia de Software Moderna_. 2022. **Cap. 5 e Cap. 7** — disponível em [engsoftmoderna.info](https://engsoftmoderna.info)
-
-### Ferramentas
-
-- [Mermaid](https://mermaid.js.org/) — diagramas como código, renderização nativa no GitHub
-- [draw.io](https://app.diagrams.net/) — editor visual de diagramas (arquivos `.drawio` versionáveis)
-- [C4 Model — site oficial](https://c4model.com/) — referência completa com exemplos
-
-### Referências complementares
-
-- Simon Brown. _The C4 Model for Visualising Software Architecture_ — [c4model.com](https://c4model.com/)
-- Martin Fowler. _Who Needs an Architect?_ — reflexão sobre o papel da arquitetura em projetos ágeis
+- 🌐 [strateegia.digital](https://strateegia.digital) — plataforma usada nas dinâmicas de segunda e terça
+- 📖 Garcia, *Engenharia de Software em Dimensões* — Cap. 6 (seções 6.1–6.2) e Cap. 7 (seções 7.1.2–7.2.4)
+- 📖 Valente, *Engenharia de Software Moderna* — Cap. 3 (User Stories, INVEST, MoSCoW, MVP) — disponível em [engsoftmoderna.info](https://engsoftmoderna.info)
+- 📄 Slides L07 — Requisitos Funcionais, Não Funcionais e Elicitação *(disponível no repositório da disciplina)*
+- 📄 Slides L08 — User Stories, Backlog e Priorização Formal *(disponível no repositório da disciplina)*
 
 ---
 
-## 💡 Por que esta semana importa
+## Por que esta semana importa para o Sprint 0
 
-Vocês acabam de sair de 3 semanas intensas: entenderam o problema do stakeholder, prototiparam soluções, fecharam escopo, priorizaram backlog. Tudo isso está na cabeça e em documentos — mas nada disso está em código ainda.
+A Semana 4 está no coração do **Sprint 0 — Descoberta e Preparação** (Semanas 1 a 4). É o momento em que a equipe passa de "entendemos o problema" para "sabemos o que vamos construir".
 
-Esta semana é a **fundação técnica da solução**. Sem uma arquitetura combinada, 4 pessoas codificando ao mesmo tempo geram conflitos de merge, estruturas incompatíveis e retrabalho. Os diagramas C4 e o scaffold implementado nesta semana são o "mapa" que permite que a equipe se divida sem se perder.
+Nas semanas anteriores, vocês fizeram a descoberta: primeiro contato com o stakeholder (Semana 1), entendimento dos processos ágeis (Semana 2), levantamento formal de requisitos e user stories (Semana 3). Esta semana é onde essa descoberta se materializa em um backlog real — a fonte única da verdade sobre o que será construído.
 
-Na prática: as equipes que investem tempo em organizar a arquitetura antes de codar entregam mais, e com menos estresse, do que as que pulam direto para a implementação. Esta semana é a diferença entre construir sobre uma base sólida e construir sobre areia.
+O que acontece aqui determina diretamente a qualidade do Sprint 1. Um backlog construído sobre divergências de visão não resolvidas vai produzir funcionalidades que o stakeholder não reconhece. Um backlog com stories mal formadas vai gerar sprints impossíveis de estimar.
+
+A quinta-feira desta semana — o refinamento com o stakeholder — é um dos encontros mais estratégicos do semestre. É a primeira vez que o backlog enfrenta a realidade. O feedback do stakeholder aqui é ouro: revela o que a equipe entendeu certo, o que entendeu errado, e o que ainda precisa ser descoberto.
+
+Na semana seguinte, começa o ciclo de testes — e os critérios de aceitação em Gherkin que vocês escrevem esta semana serão o ponto de partida direto para as especificações de teste. Não jogue esses critérios fora depois da quinta.
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*Última atualização: 26/03/2026*
