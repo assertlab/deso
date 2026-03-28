@@ -1,8 +1,8 @@
 # Planejamento de Aulas — CIN0136 · 2026.1
 
 **Centro de Informática · UFPE**
-**Professores:** Kiev Santos da Gama e Vinicius Cardoso Garcia
-**Período:** 02/03/2026 a 30/06/2026
+**Professor:** Kiev Santos da Gama & Vinicius Cardoso Garcia
+**Período:** 02/03/2026 a 02/07/2026
 
 ---
 
@@ -10,8 +10,8 @@
 
 | Marcador | Significado |
 |----------|------------|
-| 🔵 | Aula teórica — Segunda-feira (E132, 17:00–18:40) |
-| 🟢 | Aula teórica — Terça-feira (E232, 18:50–20:30) |
+| 🔵 | Aula teórica — Segunda-feira (E132, 18:50–20:30) |
+| 🟢 | Aula teórica — Terça-feira (E132, 17:00–18:40) |
 | 🟠 | Aula prática — Quinta-feira (Grad04, 17:00–20:30) |
 | 👤 | Interação com stakeholder |
 | ✏️ | Prova |
@@ -27,18 +27,19 @@
 
 ```
 MAR 2026          ABR 2026          MAI 2026          JUN 2026
-Sem 1: 02–05      Sem 5: 30/03–09   Sem 8: 04–07 ✏️  Sem 13: 08–11 ✏️
-Sem 2: 09–12      ⚠️ 02/04 feriado  Sem 9: 11–14      Sem 14: 15–18 👤
-Sem 3: 16–19      Sem 6: 06–23      Sem 10: 18–21     Sem 15: 29–30 🎤
-Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
-                  ⚠️ 20–21 feriado  Sem 12: 01–04/06
-                  Sem 7: 27–30
+Sem 1: 02–05      Sem 5: 30/03–09   Sem 8: 04–07 ✏️  Sem 12: 01–04
+Sem 2: 09–12 ✅   ⚠️ 02/04 feriado  Sem 9: 11–14 ✅   Sem 13: 08–11 ✏️ ✅
+Sem 3: 16–19      Sem 6: 06–07      Sem 10: 18–21     Sem 14: 15–18 👤
+Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28 ✅  ⚠️ 22–23 São João
+                  ⚠️ 20–21 feriado                    Sem 15: 25/06–30 🎤
+                  Sem 6 lab: 23/04                     Sem 16: 02/07
+                  Sem 7: 27–30 ✅
 ```
 
 ---
 
 ## Sprint 0 — Descoberta e Preparação
-### 🎼 Sinfonia: Exposição + Composição · Semanas 1–5
+### 🎼 Sinfonia: Exposição + Composição · Semanas 1–4
 
 ---
 
@@ -49,138 +50,140 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 |------|------|------|---------------|-----------|
 | 02/03 (Seg) | 🔵 | O mundo além do código | Cap. 1, seções 1.1–1.3 | [Guia do professor](semanas/sem01/seg-guia-professor.md) · [Material do aluno](semanas/sem01/seg-material-aluno.md) |
 | 03/03 (Ter) | 🟢 | Ecossistema de DS + Introdução à Sinfonia | Cap. 1, seções 1.4–1.7 + Sinfonia Cap. 2 | [Guia do professor](semanas/sem01/ter-guia-professor.md) · [Material do aluno](semanas/sem01/ter-material-aluno.md) |
-| 05/03 (Qui) | 🟠 👤 | Nivelamento JavaScript + 1º contato com stakeholder | — | [Roteiro 1º contato](projeto/roteiro-primeiro-contato.md) |
+| 05/03 (Qui) | 🟠 👤 | Workshop Ágil + Construção do backlog com stakeholder | — | [Roteiro 1º contato](projeto/roteiro-primeiro-contato.md) |
 
 **Entregáveis da semana:**
-- 🎯 Ambiente JS funcional + mini-servidor Express rodando
-- 🎯 Registro do 1º contato com stakeholder (subir em `docs/contatos/contato-01.md` no repo da equipe)
-- 🎯 Reflexão individual (1 página): expectativas para a disciplina
+- 🎯 Quadro Kanban configurado (GitHub Projects ou Jira) + Backlog informal priorizado com stakeholder
+- 🎯 Acordos de equipe definidos
+- 🎯 **EI1: Portfólio Git** (entrega até domingo 08/03)
 
 ---
 
 ### Semana 2 · 09–12/03/2026
-**Tema:** Git e GitHub — Trabalhando juntos no mesmo código
+**Tema:** Processos Ágeis + Fechamento de Escopo com Stakeholder
 
 | Data | Tipo | Tema | Leitura prévia | Materiais |
 |------|------|------|---------------|-----------|
-| 09/03 (Seg) | 🔵 | Fundamentos de Git | Cap. 3, seções 3.1–3.3 | [Semana 2](semanas/sem02/) |
-| 10/03 (Ter) | 🟢 | Branches, merges e estratégias de colaboração | Cap. 3, seções 3.4.1–3.4.6 | [Semana 2](semanas/sem02/) |
-| 12/03 (Qui) | 🟠 | Lab Git + Setup do repositório do projeto real | — | [Semana 2](semanas/sem02/) |
-
-**Entregáveis da semana:**
-- 🎯 Repositório individual (10+ commits semânticos, branches, merge)
-- 🎯 Repositório da equipe configurado com Hello World full-stack
-
----
-
-### Semana 3 · 16–19/03/2026
-**Tema:** Code Review + Prototipagem com Stakeholder
-
-| Data | Tipo | Tema | Leitura prévia | Materiais |
-|------|------|------|---------------|-----------|
-| 16/03 (Seg) | 🔵 | Pull Requests e Code Review | Cap. 3, seções 3.5.1–3.5.2 | [Semana 3](semanas/sem03/) |
-| 17/03 (Ter) | 🟢 | Propriedade intelectual, licenças e ética | Cap. 3, seções 3.6–3.7 | [Semana 3](semanas/sem03/) |
-| 19/03 (Qui) | 🟠 👤 | Lab Code Review + Prototipagem com stakeholder | — | [Semana 3](semanas/sem03/) |
-
-**Entregáveis da semana:**
-- 🎯 4 PRs (2 abertos + 2 revisados com checklist)
-- 🎯 Protótipos low-fi/mid-fi validados + registro de feedback do stakeholder
-
----
-
-### Semana 4 · 23–26/03/2026
-**Tema:** Processos Ágeis + Construção do Backlog
-
-| Data | Tipo | Tema | Leitura prévia | Materiais |
-|------|------|------|---------------|-----------|
-| 23/03 (Seg) | 🔵 | Modelos de processo de software | Cap. 4, seções 4.1–4.2 | [Semana 4](semanas/sem04/) |
-| 24/03 (Ter) | 🟢 | Metodologias ágeis: Scrum, Kanban e escolha do processo | Cap. 4, seções 4.3–4.5 | [Semana 4](semanas/sem04/) |
-| 26/03 (Qui) | 🟠 👤 | Workshop Ágil + Backlog com stakeholder | — | [Semana 4](semanas/sem04/) |
-
-**Entregáveis da semana:**
-- 🎯 Kanban configurado no GitHub Projects
-- 🎯 Backlog informal priorizado + acordos de equipe
-- 🎯 **EI1: Portfólio Git** (entrega até domingo 29/03)
-
----
-
-### Semana 5 · 30/03–09/04/2026
-**Tema:** Requisitos + User Stories + Fechamento de Escopo
-> ⚠️ A quinta-feira desta semana (02/04 — Quinta-feira Santa) é feriado. A aula prática é deslocada para **09/04 (quinta)**.
-
-| Data | Tipo | Tema | Leitura prévia | Materiais |
-|------|------|------|---------------|-----------|
-| 30/03 (Seg) | 🔵 | Requisitos: funcionais, não funcionais e elicitação | Cap. 6, seções 6.1–6.2 | [Semana 5](semanas/sem05/) |
-| 31/03 (Ter) | 🟢 | User Stories, backlog e priorização formal | Cap. 7, seções 7.1.2–7.2.4 | [Semana 5](semanas/sem05/) |
-| ⚠️ 02/04 | — | **FERIADO — Quinta-feira Santa** | — | — |
-| 09/04 (Qui) | 🟠 👤 | Validação do protótipo hi-fi + Fechamento de escopo | — | [Semana 5](semanas/sem05/) · [Canvas de Visão](projeto/canvas-visao-template.md) |
+| 09/03 (Seg) | 🔵 | Modelos de processo de software | Cap. 4, seções 4.1–4.2 | [Semana 2](semanas/sem02/) |
+| 10/03 (Ter) | 🟢 | Metodologias ágeis: Scrum, Kanban e escolha do processo | Cap. 4, seções 4.3–4.5 | [Semana 2](semanas/sem02/) |
+| 12/03 (Qui) | 🟠 👤 | Validação do protótipo hi-fi + Fechamento de escopo com stakeholder | — | [Semana 2](semanas/sem02/) · [Canvas de Visão](projeto/canvas-visao-template.md) |
 
 **Entregáveis da semana:**
 - 🎯 Canvas de Visão preenchido e versionado no repositório
 - 🎯 Backlog MoSCoW formalizado com critérios de aceitação
 - 🎯 Protótipo hi-fi validado + escopo aprovado pelo stakeholder
-- 🎯 **EI2: Documento de Requisitos** (entrega até domingo 12/04)
+- 🎯 **EI2: Documento de Requisitos** (entrega até domingo 15/03)
 - ✅ **Review Sprint 0**
 
 ---
 
-## Sprint 1 — Início do Desenvolvimento
-### 🎼 Sinfonia: Ensaio (início) · Semanas 6–7
-
----
-
-### Semana 6 · 06–23/04/2026
-**Tema:** Design de Software + Arquitetura C4 + Sprint Week (ICSE)
-> ⚠️ Semana com 3 momentos distintos: aulas teóricas em 06 e 07/04, Sprint Week autônoma em 13–16/04 (professor no ICSE), e aula prática deslocada para 23/04.
+### Semana 3 · 16–19/03/2026
+**Tema:** Requisitos + User Stories + Nivelamento JavaScript
 
 | Data | Tipo | Tema | Leitura prévia | Materiais |
 |------|------|------|---------------|-----------|
-| 06/04 (Seg) | 🔵 | Princípios de design de software | Cap. 14, seções 14.1.1–14.1.2 | [Semana 6](semanas/sem06/) |
-| 07/04 (Ter) | 🟢 | C4 Model: desenhando a arquitetura do projeto | Cap. 14, seções 14.3.1–14.3.3 e 14.4 | [Semana 6](semanas/sem06/) |
+| 16/03 (Seg) | 🔵 | Requisitos: funcionais, não funcionais e elicitação | Cap. 6, seções 6.1–6.2 | [Semana 3](semanas/sem03/) |
+| 17/03 (Ter) | 🟢 | User Stories, backlog e priorização formal | Cap. 7, seções 7.1.2–7.2.4 | [Semana 3](semanas/sem03/) |
+| 19/03 (Qui) | 🟠 👤 | Nivelamento JavaScript + 1º contato formal com stakeholder | — | [Semana 3](semanas/sem03/) |
+
+**Entregáveis da semana:**
+- 🎯 Ambiente JS funcional + mini-servidor Express rodando
+- 🎯 Registro do 1º contato com stakeholder
+- 🎯 Reflexão individual (1 página)
+
+---
+
+### Semana 4 · 23–26/03/2026
+**Tema:** Strateegia — Escopo e Backlog Colaborativo
+
+| Data | Tipo | Tema | Leitura prévia | Materiais |
+|------|------|------|---------------|-----------|
+| 23/03 (Seg) | 🔵 | Strateegia: visão do escopo do projeto | — *(dinâmica aplicada; insumo: Semanas 1–3)* | [Semana 4](semanas/sem04/) |
+| 24/03 (Ter) | 🟢 | Strateegia: construção inicial do backlog do produto | — *(dinâmica aplicada; user stories com épico, INVEST e Gherkin)* | [Semana 4](semanas/sem04/) |
+| 26/03 (Qui) | 🟠 👤 | Refinamento do backlog com feedback dos stakeholders | — | [Semana 4](semanas/sem04/) |
+
+**Entregáveis da semana:**
+- 🎯 Backlog refinado e priorizado com feedback do stakeholder registrado
+- 🎯 Consolidação no Jira (ou GitHub Projects)
+
+---
+
+## Sprint 1 — Início do Desenvolvimento
+### 🎼 Sinfonia: Composição → Ensaio · Semanas 5–7 + Sprint Week
+
+---
+
+### Semana 5 · 30/03–09/04/2026
+**Tema:** Qualidade de Software + Definition of Done + Início do Sprint 1
+> ⚠️ A quinta-feira desta semana (02/04 — Quinta-feira Santa) é feriado. A aula prática é deslocada para **09/04 (quinta)**.
+
+| Data | Tipo | Tema | Leitura prévia | Materiais |
+|------|------|------|---------------|-----------|
+| 30/03 (Seg) | 🔵 | O que é qualidade de software? Atributos e critérios | Cap. 8, seções 8.1.1–8.1.8 | [Semana 5](semanas/sem05/) |
+| 31/03 (Ter) | 🟢 | Medição de qualidade e cultura de qualidade contínua | Cap. 8, seções 8.2–8.3 | [Semana 5](semanas/sem05/) |
+| ⚠️ 02/04 | — | **FERIADO — Quinta-feira Santa** | — | — |
+| 09/04 (Qui) | 🟠 | Lab: qualidade aplicada ao projeto + Início do desenvolvimento Sprint 1 | — | [Semana 5](semanas/sem05/) |
+
+**Entregáveis da semana:**
+- 🎯 Atributos de qualidade prioritários definidos por equipe
+- 🎯 Definition of Done da equipe para o Sprint 1
+- 🎯 Primeiras features em progresso
+
+---
+
+### Semana 6 · 06–07/04 + 23/04/2026
+**Tema:** Design e Arquitetura de Software (Parte 1)
+> ⚠️ Semana com calendário especial: aulas teóricas em 06 e 07/04, Sprint Week autônoma em 13–16/04 (professor no ICSE), e aula prática deslocada para 23/04 (semana de Tiradentes — única aula).
+
+| Data | Tipo | Tema | Leitura prévia | Materiais |
+|------|------|------|---------------|-----------|
+| 06/04 (Seg) | 🔵 | Introdução ao Design e Projeto de Arquitetura de Software | Cap. 14, seções 14.1.1–14.1.2 | [Semana 6](semanas/sem06/) |
+| 07/04 (Ter) | 🟢 | O que são APIs + Princípios de design de software | Cap. 14, seções 14.1.1–14.1.2 (cont.) + Valente Cap. 5 | [Semana 6](semanas/sem06/) |
 | ⚠️ 13/04 (Seg) | 🏃 | **Sprint Week — desenvolvimento autônomo (ICSE)** | — | Monitor disponível para suporte |
 | ⚠️ 14/04 (Ter) | 🏃 | **Sprint Week — desenvolvimento autônomo (ICSE)** | — | Monitor disponível para suporte |
-| ⚠️ 16/04 (Qui) | 🏃 | **Sprint Week — consolidação e entregável mínimo** | — | Monitor disponível para suporte |
-| 23/04 (Qui) | 🟠 | Workshop de Arquitetura + Revisão das features da Sprint Week | — | [Semana 6](semanas/sem06/) |
+| ⚠️ 16/04 (Qui) | 🏃 | **Sprint Week — consolidação e preparação para Arquitetura Parte 2** | — | Monitor disponível para suporte |
+| ⚠️ 20/04 | — | **FERIADO — Tiradentes** | — | — |
+| ⚠️ 21/04 | — | **FERIADO — Tiradentes** | — | — |
+| 23/04 (Qui) | 🟠 | Lab: Arquitetura aplicada ao projeto + Desenvolvimento Sprint 1 | — | [Semana 6](semanas/sem06/) |
 
 **Entregável da Sprint Week (até 16/04):**
-- 🎯 Mínimo 2 features implementadas com pelo menos 1 teste cada
-- 🎯 PRs abertos no repositório da equipe
+- 🎯 Mínimo 2 features em progresso no repositório
 - 🎯 Kanban atualizado
+- 🎯 Registro de decisões técnicas
 
-**Entregáveis do Workshop (23/04):**
-- 🎯 Diagramas C4 (N1, N2, N3) no repositório
-- 🎯 Scaffold arquitetural implementado
-- 🎯 Features da Sprint Week revisadas e consolidadas
+**Entregáveis do Lab (23/04):**
+- 🎯 Arquitetura mapeada nas 3 camadas
+- 🎯 Código organizado segundo princípios de design
+- 🎯 Features do Sprint 1 avançando
 
 ---
 
 ### Semana 7 · 27–30/04/2026
-**Tema:** Qualidade de Software + Sprint 1 Review
-> ⚠️ Segunda (20/04) e terça (21/04) são feriado de Tiradentes. As aulas teóricas são deslocadas para 27 e 28/04.
+**Tema:** Design e Arquitetura de Software (Parte 2) + C4 Model + Sprint 1 Review
+> ⚠️ Segunda (27/04) e terça (28/04) são as aulas teóricas deslocadas do feriado de Tiradentes.
 
 | Data | Tipo | Tema | Leitura prévia | Materiais |
 |------|------|------|---------------|-----------|
-| ⚠️ 20/04 | — | **FERIADO — Tiradentes** | — | — |
-| ⚠️ 21/04 | — | **FERIADO — Tiradentes** | — | — |
-| 27/04 (Seg) | 🔵 | Qualidade de software: atributos e medição | Cap. 8, seções 8.1.1–8.1.8 | [Semana 7](semanas/sem07/) |
-| 28/04 (Ter) | 🟢 | Medição de qualidade e preparação para Sprint Review | Cap. 8, seções 8.2–8.3 | [Semana 7](semanas/sem07/) |
-| 30/04 (Qui) | 🟠 👤 | Desenvolvimento + Sprint 1 Review com stakeholder | — | [Semana 7](semanas/sem07/) |
+| 27/04 (Seg) | 🔵 | Design e Arquitetura: padrões e estilos arquiteturais | Cap. 14, seções 14.3–14.5 | [Semana 7](semanas/sem07/) |
+| 28/04 (Ter) | 🟢 | Documentação de Arquitetura com o C4 Model | Cap. 14, seções 14.3.1–14.3.3 e 14.4 | [Semana 7](semanas/sem07/) |
+| 30/04 (Qui) | 🟠 👤 | Workshop C4 + Desenvolvimento + Sprint 1 Review com stakeholder | — | [Semana 7](semanas/sem07/) |
 
 **Entregáveis da semana:**
+- 🎯 Diagramas C4 (N1 e N2) no repositório
 - 🎯 Features do Sprint 1 entregues e mergeadas
 - 🎯 Registro de feedback do stakeholder
-- 🎯 Retrospectiva interna documentada
+- 🎯 Retrospectiva interna documentada + Planejamento Sprint 2
 - ✅ **Review Sprint 1**
 
 ---
 
-## Sprint 2 — Features Core do MVP
-### 🎼 Sinfonia: Ensaio (cont.) · Semanas 8–9
+## Sprint 2 — Testes + Features Core do MVP
+### 🎼 Sinfonia: Ensaio · Semanas 8–9
 
 ---
 
 ### Semana 8 · 04–07/05/2026
-**Tema:** Prova 1 + Início de Testes
+**Tema:** Balanço + Prova 1 + Lab Testes com Vitest
 
 | Data | Tipo | Tema | Leitura prévia | Materiais |
 |------|------|------|---------------|-----------|
@@ -188,7 +191,7 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 | 05/05 (Ter) | ✏️ | **PROVA 1** — conteúdo: Semanas 1–7 | — | — |
 | 07/05 (Qui) | 🟠 | Lab Testes com Vitest + Início do Sprint 2 | — | [Semana 8](semanas/sem08/) |
 
-**Conteúdo da Prova 1:** ES · Git · Code Review · Processos ágeis · Requisitos e User Stories · Princípios de design · C4 Model · Qualidade de software
+**Conteúdo da Prova 1:** ES · Processos ágeis · Requisitos e User Stories · Gherkin · Qualidade de software · Princípios de design · Estilos arquiteturais · C4 Model
 
 **Entregáveis da semana:**
 - 🎯 Vitest configurado no projeto
@@ -198,13 +201,13 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 ---
 
 ### Semana 9 · 11–14/05/2026
-**Tema:** Tipos de Teste + Testes de Aceitação + Sprint 2 Review
+**Tema:** Testes de Software + BDD + Playwright + Sprint 2 Review
 
 | Data | Tipo | Tema | Leitura prévia | Materiais |
 |------|------|------|---------------|-----------|
-| 11/05 (Seg) | 🔵 | Por que testar? Tipos de teste e pirâmide | Cap. 9, seções 9.1–9.4 | [Semana 9](semanas/sem09/) |
-| 12/05 (Ter) | 🟢 | Testes de aceitação, Playwright e ética digital | Cap. 9, seção 9.2.4 + material complementar | [Semana 9](semanas/sem09/) |
-| 14/05 (Qui) | 🟠 👤 | Desenvolvimento + Sprint 2 Review com stakeholder | — | [Semana 9](semanas/sem09/) |
+| 11/05 (Seg) | 🔵 | Por que testar? Tipos de teste, pirâmide e cobertura | Cap. 9, seções 9.1–9.4 | [Semana 9](semanas/sem09/) |
+| 12/05 (Ter) | 🟢 | Testes de aceitação + BDD e Gherkin como especificação executável | Cap. 9, seção 9.2.4 + revisitar Cap. 7 | [Semana 9](semanas/sem09/) |
+| 14/05 (Qui) | 🟠 👤 | Lab Testes de Aceitação (Playwright) + Sprint 2 Review com stakeholder | — | [Semana 9](semanas/sem09/) |
 
 **Entregáveis da semana:**
 - 🎯 Features core do MVP entregues
@@ -215,7 +218,7 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 
 ---
 
-## Sprint 3 — Qualidade e Refactoring
+## Sprint 3 — Refactoring + Qualidade
 ### 🎼 Sinfonia: Ensaio (cont.) · Semanas 10–11
 
 ---
@@ -253,7 +256,7 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 ---
 
 ## Sprint 4 — Estabilização e Entrega
-### 🎼 Sinfonia: Ensaio (fechamento) · Semanas 12–13
+### 🎼 Sinfonia: Ensaio → Ressonância · Semanas 12–13
 
 ---
 
@@ -282,7 +285,7 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 | 09/06 (Ter) | ✏️ | **PROVA 2** — conteúdo: Semanas 8–12 | — | — |
 | 11/06 (Qui) | 🟠 👤 | Sprint 4 Review + Estabilização final do MVP | — | [Semana 13](semanas/sem13/) |
 
-**Conteúdo da Prova 2:** Testes (Vitest e Playwright) · Refactoring e code smells · Manutenção e dívida técnica · Qualidade arquitetural · Code review avançado · Documentação
+**Conteúdo da Prova 2:** Testes (Vitest e Playwright) · BDD e Gherkin · Refactoring e code smells · Manutenção e dívida técnica · Qualidade arquitetural · Code review avançado · Documentação
 
 **Entregáveis da semana:**
 - 🎯 MVP estabilizado (testes passando, deploy funcional)
@@ -314,14 +317,18 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 
 ---
 
-### Semana 15 · 29–30/06/2026
+> ⚠️ **Período de São João — 22 e 23/06/2026 (Sem aulas)**
+
+---
+
+### Semana 15 · 25/06–30/06/2026
 **Tema:** Apresentações Acadêmicas + Encerramento
-> ⚠️ Feriados de São João em 22–24/06. Semana 15 ocorre em 29 e 30/06 (sem quinta-feira nesta semana por limitação do calendário acadêmico — encerramento em 30/06).
 
 | Data | Tipo | Tema | Materiais |
 |------|------|------|-----------|
-| 29/06 (Seg) | 🎤 | Apresentações Acadêmicas — Bloco 1 | [Semana 15](semanas/sem15/) |
-| 30/06 (Ter) | 🎤 | Apresentações Acadêmicas — Bloco 2 + Retrospectiva Final + Encerramento | [Semana 15](semanas/sem15/) |
+| 25/06 (Qui) | 🎤 | Apresentações Acadêmicas — Bloco 1 | [Semana 15](semanas/sem15/) |
+| 29/06 (Seg) | 🎤 | Apresentações Acadêmicas — Bloco 2 | [Semana 15](semanas/sem15/) |
+| 30/06 (Ter) | — | Segunda-chamada | — |
 
 **Estrutura obrigatória das apresentações (12 min + 5 min Q&A):**
 1. **Exposição** — o problema, o stakeholder, o contexto
@@ -338,26 +345,36 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28
 
 ---
 
+### Semana 16 · 02/07/2026
+
+| Data | Tipo | Tema |
+|------|------|------|
+| 02/07 (Qui) | ✏️ | **Prova Final** |
+
+---
+
 ## Resumo dos Marcos do Semestre
 
 | Marco | Data | Tipo |
 |-------|------|------|
-| ✅ Review Sprint 0 | 09/04/2026 (Qui) | Sprint Review com stakeholder |
-| 🎯 EI1 — Portfólio Git | até 29/03/2026 (Dom) | Exercício Individual |
-| 🎯 EI2 — Documento de Requisitos | até 12/04/2026 (Dom) | Exercício Individual |
+| 🎯 EI1 — Portfólio Git | até 08/03/2026 (Dom) | Exercício Individual |
+| ✅ Review Sprint 0 | 12/03/2026 (Qui) | Sprint Review com stakeholder |
+| 🎯 EI2 — Documento de Requisitos | até 15/03/2026 (Dom) | Exercício Individual |
 | ✅ Review Sprint 1 | 30/04/2026 (Qui) | Sprint Review com stakeholder |
 | ✏️ Prova 1 | 05/05/2026 (Ter) | Avaliação individual |
 | ✅ Review Sprint 2 | 14/05/2026 (Qui) | Sprint Review com stakeholder |
 | 🎯 EI3 — Testes em JS | até 17/05/2026 (Dom) | Exercício Individual |
 | ✅ Review Sprint 3 | 28/05/2026 (Qui) | Sprint Review com stakeholder |
-| ✅ Review Sprint 4 | 11/06/2026 (Qui) | Sprint Review com stakeholder |
 | ✏️ Prova 2 | 09/06/2026 (Ter) | Avaliação individual |
+| ✅ Review Sprint 4 | 11/06/2026 (Qui) | Sprint Review com stakeholder |
 | 🎯 EI4 — Reflexão Técnica | até 14/06/2026 (Dom) | Exercício Individual |
 | 👤 Entrega formal ao stakeholder | 18/06/2026 (Qui) | Marco do projeto de extensão |
-| 🎤 Apresentações — Bloco 1 | 29/06/2026 (Seg) | Apresentação acadêmica |
-| 🎤 Apresentações — Bloco 2 + Encerramento | 30/06/2026 (Ter) | Apresentação acadêmica |
+| 🎤 Apresentações — Bloco 1 | 25/06/2026 (Qui) | Apresentação acadêmica |
+| 🎤 Apresentações — Bloco 2 | 29/06/2026 (Seg) | Apresentação acadêmica |
+| — Segunda-chamada | 30/06/2026 (Ter) | — |
+| ✏️ Prova Final | 02/07/2026 (Qui) | Avaliação final |
 
 ---
 
 *CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
-*Última atualização: março de 2026*
+*Última atualização: 28/03/2026*
