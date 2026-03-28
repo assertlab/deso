@@ -1,4 +1,4 @@
-# PLANO DE ENSINO — CIN0136: Desenvolvimento de Software (v7)
+0# PLANO DE ENSINO — CIN0136: Desenvolvimento de Software (v7)
 
 ## Bacharelado em Sistemas de Informação | Centro de Informática — UFPE
 
@@ -876,3 +876,5 @@ A vivência com a Mini-Sinfonia no 2º período cria familiaridade com o framewo
 ---
 
 *Documento elaborado com base no Programa de Componente Curricular CIN0136, no livro "Engenharia de Software em Dimensões" (Garcia, 2025, ed. 2025.2.0), na Metodologia Sinfonia (Garcia & Medeiros, 2025), nas diretrizes do MEC para curricularização da extensão e em 13 anos de experiência na disciplina de Engenharia de Software no CIn-UFPE.*
+
+*Última atualização: 28/03/2026*
