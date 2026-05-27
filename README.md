@@ -84,7 +84,7 @@ flowchart TB
 | **Sprint 2** — Features core | 8–9 | 04/05 – 14/05 | Testes, MVP em construção |
 | **Sprint 3** — Qualidade | 10–11 | 18/05 – 28/05 | Refactoring, robustez |
 | **Sprint 4** — Estabilização | 12–13 | 01/06 – 11/06 | Code review cruzado, documentação |
-| **Ressonância** — Entrega | 14–15 | 15/06 – 30/06 | Entrega formal, apresentações |
+| **Reflexão** - Entrega | 14–15 | 15/06 – 30/06 | Entrega formal, apresentações |
 
 **Marcos importantes:**
 
