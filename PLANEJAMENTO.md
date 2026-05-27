@@ -306,8 +306,8 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28 ✅  ⚠️ 22–2
 
 | Data | Tipo | Tema | Leitura prévia | Materiais |
 |------|------|------|---------------|-----------|
-| 15/06 (Seg) | 🔵 | Ressonância: o que significa medir e aprender | Sinfonia, Cap. 7, seção 7.1 | [Semana 14](semanas/sem14/) |
-| 16/06 (Ter) | 🟢 | Impacto social da extensão + Preparação das apresentações finais | — | [Semana 14](semanas/sem14/) |
+| 15/06 (Seg) | 🔵 | O que você entregou? | - | [Semana 14](semanas/sem14/) |
+| 16/06 (Ter) | 🟢 | Como você conta essa história? | — | [Semana 14](semanas/sem14/) |
 | 18/06 (Qui) | 🟠 👤 | **Entrega formal ao stakeholder + Coleta de feedback real** | — | [Semana 14](semanas/sem14/) · [Formulário de feedback](projeto/formulario-feedback-stakeholder.md) |
 
 **Entregáveis da semana:**
@@ -330,11 +330,13 @@ Sem 4: 23–26      ⚠️ 13–16 ICSE 🏃  Sem 11: 25–28 ✅  ⚠️ 22–2
 | 29/06 (Seg) | 🎤 | Apresentações Acadêmicas — Bloco 2 | [Semana 15](semanas/sem15/) |
 | 30/06 (Ter) | — | Segunda-chamada | — |
 
-**Estrutura obrigatória das apresentações (12 min + 5 min Q&A):**
-1. **Exposição** — o problema, o stakeholder, o contexto
-2. **Composição** — design da solução, protótipos, decisões
-3. **Ensaio** — arquitetura, código, testes, sprint reviews
-4. **Ressonância** — entrega, feedback do stakeholder, lições aprendidas
+**Estrutura obrigatória das apresentações (12 min + 5 min Q&A por equipe):**
+1. **O problema:** quem é o stakeholder, qual era a dor, por que valia a pena resolver
+2. **Como pensamos:** o que foi descoberto antes de construir, decisões de escopo e design
+3. **O que construímos:** demo do produto, decisões técnicas relevantes, o que ficou fora do MVP
+4. **O que aprendemos:** o que faria diferente, o que a experiência ensinou que nenhuma aula ensina
+
+**Peer evaluation formativa** (formulário estruturado — não conta na nota)
 
 **Entregáveis finais:**
 - ✅ MVP no repositório (código + testes + documentação + deploy)
