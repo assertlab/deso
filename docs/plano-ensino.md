@@ -1,8 +1,8 @@
-0# PLANO DE ENSINO — CIN0136: Desenvolvimento de Software (v7)
+# PLANO DE ENSINO — CIN0136: Desenvolvimento de Software (v6)
 
 ## Bacharelado em Sistemas de Informação | Centro de Informática — UFPE
 
-**Professor:** Vinicius Cardoso Garcia, PhD  
+**Professores:** Kiev Santos da Gama & Vinicius Cardoso Garcia
 **Período Letivo:** 2026.1 | **Semestre Ideal:** 2º  
 **Carga Horária:** 120h (60h Teóricas + 60h Práticas)  
 **Créditos:** 6  
@@ -12,8 +12,8 @@
 
 | Dia | Horário | Duração | Natureza |
 |-----|---------|---------|----------|
-| Segunda-feira | 18:50–20:30 | 2h | Teórica — Conceitos, leituras, debates |
-| Terça-feira | 17:00–18:40 | 2h | Teórica — Aprofundamento, estudos de caso, questões estruturantes |
+| Segunda-feira | 17:00–18:40 | 2h | Teórica — Conceitos, leituras, debates |
+| Terça-feira | 18:50–20:30 | 2h | Teórica — Aprofundamento, estudos de caso, questões estruturantes |
 | Quinta-feira | 17:00–20:30 | 4h | Prática — Consolidação, workshops, laboratórios, projeto com stakeholder |
 
 ---
@@ -92,68 +92,38 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    SPRINT 0 — Descoberta e Preparação                  │
-│                         Semanas 1–4 (4 semanas)                        │
+│                         Semanas 1–6 (6 semanas)                        │
 │                                                                         │
 │  🎼 Sinfonia: EXPOSIÇÃO + COMPOSIÇÃO                                   │
 │                                                                         │
-│  Sem 1: Acolhimento + Ecossistema de DS + Backlog com stakeholder      │
-│  Sem 2: Processos ágeis + Fechamento de escopo com stakeholder         │
-│  Sem 3: Requisitos formais + User Stories + Nivelamento JS             │
-│  Sem 4: Strateegia: escopo e backlog + Refinamento com stakeholder     │
+│  Sem 1: Acolhimento + Processos ágeis (intro) + Backlog com stakeholder │
+│  Sem 2: Processos ágeis (aprofundamento) + Refinamento do backlog       │
+│  Sem 3: Requisitos formais + Validação do protótipo + Fechamento escopo │
+│  Sem 4: Design e Arquitetura + Diagramas C4                             │
+│  Sem 5: Git/GitHub + Setup do repositório do projeto real               │
+│  Sem 6: PR/Code Review + Prototipagem com stakeholder                   │
 │                                                                         │
-│  → Entrega: Backlog priorizado + Protótipo hi-fi + Escopo fechado     │
+│  → Entrega: Protótipo hi-fi validado + Backlog priorizado + Escopo     │
 ├─────────────────────────────────────────────────────────────────────────┤
-│               SPRINT 1 — Primeiras Funcionalidades                     │
-│                  Semanas 5–7 + Sprint Week (~4 semanas)                 │
-│                                                                         │
-│  🎼 Sinfonia: COMPOSIÇÃO → ENSAIO                                      │
-│                                                                         │
-│  Sem 5:  Qualidade de Software + Definition of Done + Início Sprint 1  │
-│  Sem 6:  Design e Arquitetura Parte 1 (HTTP, 3 camadas, MVC, APIs)    │
-│  ICSE:   Sprint Week — Desenvolvimento autônomo                        │
-│  Sem 7:  Design e Arquitetura Parte 2 (C4 Model) + Sprint 1 Review    │
-│                                                                         │
-│  → Entrega: Features Sprint 1 + Diagramas C4 + Feedback stakeholder   │
-├─────────────────────────────────────────────────────────────────────────┤
-│               SPRINT 2 — Testes + Features Core do MVP                 │
-│                       Semanas 8–9 (~2 semanas)                         │
+│                  SPRINTS 1–4 — Construção Incremental                  │
+│                       Semanas 7–14 (~2 sem/sprint)                     │
 │                                                                         │
 │  🎼 Sinfonia: ENSAIO                                                   │
 │                                                                         │
-│  Sem 8:  Balanço + Prova 1 + Lab Vitest + Início Sprint 2             │
-│  Sem 9:  Testes de Software + BDD/Gherkin + Sprint 2 Review           │
+│  Sprint 1 (Sem 7–8):  Qualidade + Setup técnico + Primeiras features   │
+│  Sprint 2 (Sem 9–10): Testes + Features core do MVP                    │
+│  Sprint 3 (Sem 11–12): Qualidade + Refactoring + Features complementar │
+│  Sprint 4 (Sem 13–14): Refinamento + Code Review + Estabilização       │
 │                                                                         │
-│  → Entrega: Features core + Testes (Vitest + Playwright) + Feedback   │
+│  → Cada sprint: Review com stakeholder na quinta da semana par          │
 ├─────────────────────────────────────────────────────────────────────────┤
-│               SPRINT 3 — Refactoring + Qualidade                       │
-│                      Semanas 10–11 (~2 semanas)                        │
-│                                                                         │
-│  🎼 Sinfonia: ENSAIO                                                   │
-│                                                                         │
-│  Sem 10: Refactoring + Manutenção + Dívida técnica                    │
-│  Sem 11: Impacto do design na qualidade + Debugging + Sprint 3 Review │
-│                                                                         │
-│  → Entrega: Código refatorado + Qualidade evidenciada + Feedback      │
-├─────────────────────────────────────────────────────────────────────────┤
-│               SPRINT 4 — Estabilização + Entrega                       │
-│                      Semanas 12–13 (~2 semanas)                        │
-│                                                                         │
-│  🎼 Sinfonia: ENSAIO → RESSONÂNCIA                                    │
-│                                                                         │
-│  Sem 12: Code Review avançado + Documentação + Code Review cruzado    │
-│  Sem 13: Reflexão + Prova 2 + Sprint 4 Review + Estabilização        │
-│                                                                         │
-│  → Entrega: MVP estabilizado + Documentação + Feedback                │
-├─────────────────────────────────────────────────────────────────────────┤
-│                    RESSONÂNCIA — Entrega e Reflexão                     │
+│                    ENCERRAMENTO — Entrega e Reflexão                   │
 │                        Semanas 14–15 (2 semanas)                       │
 │                                                                         │
-│  🎼 Sinfonia: RESSONÂNCIA                                              │
+│  Sem 14: Reflexão + Preparação das apresentações + Entrega stakeholder  │
+│  Sem 15: Apresentações acadêmicas + Retrospectiva + Encerramento       │
 │                                                                         │
-│  Sem 14: Ressonância + Entrega formal ao stakeholder                   │
-│  Sem 15: Apresentações acadêmicas + Segunda-chamada                    │
-│                                                                         │
-│  → Entrega: Produto entregue + Feedback formal + Apresentação         │
+│  → Entrega: Produto funcional + Feedback + Reflexão individual          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -162,43 +132,42 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 | Movimento da Sinfonia | Fase do Semestre | Semanas | Artefato de Saída |
 |----------------------|------------------|---------|-------------------|
 | **Exposição** — Alinhar Estratégia | Sprint 0 (parte 1) | 1–3 | Canvas de Visão do Projeto (simplificado) |
-| **Composição** — Desenhar a Solução | Sprint 0 (parte 2) + Sprint 1 | 3–7 | Protótipo hi-fi validado + Backlog priorizado + Arquitetura definida |
-| **Ensaio** — Construir e Testar | Sprints 1–4 | 5–13 | MVP funcional, testado e documentado |
-| **Ressonância** — Medir e Aprender | Entrega e Reflexão | 14–15 | Feedback do stakeholder + Documento de reflexão |
+| **Composição** — Desenhar a Solução | Sprint 0 (parte 2) | 3–5 | Protótipo hi-fi validado + Backlog priorizado |
+| **Ensaio** — Construir e Testar | Sprints 1–4 | 6–13 | MVP funcional, testado e documentado |
+| **Ressonância** — Medir e Aprender | Encerramento | 14–15 | Produto entregue ao stakeholder + Feedback formal + Documento de Reflexão individual |
 
 ### 2.2 Correspondência Ementa → Livro-Texto → Semanas
 
 | Conteúdo Programático (Ementa) | Capítulo(s) do Livro | Semana(s) |
 |-------------------------------|---------------------|-----------|
 | Introdução ao gerenciamento de projetos | Cap. 1 — Engenharia de Software | 1 |
-| Metodologias ágeis de desenvolvimento | Cap. 4 — Processos de Software | 2 |
-| Intro à Engenharia de Requisitos ágil | Cap. 6 e Cap. 7 — Requisitos e User Stories | 3 |
-| Qualidade de software | Cap. 8 — Qualidade de Software | 5 |
-| Arquitetura de software e Modularização | Cap. 14 — Fundamentos de Arquitetura | 6, 7, 11 |
-| Testes de software | Cap. 9 — Testes | 9 |
-| Refactoring e Manutenção | Cap. 19 — Manutenção e Evolução | 10 |
-| Code Review | Cap. 3, seção 3.5 | 12 |
-| Introdução ao controle de versão | Cap. 3 — Versionamento e Gerência de Configuração | *Momento prático a definir* |
+| Metodologias ágeis de desenvolvimento | Cap. 3 — Processos de Software | 2 |
+| Intro à Engenharia de Requisitos ágil | Cap. 5 e Cap. 6 — Requisitos | 3 |
+| Arquitetura de software e Modularização | Cap. 13 — Fundamentos de Arquitetura (seções selecionadas) | 4, 11 |
+| Introdução ao controle de versão | Cap. 2 — Versionamento e Gerência de Configuração | 5–6 |
+| Testes de software | Cap. 7 e Cap. 8 — Qualidade e Testes | 7–9 |
+| Code Review | Cap. 2, seção 2.5 | 6, 12 |
+| Refactoring | Cap. 18, seções 18.3–18.4 | 10, 12 |
 
 ---
 
 ## 3. CRONOGRAMA DETALHADO — SEMANA A SEMANA
 
 > **Convenção de leitura:**
-> - 🔵 **SEG** = Segunda-feira (2h, teórica — conceitos) — 18:50–20:30
-> - 🟢 **TER** = Terça-feira (2h, teórica — aprofundamento) — 17:00–18:40
-> - 🟠 **QUI** = Quinta-feira (4h, prática — consolidação e projeto) — 17:00–20:30
+> - 🔵 **SEG** = Segunda-feira (2h, teórica — conceitos)
+> - 🟢 **TER** = Terça-feira (2h, teórica — aprofundamento)
+> - 🟠 **QUI** = Quinta-feira (4h, prática — consolidação e projeto)
 > - 📖 = Leitura prévia obrigatória
 > - 🎯 = Entregável da semana
 > - 👤 = Momento de interação com stakeholder
 
 ---
 
-## SPRINT 0 — DESCOBERTA E PREPARAÇÃO (Semanas 1–4)
+## SPRINT 0 — DESCOBERTA E PREPARAÇÃO (Semanas 1–5)
 
 ### 🎼 Sinfonia: Exposição + Composição
 
-> **Propósito:** Acolher, nivelar, formar equipes, conhecer o stakeholder, entender o problema, prototipar e fechar escopo. Os conceitos teóricos (ES, processos, requisitos) são introduzidos **a serviço** do projeto desde o primeiro dia.
+> **Propósito:** Acolher, nivelar, formar equipes, conhecer o stakeholder, entender o problema, prototipar e fechar escopo. Os conceitos teóricos (ES, Git, processos, requisitos) são introduzidos **a serviço** do projeto desde o primeiro dia.
 
 ---
 
@@ -206,7 +175,7 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 
 **🔵 SEG — O mundo além do código**
 
-- 📖 Leitura prévia: Cap. 1, seções 1.1 a 1.3 (O que é ES? Diferencial da ES; Desafios técnicos e organizacionais)
+- 📖 Leitura prévia: Cap. 1, seções 1.1 a 1.3 (A Emergência de uma Disciplina; A Evolução dos Desafios e as Novas Crises do Software; Apresentando a PetFood)
 - Dinâmica de apresentação: "Quem sou eu no contexto da tecnologia?"
 - Discussão provocativa: "Qual é a diferença entre programar e desenvolver software?"
 - Apresentação do plano de ensino, metodologia, contrato pedagógico e projeto de extensão
@@ -214,7 +183,7 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 
 **🟢 TER — Ecossistema do desenvolvimento de software + Introdução à Sinfonia**
 
-- 📖 Leitura prévia: Cap. 1, seções 1.4 a 1.7 + Sinfonia Cap. 2 (Visão Geral dos 4 Movimentos)
+- 📖 Leitura prévia: Cap. 1, seções 1.4 a 1.7 (ES na Sociedade Contemporânea; O Valor Estratégico da ES; O Engenheiro de Software Moderno; Conclusão) + Sinfonia Cap. 2 (Visão Geral dos 4 Movimentos)
 - Mapa mental coletivo: papéis, atividades e artefatos no desenvolvimento de software
 - Apresentação da Mini-Sinfonia como framework do projeto do semestre
 - Apresentação e assinatura do Código de Conduta e Ética
@@ -224,8 +193,8 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 **🟠 QUI — Workshop Ágil + 👤 Construção do Backlog com Stakeholder (4h)**
 
 - Bloco 1 (1.5h) — **Workshop Ágil:**
-  - Atividade lúdica: "Construindo sem plano" → repetir com mini-sprint estruturada → comparar
-  - Configuração do quadro Kanban da equipe (GitHub Projects ou Jira) com colunas: Backlog → To Do → In Progress → Review → Done
+  - Atividade lúdica: "Construindo sem plano" (com LEGO ou equivalente digital) → repetir com mini-sprint estruturada → comparar
+  - Configuração do quadro Kanban da equipe (GitHub Projects) com colunas: Backlog → To Do → In Progress → Review → Done
   - Planning poker simplificado: como estimar esforço
 - Bloco 2 (2.5h) — **👤 Construção do backlog com stakeholder:**
   - 👤 Sessão com stakeholder: detalhar funcionalidades desejadas, priorizar juntos
@@ -233,47 +202,47 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
   - Priorização colaborativa: o que é mais urgente para o demandante? O que é mais viável para a equipe?
   - Definição dos papéis internos da equipe e acordos de trabalho
 - 🎯 Quadro Kanban configurado + Backlog informal priorizado com stakeholder + Acordos de equipe
-- **Exercício Individual 1 — "Portfólio Git"** (entrega domingo)
+- Habilidades transversais: resolução de problemas, criatividade, negociação, trabalho em equipe
 
 ---
 
-#### 📅 Semana 2 — Processos Ágeis + 👤 Fechamento de Escopo
+#### 📅 Semana 2 — Processos Ágeis
 
 **🔵 SEG — Do caos ao processo: modelos de desenvolvimento de software**
 
-- 📖 Leitura prévia: Cap. 4, seções 4.1 e 4.2 (Modelo Cascata; Modelos Incremental e Iterativo)
+- 📖 Leitura prévia: Cap. 3, seções 3.2 e 3.3 (A Sombra do Passado: O Modelo Cascata; Em Busca da Flexibilidade: Modelos Incremental e Iterativo)
 - Modelos clássicos como respostas históricas a problemas de coordenação
 - Debate: "O modelo cascata é realmente ruim ou apenas mal compreendido?"
 - Análise: "Olhando para o nosso projeto real — o que já estamos fazendo que se parece com um processo?"
 
 **🟢 TER — Metodologias ágeis: Scrum, Kanban e a escolha do processo**
 
-- 📖 Leitura prévia: Cap. 4, seções 4.3 a 4.5 (Scrum, Kanban, Lean, Comparação, Critérios de escolha)
+- 📖 Leitura prévia: Cap. 3, seções 3.4 a 3.9 (A Revolução Ágil; Scrum: Ritmo e Foco; Kanban: Fluxo e Flexibilidade; Lean; Comparação; Critérios de escolha)
 - Comparação prática: Scrum vs. Kanban — quando usar cada um?
-- Debate com Questões Estruturantes do Cap. 4 (selecionar 2–3)
+- Debate com Questões Estruturantes do Cap. 3 (selecionar 2–3)
 - Provocação: "Para o nosso projeto com stakeholder real, qual cadência faz mais sentido?"
 
-**🟠 QUI — 👤 Validação do Protótipo Hi-Fi + Fechamento de Escopo (4h)**
+**🟠 QUI — Consolidação Ágil + Refinamento do Backlog (4h)**
 
-- Bloco 1 (2h) — **Formalização:**
-  - Conversão do backlog em user stories formais com critérios de aceitação
-  - Priorização MoSCoW
-  - Canvas de Visão simplificado
-  - Definição do MVP
-- Bloco 2 (2h) — **👤 Sessão de fechamento de escopo com stakeholder:**
-  - Apresentação do protótipo hi-fi ao stakeholder
-  - Validação, ajustes e aprovação formal do escopo
-- 🎯 Canvas de Visão + Backlog MoSCoW + Protótipo hi-fi validado + Escopo aprovado
-- **Exercício Individual 2 — "Documento de Requisitos"** (entrega domingo)
-- **✅ Review Sprint 0**
+- Bloco 1 (1.5h) — **Consolidação Ágil:**
+  - Revisão do quadro Kanban criado na Semana 1 — ajustes após a primeira semana de uso
+  - Exercício: simulação de uma sprint planning com o backlog já levantado
+  - Discussão: "O que descobrimos na construção do backlog que mudou nossa visão do processo?"
+- Bloco 2 (2.5h) — **Refinamento do backlog:**
+  - Revisão e consolidação dos itens de backlog levantados com o stakeholder na Semana 1
+  - Primeira priorização colaborativa da equipe: o que entra no Sprint 0?
+  - Definição de Definition of Done da equipe
+  - Acordos de trabalho revistos com base no que aprenderam na primeira semana
+- 🎯 Backlog refinado + Definition of Done + Sprint 0 planejado
+- Habilidades transversais: colaboração, organização, negociação interna
 
 ---
 
-#### 📅 Semana 3 — Requisitos + User Stories + Nivelamento JS
+#### 📅 Semana 3 — Requisitos + 👤 Validação e Fechamento de Escopo
 
 **🔵 SEG — Requisitos funcionais, não funcionais e técnicas de elicitação**
 
-- 📖 Leitura prévia: Cap. 6, seções 6.1 e 6.2 (Requisitos Funcionais e Não Funcionais; Técnicas de Elicitação)
+- 📖 Leitura prévia: Cap. 5, seções 5.1 e 5.2 (Requisitos Funcionais e Não Funcionais; Técnicas de Elicitação em Profundidade)
 - Exercício provocativo: "Descreva o que o WhatsApp faz" — observar como descrições divergem
 - Distinção funcional vs. não funcional com exemplos concretos
 - Técnicas de elicitação: entrevistas, workshops, observação, prototipagem
@@ -281,447 +250,444 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 
 **🟢 TER — User Stories, backlog e priorização formal**
 
-- 📖 Leitura prévia: Cap. 7, seções 7.1.2 a 7.2.4 (User Stories, Epics, Features, MoSCoW, WSJF)
+- 📖 Leitura prévia: Cap. 6, seções 6.1 a 6.4 (Da Descoberta à Especificação Ágil; User Stories: A Linguagem do Valor; Hierarquia do Backlog; Priorização; Refinamento Contínuo)
 - Workshop: escrita de user stories no formato "Como [persona], quero [funcionalidade] para [benefício]"
 - Critérios de qualidade (INVEST)
 - Exercício de priorização com MoSCoW
-- Debate com Questões Estruturantes do Cap. 7 (selecionar 2)
+- Debate com Questões Estruturantes do Cap. 6 (selecionar 2)
 
-**🟠 QUI — Nivelamento JS + 👤 1º Contato com Stakeholder (4h)**
+**🟠 QUI — 👤 Validação do Protótipo Hi-Fi + Fechamento de Escopo (4h)**
 
-- Bloco 1 (2h) — **Nivelamento JavaScript:**
-  - Variáveis, funções, arrays, objetos, arrow functions, template literals
-  - Setup do ambiente (Node.js, VS Code, ESLint, Prettier)
-  - Mini-servidor Express com 2 rotas JSON
-- Bloco 2 (2h) — **👤 Primeiro contato formal com o stakeholder:**
-  - Conversa guiada por roteiro mínimo
-  - Plenária de encerramento
-- 🎯 Ambiente JS funcional + Registro do 1º contato + Reflexão individual
-
----
-
-#### 📅 Semana 4 — Strateegia: Escopo e Backlog
-
-**🔵 SEG — Strateegia: visão do escopo do projeto**
-
-- Dinâmica individual na Strateegia: cada estudante descreve em até 5 frases o escopo essencial do projeto (problema, personas, valor entregue)
-- Leitura coletiva das respostas para evidenciar divergências de visão
-- Discussão facilitada sobre alinhamento de escopo
-
-**🟢 TER — Strateegia: construção inicial do backlog do produto**
-
-- Dinâmica na Strateegia: cada estudante escreve user stories individuais (uma por resposta), indicando o épico correspondente, avaliação INVEST e pelo menos um critério de aceitação em formato Gherkin incluindo caso de falha
-- Dinâmica de revisão coletiva: identificação de duplicatas, histórias fracas e primeiras sinalizações de prioridade
-
-**🟠 QUI — 👤 Refinamento do Backlog com Feedback dos Stakeholders (4h)**
-
-- Bloco 1 (2h) — **Apresentação dos resultados das dinâmicas Strateegia aos stakeholders:**
-  - Visão de escopo e user stories levantadas
-  - Coleta de feedback estruturado
-- Bloco 2 (2h) — **Refinamento do backlog:**
-  - Correção de stories, identificação de lacunas
-  - Priorização MoSCoW inicial
-  - Consolidação no Jira (ou GitHub Projects)
-- 🎯 Backlog refinado e priorizado com feedback do stakeholder registrado
+- 📖 Leitura prévia: Sinfonia — Cap. 4, seção 4.1 (Exposição) e Cap. 5, seção 5.1 (Composição)
+- Bloco 1 (2h) — **Formalização:**
+  - Cada equipe converte o backlog informal em user stories formais com critérios de aceitação
+  - Priorização com MoSCoW do backlog completo
+  - Preenchimento do Canvas de Visão do Projeto (versão simplificada do Canvas de Estratégia e Ação da Sinfonia)
+  - Definição do MVP: "Se pudéssemos entregar apenas 3 funcionalidades, quais seriam?"
+- Bloco 2 (2h) — **👤 Sessão de fechamento de escopo com stakeholder:**
+  - Apresentação do protótipo hi-fi refinado
+  - Apresentação do backlog priorizado e proposta de MVP
+  - 👤 Stakeholder valida, ajusta, aprova o escopo
+  - Registro formal: o que está dentro do MVP, o que fica para depois, o que mudou
+- 🎯 Canvas de Visão + Backlog de user stories priorizado com MoSCoW + Protótipo hi-fi validado + Escopo fechado e assinado com stakeholder
+- **Exercício Individual 2 — "Documento de Requisitos":** dado um sistema fictício, o aluno deve: (1) listar requisitos funcionais e não funcionais, (2) escrever 8 user stories com critérios de aceitação, (3) priorizar com MoSCoW, (4) identificar os 3 atributos de qualidade mais críticos e justificar (entrega até domingo)
+- **✅ Review do Sprint 0:** Canvas de Visão + Backlog priorizado + Protótipo validado + Escopo fechado
 
 ---
 
-## SPRINT 1 — PRIMEIRAS FUNCIONALIDADES (Semanas 5–7 + Sprint Week)
+#### 📅 Semana 4 — Princípios de Design e Arquitetura
 
-### 🎼 Sinfonia: Composição → Ensaio
+**🔵 SEG — Por que a organização do código importa**
 
-> **Propósito:** Estabelecer a base de qualidade, construir a arquitetura do projeto e entregar as primeiras funcionalidades ao stakeholder. A teoria de cada semana é calibrada para o que a equipe precisa naquele momento.
+- 📖 Leitura prévia: Cap. 13, seções 13.1 e 13.3 (O Que é Arquitetura de Software; Princípios Fundamentais de Design de Código — SOLID, DRY, KISS)
+- Exercício provocativo: dois códigos JavaScript que fazem a mesma coisa — um bem organizado, outro caótico. "Qual vocês preferem manter?"
+- Princípios acessíveis para 2º período: separação de responsabilidades, coesão, acoplamento, abstração, nomes significativos
+- Conexão com o projeto: "Como organizaremos nosso código para que 4 pessoas trabalhem sem pisar no pé uma da outra?"
+
+**🟢 TER — C4 Model: desenhando a arquitetura do nosso projeto**
+
+- 📖 Leitura prévia: Cap. 13, seção 13.5 (Comunicando a Arquitetura: O Poder do C4 Model — seções 13.5.1 O C4 Model como Ferramenta de Storytelling; 13.5.2 O Papel Complementar da UML)
+- Demonstração: diagramas de Contexto (Nível 1) e Contêiner (Nível 2) para um sistema semelhante aos projetos das equipes
+- Discussão: "Por que documentamos a arquitetura se ela pode mudar?"
+- Ferramenta: Mermaid (integra com GitHub) ou draw.io
+
+**🟠 QUI — Workshop de Arquitetura (4h)**
+
+- Bloco 1 (2h) — **Workshop de Arquitetura:**
+  - Cada equipe desenha os diagramas C4 do seu projeto: Contexto (Nível 1), Contêiner (Nível 2), Componentes (Nível 3 do módulo principal)
+  - Definição da estrutura de pastas e módulos do projeto (backend: rotas, controllers, services, models; frontend: pages, components, hooks, services)
+  - Decisões arquiteturais documentadas: "Escolhemos X porque..."
+- Bloco 2 (2h) — **Aplicação no contexto do projeto:**
+  - Discussão em equipe: como a arquitetura desenhada se conecta ao backlog e ao escopo fechado?
+  - Refinamento dos diagramas com base no feedback entre equipes
+  - Preparação para o setup técnico que virá na Semana 5
+- 🎯 Diagramas C4 da equipe (Níveis 1, 2 e 3) + Decisões arquiteturais documentadas
+- Habilidades transversais: pensamento sistêmico, comunicação técnica, tomada de decisão
 
 ---
 
-#### 📅 Semana 5 — Qualidade de Software
+#### 📅 Semana 5 — Git e GitHub: Trabalhando juntos no mesmo código
 
-**🔵 SEG — O que é qualidade de software? Atributos e critérios**
+**🔵 SEG — Por que versionar? Fundamentos de Git**
 
-- 📖 Leitura prévia: Cap. 8, seções 8.1.1 a 8.1.8 (Critérios de qualidade: funcionalidade, desempenho, usabilidade, confiabilidade, segurança, manutenibilidade)
+- 📖 Leitura prévia: Cap. 2, seções 2.1 a 2.3 (O Desafio Inicial: Dois Desenvolvedores; A Escolha da Ferramenta: Centralizado vs. Distribuído; Os Primeiros Passos: Commit, Branch e Merge na Prática)
+- Debate: "Você já perdeu código? Já teve medo de alterar algo que funcionava?"
+- Demonstração ao vivo: ciclo básico do Git (init, add, commit, log, diff, status)
+- Modelo mental: working directory → staging area → repository
+
+**🟢 TER — Branches, merges e estratégias de colaboração**
+
+- 📖 Leitura prévia: Cap. 2, seção 2.4 (Organizando o Caos: Git Flow; Trunk-Based Development; Feature Branching; Mantendo um Histórico Limpo — Merge vs. Rebase)
+- Análise comparativa das estratégias para diferentes cenários
+- Discussão: "Qual estratégia faz sentido para o nosso projeto de extensão?"
+- Simulação conceitual de conflito de merge
+
+**🟠 QUI — Laboratório Git + Setup do Repositório do Projeto Real (4h)**
+
+- Bloco 1 (2h) — **Laboratório Git:**
+  - Exercício individual: criar repositório JS, fazer 10 commits semânticos, criar e mesclar branches, navegar pelo histórico
+  - Exercício em duplas: repositório compartilhado, feature branches, merge, simulação e resolução de conflitos — repetir até ficar natural
+- Bloco 2 (2h) — **Setup do projeto real:**
+  - Criação do repositório da equipe no GitHub: README estruturado, .gitignore (Node.js), licença, branch protection rules, template de PR
+  - Scaffolding do projeto: `npm init`, estrutura de pastas (src/, tests/, docs/), configuração de ESLint + Prettier
+  - Setup inicial do backend (Express) e frontend (Vite + React) — boilerplate funcional, já refletindo a arquitetura desenhada na Semana 4
+  - Cada membro faz um commit inaugural no projeto real
+- 🎯 Repositório individual (10+ commits) + Repositório do projeto real configurado e funcional (Hello World full-stack)
+- **Exercício Individual 1 — "Meu portfólio Git":** repositório pessoal JavaScript com projeto organizado, commits semânticos, branches com propósito, README completo, e pelo menos 1 PR com self-review documentado (entrega até domingo)
+- Habilidades transversais: colaboração, resolução de problemas, disciplina técnica
+
+---
+
+## SPRINTS 1–4 — CONSTRUÇÃO INCREMENTAL (Semanas 7–14)
+
+### 🎼 Sinfonia: Ensaio — Construir e Testar
+
+> **Propósito:** Construção incremental do MVP em 4 sprints de ~2 semanas cada. A teoria de cada quinzena é calibrada para o que a equipe precisa naquele momento do projeto. Sprint reviews com stakeholder acontecem na quinta-feira da semana par de cada sprint.
+
+---
+
+### 🏃 SPRINT 1 — Primeiras Funcionalidades (Semanas 7–8)
+
+> **Foco técnico:** Qualidade de software, primeiras features sobre a arquitetura já definida no Sprint 0.
+
+#### 📅 Semana 6 — Code Review + 👤 Prototipagem com Stakeholder
+
+**🔵 SEG — Pull Requests e Code Review: mais que revisão técnica**
+
+- 📖 Leitura prévia: Cap. 2, seção 2.5 (O Ritual da Qualidade: O Primeiro Pull Request — A Validação Colaborativa via Code Review; A Automação como Aliada)
+- Demonstração: anatomia de um PR no GitHub (título, descrição, diff, comentários, aprovação)
+- Discussão: "O que distingue um bom comentário de code review de um inútil?"
+- Apresentação da rubrica de code review da disciplina
+
+**🟢 TER — Propriedade intelectual, licenças e ética no desenvolvimento**
+
+- 📖 Leitura prévia: Cap. 2, seções 2.6 e 2.7 (Benefícios da Gestão de Configuração na Prática; Conclusão: O Alicerce da Colaboração)
+- Debate: "Quem é dono do código que vocês escreverão para o stakeholder? E se usarem código gerado por IA?"
+- Licenças de software (MIT, GPL, Apache) e implicações para o projeto de extensão
+- Questões éticas: plágio, atribuição, contribuições open source, responsabilidade com o demandante
+
+**🟠 QUI — Laboratório Code Review + 👤 Prototipagem com Stakeholder (4h)**
+
+- Bloco 1 (1.5h) — **Laboratório de Code Review:**
+  - Exercício formal em duplas: abrir PR → revisar com checklist → solicitar mudanças → corrigir → aprovar → merge
+  - Repetir com nova dupla para consolidar
+- Bloco 2 (2.5h) — **👤 Composição: Prototipagem com o stakeholder:**
+  - Mini-workshop de prototipagem rápida: sketches em papel → wireframes digitais (Figma free, Excalidraw ou similar)
+  - Cada equipe constrói protótipos low-fi/mid-fi das telas principais com base no que aprendeu com o stakeholder
+  - 👤 Sessão de validação com stakeholder: apresentar protótipos, coletar feedback direto, iterar ao vivo
+  - Registrar: o que o stakeholder aprovou, o que pediu para mudar, o que gerou dúvida
+- 🎯 4 PRs (2 abertos + 2 revisados) + Protótipos validados pelo stakeholder + Registro de feedback
+- **✅ Review do Sprint 0:** Canvas de Visão + Backlog priorizado + Protótipo validado + Arquitetura definida + Escopo fechado
+- Habilidades transversais: comunicação construtiva, feedback, empatia, propriedade intelectual
+
+---
+
+#### 📅 Semana 7 — Qualidade de Software + Início do Desenvolvimento
+
+**🔵 SEG — O que é qualidade de software? (Não é só "funcionar")**
+
+- 📖 Leitura prévia: Cap. 7, seções 7.1 e 7.2 (Os Atributos da Qualidade: Adequação Funcional, Usabilidade, Eficiência de Desempenho, Confiabilidade, Segurança, Manutenibilidade, Portabilidade; O Campo de Batalha dos Trade-offs)
 - Atividade: classificar softwares conhecidos de 1 a 5 em qualidade — observar divergência de critérios
 - Para cada atributo, identificação no projeto: "Qual é o mais crítico para o nosso stakeholder?"
-- Debate: "Qualidade custa caro ou a falta dela custa mais?"
-- Debate com Questões Estruturantes do Cap. 8 (selecionar 2)
+- Debate com Questões Estruturantes do Cap. 7 (selecionar 2)
 
 **🟢 TER — Medição de qualidade e cultura de qualidade contínua**
 
-- 📖 Leitura prévia: Cap. 8, seções 8.2 e 8.3 (Técnicas de medição; Avaliação contínua)
-- Debate: "Quando entregarmos o produto, como o stakeholder saberá se tem qualidade?"
-- Conexão com os critérios de aceitação em Gherkin da Semana 4: critérios de aceitação como expressão de qualidade esperada
-- Introdução à ideia de que testes são uma das ferramentas de qualidade (preparação para semanas seguintes)
+- 📖 Leitura prévia: Cap. 7, seções 7.3 a 7.5 (Anatomia da Dívida Técnica; Estratégias de Gerenciamento; Da Medição à Ação: Qualidade de Código, Análise Estática, Monitoramento, Cultura da Qualidade)
+- Debate: "Qualidade custa caro? Ou a falta de qualidade custa mais?"
+- Conexão com o stakeholder: "Quando entregarmos o produto, como o demandante saberá se tem qualidade?"
+- Preparação para o início do desenvolvimento: critérios de qualidade que guiarão o Sprint 1
 
-> 🔴 Quinta-feira Santa (02/04) — Sem aula. A quinta da Semana 5 é deslocada para 09/04.
+**🟠 QUI — Início do Desenvolvimento Sprint 1 (4h)**
 
-**🟠 QUI (09/04) — Lab: Qualidade Aplicada ao Projeto + Início do Sprint 1 (4h)**
-
-- Bloco 1 (2h) — **Qualidade aplicada:**
-  - Cada equipe define os atributos de qualidade prioritários para seu projeto
-  - Revisão dos critérios de aceitação Gherkin da Semana 4 sob a ótica de qualidade
-  - Definição do "Definition of Done" da equipe para o Sprint 1
-- Bloco 2 (2h) — **Início do desenvolvimento Sprint 1:**
-  - Primeiras features do backlog
-  - Setup técnico (se necessário)
-  - Organização do trabalho no Jira (ou GitHub Projects)
-- 🎯 Atributos de qualidade definidos + Definition of Done + Primeiras features em progresso
+- Bloco 1 (2h) — **Setup técnico e scaffold:**
+  - Implementação do scaffold arquitetural real no repositório (com base nos diagramas C4 da Semana 4)
+  - Divisão de tarefas: cada membro assume features do Sprint 1
+  - Pair programming guiado — professor circula entre equipes
+- Bloco 2 (2h) — **Desenvolvimento:**
+  - Primeiros PRs com features reais
+  - Aplicação dos critérios de qualidade discutidos nas aulas teóricas
+  - Revisão de PRs entre pares usando a rubrica da disciplina
+- 🎯 Scaffold arquitetural no repositório + Primeiras features em desenvolvimento + PRs abertos
 
 ---
 
-#### 📅 Semana 6 — Design e Arquitetura de Software (Parte 1)
+### 🏃 SPRINT 2 — Testes + Features Core do MVP (Semanas 9–10)
 
-**🔵 SEG — Introdução ao Design e Projeto de Arquitetura de Software**
+> **Foco técnico:** Fundamentos de testes, pirâmide de testes, testes de unidade com Vitest, testes de aceitação.
 
-- 📖 Leitura prévia: Cap. 14, seções 14.1.1 e 14.1.2 (Princípios fundamentais; Integração no design)
-- Introdução à arquitetura web: HTTP, TCP/IP, modelo cliente-servidor e P2P
-- Arquitetura em 3 camadas: apresentação, lógica de negócio, dados
-- MVC como padrão organizacional
-- Introdução a SOA (Service-Oriented Architecture)
-- Conexão com o projeto: onde cada camada aparece (React = apresentação, Express = lógica, SQLite/PostgreSQL = dados)
+#### 📅 Semana 8 — Fundamentos do Teste de Software + Sprint 1 Review
 
-**🟢 TER — O que são APIs + Princípios de design de software**
+**🔵 SEG — Por que testar? Tipos de teste e a pirâmide**
 
-- 📖 Leitura prévia: Cap. 14, seções 14.1.1–14.1.2 (continuação) + Cap. 5 do Valente (Princípios de Projeto)
-- O que é uma API — conceito geral e APIs web (REST)
-- Anatomia de uma API Express: rotas, controllers, middleware
-- Princípios de design: separação de responsabilidades, coesão, acoplamento, abstração, nomes significativos
-- Como esses princípios impactam a manutenibilidade e a colaboração em equipe
-
-> ⚠️ A quinta-feira 09/04 pertence ao calendário da Semana 5 (Aula 16 deslocada). A quinta da Semana 6 é 23/04 (ver abaixo — feriado de Tiradentes).
-
----
-
-#### 📅 Sprint Week — ICSE (13–16/04/2026)
-
-> Semana de desenvolvimento autônomo — professor em evento ICSE. Monitor disponível para suporte.
-
-**🔵 SEG — Desenvolvimento autônomo — Sprint 1**
-
-- Equipes trabalham no Sprint 1 com base na arquitetura definida na Semana 6
-- Foco: implementar features respeitando a separação em camadas e o Definition of Done da Semana 5
-- Atualização do Kanban no Jira (ou GitHub Projects)
-
-**🟢 TER — Desenvolvimento autônomo — Sprint 1**
-
-- Continuação: cadência de commits, organização do trabalho
-- Registro de decisões técnicas no repositório
-
-**🟠 QUI — Consolidação e preparação para Arquitetura Parte 2 (4h)**
-
-- Consolidação do trabalho da semana
-- Organização do repositório, atualização do Kanban
-- Reflexão: "A arquitetura que planejamos na Sem 6 está se sustentando?"
-- 🎯 Mínimo 2 features em progresso + Kanban atualizado + Registro de decisões técnicas
-
----
-
-> 🔴 Feriado de Tiradentes — 20 e 21/04/2026 (Sem aulas de Segunda e Terça)
-
-**🟠 QUI (23/04) — Lab: Arquitetura Aplicada ao Projeto + Desenvolvimento Sprint 1 (4h)**
-
-> ⚠️ Única aula desta semana — segunda e terça são feriado. Pertence ao calendário da Semana 6.
-
-- Bloco 1 (2h) — **Exercício prático:**
-  - Mapear a arquitetura atual do projeto nas 3 camadas
-  - Identificar onde os princípios de design estão sendo respeitados ou violados
-  - Refatoração guiada de trechos problemáticos
-  - Organização das rotas Express como API
-- Bloco 2 (2h) — **Desenvolvimento Sprint 1**
-- 🎯 Arquitetura mapeada + Código organizado + Features em progresso
-
----
-
-#### 📅 Semana 7 — Design e Arquitetura de Software (Parte 2) + Sprint 1 Review
-
-> ⚠️ Segunda e terça deslocadas do feriado de Tiradentes: ocorrem em 27 e 28/04.
-
-**🔵 SEG (27/04) — Design e Arquitetura: padrões e estilos arquiteturais**
-
-- 📖 Leitura prévia: Cap. 14, seções 14.3 a 14.5 (Padrões arquiteturais; Estilos; Trade-offs)
-- Padrões fundamentais: Big Ball of Mud, Unitary Architecture, Client/Server
-- Estilos arquiteturais: Camadas (aprofundamento), SOA, Microsserviços, Bounded Context
-- Trade-offs: simplicidade vs. escalabilidade, monolito vs. distribuído
-- Conexão: qual estilo se aplica ao projeto de cada equipe?
-
-**🟢 TER (28/04) — Documentação de Arquitetura com o C4 Model**
-
-- 📖 Leitura prévia: Cap. 14, seções 14.3.1–14.3.3 e 14.4 (Estrutura hierárquica do C4; C4 vs UML)
-- Estrutura do C4: Contexto (N1), Contêiner (N2), Componentes (N3)
-- Por que documentar arquitetura mesmo que mude
-- Ferramentas: Mermaid e draw.io
-- Hands-on com Mermaid aplicado ao projeto real
-
-**🟠 QUI — Workshop C4 + Desenvolvimento + 👤 Sprint 1 Review (4h)**
-
-- Bloco 1 (2h) — **Workshop C4:**
-  - Cada equipe produz os diagramas C4 (N1 e N2) do projeto real usando Mermaid
-  - Revisão dos princípios de design e arquitetura das Semanas 6–7
-  - Merge de PRs e preparação da demo
-- Bloco 2 (2h) — **👤 Sprint 1 Review:**
-  - Demo ao stakeholder (10 min + 5 min feedback)
-  - Retrospectiva interna + Planejamento do Sprint 2
-- 🎯 Diagramas C4 no repositório + Features Sprint 1 + Feedback + Retrospectiva
-- **✅ Sprint 1 Review**
-
----
-
-## SPRINT 2 — TESTES + FEATURES CORE DO MVP (Semanas 8–9)
-
-### 🎼 Sinfonia: Ensaio
-
-> **Propósito:** Introduzir testes formais, consolidar a pirâmide de testes com Vitest e Playwright, e entregar as features core do MVP.
-
----
-
-#### 📅 Semana 8 — Balanço + Prova 1 + Lab Testes com Vitest
-
-**🔵 SEG — Balanço do Sprint 0 e Sprint 1**
-
-- Aula reflexiva sem conteúdo novo
-- Revisão do arco percorrido: ES → Processos → Requisitos → User Stories/Gherkin → Qualidade → Design/Arquitetura → C4 → Sprint 1
-- Espaço para dúvidas emergentes
-- Preparação conceitual para testes: por que testar? Tipos de teste e pirâmide (introdução rápida)
-- Sem leitura prévia
-
-**🟢 TER — ✏️ PROVA 1**
-
-- Avaliação individual escrita (2h)
-- Conteúdo: Semanas 1–7 — fundamentos de ES, processos ágeis, requisitos, user stories, Gherkin, qualidade de software, princípios de design, estilos arquiteturais, C4 Model
-
-**🟠 QUI — Lab Testes com Vitest + Início do Sprint 2 (4h)**
-
-- Bloco 1 (2h) — **Workshop Vitest:**
-  - Setup de Vitest no projeto
-  - Workshop progressivo em 4 fases: (1) função pura, (2) edge cases, (3) rota Express com supertest, (4) relatório de cobertura
-  - Pair testing
-- Bloco 2 (2h) — **Início Sprint 2:**
-  - Implementação das features core com regra: nenhuma feature "pronta" sem pelo menos 1 teste
-- 🎯 Vitest configurado + Mínimo 10 testes + Features Sprint 2 em progresso
-
----
-
-#### 📅 Semana 9 — Testes de Software + BDD + Sprint 2 Review
-
-**🔵 SEG — Por que testar? Tipos de teste, pirâmide e cobertura**
-
-- 📖 Leitura prévia: Cap. 9, seções 9.1 a 9.4 (Tipos de teste; Pirâmide; Cobertura; Estratégias)
+- 📖 Leitura prévia: Cap. 8, seções 8.1 e 8.2 (A Evolução Histórica dos Testes; A Pirâmide de Testes Moderna — Unidade, Integração, Sistema/E2E, Aceitação)
 - Analogia: "Você faria cirurgia com um médico que nunca treinou?"
-- Pirâmide de testes e a lógica econômica por trás da sua forma
-- Cobertura — o que mede e suas limitações
-- Conexão: os critérios Gherkin da Semana 4 e o Definition of Done da Semana 5 como base para testes de aceitação
+- Pirâmide de testes: o que testar em cada nível e por quê
+- Demonstração ao vivo: primeiro teste com Vitest em um módulo Node.js/Express
 
-**🟢 TER — Testes de aceitação + BDD e Gherkin como especificação executável**
+**🟢 TER — Cobertura, edge cases e estratégias de teste**
 
-- 📖 Leitura prévia: Cap. 9, seção 9.2.4 + revisitar Cap. 7 (User Stories)
-- BDD — Behavior-Driven Development como ponte entre requisitos, testes e desenvolvimento
-- O formato Gherkin (Dado/Quando/Então) como especificação executável
-- Cenários de sucesso e de falha
-- Playwright como ferramenta de automação e2e
-- Demonstração: Playwright automatizando um cenário Gherkin
+- 📖 Leitura prévia: Cap. 8, seções 8.3 a 8.6 (Técnicas Caixa-Preta e Caixa-Branca; Teste Exploratório; Estratégias de Cobertura; Desafios e Vantagens dos Testes)
+- Discussão: "100% de cobertura significa 100% de qualidade? Por que não?"
+- Exercício: "Encontre os bugs!" — código JavaScript com falhas sutis que bons testes revelariam
+- Testes de aceitação: formato Dado-Quando-Então e conexão com user stories
+- Debate com Questões Estruturantes do Cap. 8 (selecionar 2)
 
-**🟠 QUI — Lab Testes de Aceitação + 👤 Sprint 2 Review (4h)**
+**🟠 QUI — Desenvolvimento + 👤 Sprint 1 Review com Stakeholder (4h)**
 
-- Bloco 1 (2h) — **Lab Playwright:**
-  - Cada equipe implementa testes de aceitação (mínimo 3 cenários)
-  - Merge, resolução de conflitos, preparação da demo
-- Bloco 2 (2h) — **👤 Sprint 2 Review:**
-  - Demo ao stakeholder (10 min + 5 min feedback)
-  - Retrospectiva + Planejamento Sprint 3
-- 🎯 Testes de aceitação + Features Sprint 2 + Feedback + Retrospectiva
-- **Exercício Individual 3 — "Testes em JavaScript"** (entrega domingo)
-- **✅ Sprint 2 Review**
-
----
-
-## SPRINT 3 — REFACTORING + QUALIDADE (Semanas 10–11)
-
-### 🎼 Sinfonia: Ensaio
-
-> **Propósito:** Melhorar o código existente com refactoring, compreender dívida técnica, e evidenciar qualidade ao stakeholder.
+- Bloco 1 (2h) — **Desenvolvimento:**
+  - Finalização das features do Sprint 1
+  - Merge dos PRs pendentes, resolução de conflitos
+  - Preparação da demo para o stakeholder
+- Bloco 2 (2h) — **👤 Sprint 1 Review:**
+  - Cada equipe demonstra ao stakeholder o que foi construído (10 min demo + 5 min feedback)
+  - Stakeholder valida, sugere ajustes, prioriza próximos passos
+  - Retrospectiva interna da equipe: "O que funcionou? O que precisamos melhorar?"
+  - Planejamento do Sprint 2: ajuste do backlog com base no feedback
+- 🎯 Features do Sprint 1 entregues + Feedback do stakeholder registrado + Retrospectiva documentada
+- **✅ Sprint 1 Review:** Funcionalidades demonstradas + Diagramas C4 + Retrospectiva
 
 ---
 
-#### 📅 Semana 10 — Refactoring + Manutenção + Sprint 3
+#### 📅 Semana 9 — Testes de Aceitação + Laboratório de Testes
 
-**🔵 SEG — Refactoring: melhorar sem quebrar**
+**🔵 SEG — Testes de aceitação e a perspectiva do usuário**
 
-- 📖 Leitura prévia: Cap. 19, seções 19.2 e 19.3.1 (Tipos de Manutenção; Refatoração Contínua)
-- Demonstração ao vivo em JS: renomear variáveis, extrair funções, simplificar condicionais, eliminar duplicação
-- Catálogo de code smells
+- 📖 Leitura prévia: Cap. 8, seção 8.2.5 (Além da Pirâmide: Testes de Aceitação) + revisitar Cap. 6 (User Stories — critérios de aceitação)
+- Conexão: "User stories definem o que deve ser feito; testes de aceitação verificam se foi feito"
+- Demonstração: Playwright para testes e2e de uma feature React
+- Exercício: transformar 3 user stories em cenários de teste automatizado
+
+**🟢 TER — Relação do profissional com a sociedade e a cultura digital**
+
+- 📖 Leitura prévia: material complementar sobre ética em software, impacto social, viés
+- Debate: "Software é neutro?" — estudo de caso sobre decisões técnicas com consequências sociais
+- Reflexão: "O projeto que estamos construindo para o stakeholder poderia gerar impacto negativo não intencional?"
+- Conexão com a extensão: responsabilidade social do desenvolvedor que constrói para a comunidade
+
+**🟠 QUI — Laboratório de Testes + Desenvolvimento Sprint 2 (4h)**
+
+- Bloco 1 (2h) — **Laboratório de Testes:**
+  - Setup de Vitest no projeto real
+  - Workshop progressivo: (1) testar uma função pura, (2) testar com edge cases, (3) testar uma rota Express com supertest, (4) gerar e interpretar relatório de cobertura
+  - Pair testing: um escreve código, outro escreve teste
+- Bloco 2 (2h) — **Desenvolvimento Sprint 2:**
+  - Implementação das features core do MVP
+  - Regra a partir de agora: **nenhuma feature é considerada "pronta" sem pelo menos 1 teste**
+  - Professor circula com foco em qualidade de testes
+- 🎯 Vitest configurado no projeto + Mínimo 10 testes no repositório + Features do Sprint 2 em progresso
+
+---
+
+### 🏃 SPRINT 3 — Qualidade + Refactoring (Semanas 11–12)
+
+> **Foco técnico:** Refactoring, code smells, manutenção de software, melhoria contínua.
+
+#### 📅 Semana 10 — Refactoring: Melhorar sem Quebrar + Sprint 2 Review
+
+**🔵 SEG — Refactoring: o que é, por que fazer, como fazer com segurança**
+
+- 📖 Leitura prévia: Cap. 18, seções 18.3 e 18.3.2 (A Dívida Técnica Volta a Atacar; O Legado Moderno; Refatoração Contínua: O Antídoto Contra a Entropia)
+- Demonstração ao vivo em JavaScript: renomear variáveis, extrair funções, simplificar condicionais, eliminar duplicação
+- Catálogo simplificado de "code smells" e refatorações correspondentes
 - Regra de ouro: "Refactoring sem testes é andar no escuro"
 
 **🟢 TER — Manutenção, evolução e dívida técnica**
 
-- 📖 Leitura prévia: Cap. 19, seções 19.1 e 19.4 (Evolução da manutenção; Documentação)
+- 📖 Leitura prévia: Cap. 18, seções 18.1 e 18.2 (O Fim da Lua de Mel: As Leis de Lehman; As Duas Leis da Arquitetura na Prática; As Quatro Faces da Manutenção)
+- Discussão: "Software nunca está 'pronto'. O que acontece depois que entregamos ao stakeholder?"
 - Tipos de manutenção: corretiva, adaptativa, evolutiva, preventiva
-- Debate: "Por que empresas acumulam dívida técnica?"
-- Reflexão: "Onde está a dívida técnica no nosso código?"
+- Debate: "Se arquitetura ruim leva a software ruim, por que empresas acumulam dívida técnica?"
+- Reflexão: "Olhando para o código que escrevemos até agora — onde está nossa dívida técnica?"
 
-**🟠 QUI — Lab Refactoring + Desenvolvimento Sprint 3 (4h)**
+**🟠 QUI — Desenvolvimento + 👤 Sprint 2 Review com Stakeholder (4h)**
 
-- Bloco 1 (2h) — **Lab Refactoring:**
-  - Exercício: código JS "smelly" → 5 refatorações progressivas com testes verdes a cada passo
-  - Pair refactoring
+- Bloco 1 (2h) — **Desenvolvimento:**
+  - Finalização das features core do Sprint 2
+  - Implementação de testes de aceitação para as funcionalidades principais (mínimo 3 cenários Playwright)
+  - Merge, resolução de conflitos, preparação da demo
+- Bloco 2 (2h) — **👤 Sprint 2 Review:**
+  - Demo ao stakeholder (10 min + 5 min feedback)
+  - Foco: funcionalidades core do MVP estão de acordo com as expectativas?
+  - Retrospectiva interna + planejamento do Sprint 3
+- 🎯 Features core entregues e testadas + 3 testes e2e + Feedback do stakeholder + Retrospectiva
+- **Exercício Individual 3 — "Testes em JavaScript":** dado um módulo Node.js/Express fornecido pelo professor: (1) escrever testes de unidade com Vitest, (2) escrever testes de aceitação, (3) gerar relatório de cobertura, (4) análise crítica dos resultados (entrega até domingo)
+- **✅ Sprint 2 Review:** Features core + Testes (unitários e aceitação) + Retrospectiva
+
+---
+
+#### 📅 Semana 11 — Qualidade Arquitetural + Laboratório de Refactoring
+
+**🔵 SEG — O impacto das decisões de design na qualidade do software**
+
+- 📖 Leitura prévia: Cap. 13, seções 13.3 e 13.4 (Princípios SOLID; Filosofias DRY/KISS/YAGNI; Estilos Arquiteturais como Respostas a Trade-offs)
+- Estudo de caso simplificado: cenário de decisão arquitetural e suas consequências
+- Conexão com o projeto: "As decisões que tomamos na Semana 4 — qual impacto tiveram?"
+- Debate com Questões Estruturantes do Cap. 13 (selecionar 2)
+
+**🟢 TER — Debugging, robustez e preparação para a Sprint Review**
+
+- Técnicas de debugging em JavaScript (breakpoints no VS Code, console.log estratégico, leitura de stack traces)
+- Exercício rápido: "Encontre e corrija os 5 bugs" em código Node.js fornecido
+- Tratamento de erros elegante: try/catch, error boundaries em React, respostas HTTP apropriadas
+- Preparação para Sprint 3 Review: o que mostrar, como demonstrar evolução da qualidade
+
+**🟠 QUI — Laboratório de Refactoring + Desenvolvimento Sprint 3 (4h)**
+
+- Bloco 1 (2h) — **Laboratório de Refactoring:**
+  - Exercício prático: dado um código JavaScript "smelly", aplicar 5 refatorações progressivas garantindo que testes continuam passando a cada passo
+  - Pair refactoring: um navega, outro executa
+  - Aplicação no projeto real: cada equipe identifica os 3 piores trechos do seu código e planeja refatorações
 - Bloco 2 (2h) — **Desenvolvimento Sprint 3:**
-  - Refatorações no projeto real + Features complementares
-- 🎯 Exercício completo + Refatorações aplicadas + Features em progresso
+  - Execução das refatorações planejadas no projeto
+  - Implementação de features complementares
+  - Verificação: todos os testes continuam verdes após cada refactoring
+- 🎯 Exercício de refactoring completo + Refatorações aplicadas ao projeto (com testes verdes) + Features complementares em progresso
 
 ---
 
-#### 📅 Semana 11 — Design, Debugging + Sprint 3 Review
+### 🏃 SPRINT 4 — Refinamento + Estabilização (Semanas 13–14)
 
-**🔵 SEG — Impacto das decisões de design na qualidade**
+> **Foco técnico:** Code review cruzado, estabilização, documentação, preparação para entrega final ao stakeholder.
 
-- 📖 Leitura prévia: Cap. 14, seções 14.7 e 14.8 (Qualidade e Arquitetura; Impacto no sucesso)
-- Estudo de caso: decisão arquitetural e suas consequências
-- Conexão: "As decisões das Semanas 6–7 — que impacto tiveram?"
-- Debate com Questões Estruturantes do Cap. 14 (selecionar 2)
-
-**🟢 TER — Debugging, robustez e preparação para Sprint Review**
-
-- Técnicas de debugging: breakpoints no VS Code, console.log estratégico, stack traces
-- Exercício: "Encontre e corrija os 5 bugs" em Node.js
-- Tratamento de erros: try/catch, error boundaries em React, respostas HTTP adequadas
-- Preparação da demo
-
-**🟠 QUI — 👤 Sprint 3 Review + Retrospectiva (4h)**
-
-- Bloco 1 (2h) — **Desenvolvimento final:**
-  - Testes passando, features completas
-- Bloco 2 (2h) — **👤 Sprint 3 Review:**
-  - Demo ao stakeholder (10 min + 5 min feedback) com foco em qualidade
-  - Prioridades finais, retrospectiva, planejamento Sprint 4
-- 🎯 Features + Refactoring + Feedback + Retrospectiva
-- **✅ Sprint 3 Review**
-
----
-
-## SPRINT 4 — ESTABILIZAÇÃO + ENTREGA (Semanas 12–13)
-
-### 🎼 Sinfonia: Ensaio → Ressonância
-
-> **Propósito:** Code review cruzado, estabilização, documentação, preparação para entrega final ao stakeholder.
-
----
-
-#### 📅 Semana 12 — Code Review + Documentação + Sprint 4
+#### 📅 Semana 12 — Code Review Cruzado + Sprint 3 Review
 
 **🔵 SEG — Code Review como prática profissional (revisitado)**
 
-- 📖 Leitura prévia: revisitar Cap. 3, seção 3.5.1 + Cap. 14, seção 14.6
-- Revisitar code review com a maturidade adquirida
-- Checklist avançado: legibilidade, testes, erros, convenções, documentação, diagramas C4
-- Exemplos de reviews bons e ruins
+- 📖 Leitura prévia: revisitar Cap. 2, seção 2.5 (O Ritual da Qualidade: Validação Colaborativa via Code Review) + Cap. 13, seção 13.5.1 (O C4 Model como Ferramenta de Storytelling — documentação arquitetural)
+- Revisitar code review agora com maturidade: o que mudou desde a Semana 6?
+- Checklist de qualidade avançado: legibilidade, testes, organização, tratamento de erros, convenções, documentação
+- Discussão: "Vocês gostariam de manter o código que outra equipe escreveu?"
 
-**🟢 TER — Documentação, README e preparação para entrega**
+**🟢 TER — Documentação, README e preparação do produto para entrega**
 
-- 📖 Leitura prévia: Cap. 19, seção 19.4
-- O que documentar: README, guia de instalação, decisões arquiteturais, diagramas
-- Reflexão: "Se a equipe fosse embora amanhã, outra conseguiria continuar?"
-- Checklist de entrega
+- 📖 Leitura prévia: Cap. 18, seção 18.4 (Rumo a um Juramento: Leis Universais para a Engenharia de Software; Princípios para um Software Resiliente)
+- O que documentar e para quem: README, guia de instalação, decisões arquiteturais
+- Discussão: "Se vocês fossem embora amanhã, outra equipe conseguiria continuar o projeto?"
+- Checklist de entrega: código limpo, testes passando, README completo, diagramas C4 atualizados
 
-**🟠 QUI — Code Review Cruzado entre Equipes + Desenvolvimento Sprint 4 (4h)**
+**🟠 QUI — 👤 Sprint 3 Review com Stakeholder + Retrospectiva (4h)**
 
-- Bloco 1 (2h) — **Code Review cruzado:**
-  - Cada equipe abre PR; outra revisa com checklist avançado
-  - Discussão pós-review
-  - Incorporação do feedback
-- Bloco 2 (2h) — **Desenvolvimento:**
-  - Correções, bug fixes, ajustes de UX, atualização de documentação
-- 🎯 Code review completo + Feedback incorporado + Documentação atualizada
-
----
-
-#### 📅 Semana 13 — Reflexão + Prova 2 + Sprint 4 Review
-
-**🔵 SEG — Reflexão: da ideia ao produto**
-
-- Aula reflexiva sem conteúdo novo
-- Revisão do arco das Semanas 8–12: testes e BDD, refactoring, qualidade arquitetural, code review avançado, documentação
-- Análise das decisões de cada equipe
-- Sem leitura prévia
-
-**🟢 TER — ✏️ PROVA 2**
-
-- Avaliação individual escrita (2h)
-- Conteúdo: Semanas 8–12 — Testes (Vitest e Playwright), refactoring, code smells, manutenção, dívida técnica, qualidade arquitetural, code review avançado, documentação
-
-**🟠 QUI — 👤 Sprint 4 Review + Estabilização Final do MVP (4h)**
-
-- Bloco 1 (2h) — **Estabilização:**
-  - Bug fixes finais, testes, README, diagramas C4, deploy funcional
-- Bloco 2 (2h) — **👤 Sprint 4 Review:**
-  - Demo completa do MVP (10 min + 5 min feedback)
-  - Feedback final, retrospectiva
-- 🎯 MVP estabilizado + Feedback final + Retrospectiva
-- **Exercício Individual 4 — "Reflexão Técnica e Profissional"** (entrega domingo)
-- **✅ Sprint 4 Review**
+- Bloco 1 (2h) — **Finalização e preparação:**
+  - Garantir testes passando, features complementares completas, demonstração funcional
+  - Code review cruzado rápido entre equipes como aquecimento
+- Bloco 2 (2h) — **👤 Sprint 3 Review:**
+  - Demo ao stakeholder (10 min + 5 min feedback)
+  - Foco: qualidade perceptível — o produto está estável? A UX melhorou?
+  - Discussão com stakeholder sobre prioridades finais do Sprint 4
+  - Retrospectiva + planejamento do Sprint 4 (último sprint de desenvolvimento)
+- 🎯 Features complementares + Refactoring aplicado + Feedback do stakeholder + Retrospectiva
+- **✅ Sprint 3 Review:** Código refatorado + Qualidade evidenciada + Retrospectiva
 
 ---
 
-## RESSONÂNCIA — ENTREGA E REFLEXÃO (Semanas 14–15)
+#### 📅 Semana 13 — Estabilização + Code Review Cruzado Final
 
-### 🎼 Sinfonia: Ressonância — Medir e Aprender
+**🔵 SEG — Reflexão: da ideia ao produto — a jornada do Ensaio**
 
-> **Propósito:** Entregar formalmente ao stakeholder, coletar feedback real, apresentar academicamente e refletir sobre a jornada completa.
+- Reflexão guiada: revisitar a jornada desde a Semana 1. O que sabíamos? O que aprendemos?
+- Análise honesta: quais decisões foram boas? Quais refariamos diferente?
+- Dívida técnica restante: o que não deu tempo de melhorar?
+- Preparação emocional e técnica para a entrega ao stakeholder
 
----
+**🟢 TER — Preparação para as apresentações e entrega final**
 
-#### 📅 Semana 14 — 👤 Entrega Formal ao Stakeholder
+- Workshop: "Como demonstrar software de forma convincente"
+- Estrutura da apresentação seguindo os 4 movimentos da Mini-Sinfonia: o que entendemos do problema (Exposição), como projetamos (Composição), como construímos e testamos (Ensaio), o que aprendemos (Ressonância)
+- Ensaio rápido: cada equipe pratica (3 min) com feedback do professor
 
-**🔵 SEG — Ressonância: o que significa medir e aprender**
+**🟠 QUI — Code Review Cruzado Final + Estabilização (4h)**
 
-- 📖 Leitura prévia: Sinfonia — Cap. 7, seção 7.1 (Propósito da Ressonância)
-- Discussão: "Nosso software será um sucesso? Como medimos isso?"
-- A perspectiva do stakeholder vs. a perspectiva técnica
-- Preparação para a entrega: o que entregar, como, o que esperar
-
-**🟢 TER — Impacto social da extensão e conexão com o futuro**
-
-- Reflexão: impacto do projeto na organização do stakeholder
-- Conexão: como os fundamentos serão amplificados pela IA — antecipação da ESAIA (IF1015)
-- Workshop de apresentações com ensaio rápido (3 min por equipe)
-
-**🟠 QUI — 👤 Entrega Formal ao Stakeholder + Coleta de Feedback Real (4h)**
-
-- Bloco 1 (2h) — **Sessão formal de entrega:**
-  - Apresentação (15 min + 10 min feedback)
-  - Entrega de repositório/deploy/documentação
-  - Formulário de feedback estruturado
-- Bloco 2 (2h) — **Análise do feedback:**
-  - Preparação para apresentação acadêmica
-  - Início do Documento de Reflexão individual
-- 🎯 Produto entregue + Feedback formal + Material para apresentação
+- Bloco 1 (2h) — **Code Review Cruzado formal:**
+  - Cada equipe abre um PR com sua funcionalidade principal
+  - Outra equipe realiza a revisão seguindo checklist avançado
+  - Discussão pós-review: "Como foi dar e receber feedback de outra equipe?"
+  - Incorporação do feedback recebido
+- Bloco 2 (2h) — **Estabilização final:**
+  - Correção dos pontos levantados no code review
+  - Bug fixes, ajustes de UX, melhoria de mensagens de erro
+  - Atualização de documentação (README, diagramas C4, guia de instalação)
+  - Garantir: deploy funcional, demo sem surpresas
+- 🎯 Code review cruzado completo + Feedback incorporado + Documentação atualizada + MVP estabilizado
+- **Exercício Individual 4 — "Reflexão Técnica e Profissional":** análise crítica do próprio projeto: (1) decisões de design — quais foram boas, quais refaria, (2) dívidas técnicas identificadas, (3) o que aprendeu trabalhando com stakeholder real, (4) autoavaliação honesta da contribuição individual (entrega até domingo)
+- Habilidades transversais: comunicação construtiva, humildade intelectual, profissionalismo
 
 ---
 
-> 🔴 Período de São João — 22 e 23/06/2026 (Sem aulas)
+## ENCERRAMENTO — ENTREGA E REFLEXÃO (Semanas 14–15)
+
+> **Propósito:** Entregar formalmente o produto ao stakeholder, refletir sobre a jornada completa e apresentar academicamente o trabalho realizado no semestre.
 
 ---
 
-#### 📅 Semana 15 — Apresentações Acadêmicas
+#### 📅 Semana 14 — O que você entregou? + Como você conta essa história? + 👤 Entrega Formal ao Stakeholder
 
-**🟠 QUI (25/06) — Apresentações Acadêmicas — Bloco 1**
+**🔵 SEG — O que você entregou?**
+
+- Sem leitura prévia — traga o projeto aberto e honestidade
+- Aula de reflexão estruturada sem conteúdo novo: cada equipe olha para o próprio trabalho antes da entrega formal
+- Parte 1 — reflexão individual (25 min): quatro perguntas progressivas — qual era o problema real do stakeholder (não o que ele pediu); o que foi entregue resolve esse problema; o que mudaria com mais duas semanas; o que o stakeholder vai dizer que a equipe não espera ouvir
+- Parte 2 — discussão em equipe (35 min): leitura das respostas individuais em voz alta, identificação de divergências, definição de até três ajustes concretos para os próximos dois dias
+- Parte 3 — plenária (20 min): cada equipe compartilha sua resposta para a quarta pergunta; professor observa padrões no conjunto
+- 🎯 Documento de reflexão preenchido (individual + equipe)
+
+**🟢 TER — Como você conta essa história?**
+
+- Sem leitura prévia — traga o material da segunda-feira
+- Apresentação e análise da estrutura narrativa das apresentações acadêmicas: quatro perguntas em sequência — O problema (quem é o stakeholder, qual era a dor, por que importava resolver); Como pensamos (descobertas antes de construir, decisões de escopo e design); O que construímos (demo, decisões técnicas relevantes, o que ficou de fora); O que aprendemos (o que faria diferente, o que a experiência ensinou que nenhuma aula ensina)
+- Análise comparativa de dois roteiros fictícios — bem e mal construídos — para identificar o que diferencia uma apresentação memorável de uma genérica (20 min)
+- Escrita do roteiro de apresentação por cada equipe: campos para cada parte, quem fala, tempo estimado — meta 12 minutos totais (35 min)
+- Ensaio de 3 minutos por equipe (apenas O problema e Como pensamos) com feedback escrito estruturado de outra equipe: o que ficou claro, o que ficou confuso, o que estava faltando (25 min)
+- 🎯 Roteiro escrito + feedback recebido
+
+**🟠 QUI — 👤 Entrega Formal ao Stakeholder (4h)**
+
+- Bloco 0 (15 min) — **Abertura coletiva com todos os stakeholders presentes:**
+  - Enquadramento do evento: entrega real para pessoas reais, sem slides
+  - Critério de sucesso explícito: "o stakeholder consegue usar o que foi construído?"
+- Bloco 1 (2h) — **Rodada de entregas em formato feira:**
+  - Cada equipe em sua estação — laptop aberto, deploy funcionando
+  - Stakeholders circulam; cada um recebe da sua equipe: demo (15 min) + preenchimento do formulário de feedback em silêncio (10 min) + entrega formal dos artefatos: link do repositório, deploy, README, guia de uso (5 min)
+- Bloco 2 (45 min) — **Plenária de encerramento:**
+  - Cada equipe compartilha em 2 minutos uma frase que o stakeholder disse que não esperavam ouvir
+  - Professor observa padrões no conjunto das respostas
+- Bloco 3 (até 45 min) — **Fala de encerramento + buffer:**
+  - Nomeação da transformação vivida: de programadores a desenvolvedores de software
+  - Conexão com o que vem a seguir: fundamentos como base para amplificação com IA
+  - Buffer para conversas, celebração e encerramento natural
+- 🎯 Produto entregue ao stakeholder + Formulário de feedback preenchido pelo stakeholder + Artefatos formais entregues (repositório, deploy, README, guia de uso)
+- **✅ Encerramento do Projeto de Extensão**
+
+---
+
+#### 📅 Semana 15 — Apresentações Acadêmicas + Encerramento
+
+**🔵 SEG — Apresentações Acadêmicas — Bloco 1**
 
 - Apresentações formais (12 min + 5 min Q&A por equipe)
-- Estrutura obrigatória seguindo os 4 movimentos da Mini-Sinfonia:
-  1. **Exposição:** O problema, o stakeholder, o contexto
-  2. **Composição:** Como projetamos a solução, protótipos, decisões de design
-  3. **Ensaio:** Como construímos (arquitetura, código, testes), desafios técnicos, sprint reviews
-  4. **Ressonância:** O que entregamos, feedback do stakeholder, lições aprendidas
-- Peer evaluation estruturada
+- Estrutura narrativa obrigatória — quatro perguntas em sequência:
+  1. **O problema:** quem é o stakeholder, qual era a dor, por que valia a pena resolver
+  2. **Como pensamos:** o que foi descoberto antes de construir, decisões de escopo e design
+  3. **O que construímos:** demo do produto, decisões técnicas relevantes, o que ficou fora do MVP
+  4. **O que aprendemos:** o que faria diferente, o que a experiência ensinou que nenhuma aula ensina
+- Peer evaluation formativa (formulário estruturado — não conta na nota)
 
-**🔵 SEG (29/06) — Apresentações Acadêmicas — Bloco 2**
+**🟢 TER — Apresentações Acadêmicas — Bloco 2**
 
-- Continuação das apresentações (mesma estrutura)
-- Peer evaluation
+- Continuação das apresentações com a mesma estrutura e critérios do Bloco 1
+- Peer evaluation formativa
 
-**🟢 TER (30/06) — Segunda-chamada**
+**🟠 QUI — Retrospectiva Final + Encerramento (4h)**
 
----
-
-#### 📅 Semana 16
-
-**🟠 QUI (02/07) — Prova Final**
+- Bloco 1 (2h) — **Retrospectiva coletiva:**
+  - Atividade: "O que sabemos agora que não sabíamos na Aula 1?" — reflexão individual escrita, compartilhamento em grupos, plenária
+  - Destaques do semestre escolhidos por pares
+  - Conexão com o que vem a seguir: ESAIA (IF1015), estágio, primeiro emprego
+- Bloco 2 (2h) — **Finalizações e encerramento:**
+  - Documento de Reflexão individual (2–3 páginas): jornada pessoal, aprendizados técnicos e transversais, o que a extensão significou, autoavaliação honesta
+  - Survey de feedback sobre a disciplina
+  - Encerramento: palavras finais, celebração
+- 🎯 **✅ Checkpoint Final:** MVP no repositório (código, testes, documentação, diagramas C4) + Apresentação acadêmica + Feedback do stakeholder + Documento de Reflexão individual
 
 ---
 
@@ -729,27 +695,23 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 
 | Sem | Fase | Segunda (2h) | Terça (2h) | Quinta (4h) | Marco |
 |-----|------|-------------|-----------|-------------|-------|
-| 1 | Sprint 0 | Abertura: mundo além do código | Ecossistema + Intro Sinfonia | Workshop Ágil + 👤 Backlog com stakeholder | **EI1** |
-| 2 | Sprint 0 | Modelos de processo | Metodologias ágeis | 👤 Validação protótipo + Fechamento escopo | **✅ R-S0** / **EI2** |
-| 3 | Sprint 0 | Requisitos e elicitação | User Stories e priorização | Nivelamento JS + 👤 1º contato stakeholder | — |
-| 4 | Sprint 0 | Strateegia: visão do escopo | Strateegia: backlog do produto | 👤 Refinamento do backlog com stakeholder | — |
-| 5 | Sprint 1 | Qualidade: atributos | Qualidade: medição | 🔴 Qui Santa *(Qui reposta 09/04: DoD + Início Sprint 1)* | — |
-| 6 | Sprint 1 | Design/Arq: HTTP, 3 camadas, MVC | Design/Arq: APIs, princípios de design | *(Qui 09/04 = Sem 5; Qui 23/04 = Lab Arq — ver feriado)* | — |
-| ICSE | Sprint 1 | Dev autônomo | Dev autônomo | Consolidação Sprint 1 | — |
-| — | *Tiradentes* | 🔴 Feriado 20/04 | 🔴 Feriado 21/04 | Lab Arquitetura + Dev Sprint 1 (23/04, Sem 6) | — |
-| 7 | Sprint 1 | Padrões e estilos arquiteturais | C4 Model | Workshop C4 + 👤 Sprint 1 Review | **✅ R-S1** |
-| 8 | Sprint 2 | Balanço Sprints 0–1 | ✏️ PROVA 1 | Lab Vitest + Início Sprint 2 | **P1** |
-| 9 | Sprint 2 | Tipos de teste + pirâmide | BDD + Gherkin + Playwright | Lab Playwright + 👤 Sprint 2 Review | **✅ R-S2** / **EI3** |
-| 10 | Sprint 3 | Refactoring | Manutenção e dívida técnica | Lab Refactoring + Dev Sprint 3 | — |
-| 11 | Sprint 3 | Impacto do design na qualidade | Debugging e robustez | 👤 Sprint 3 Review + Retrospectiva | **✅ R-S3** |
-| 12 | Sprint 4 | Code Review revisitado | Documentação e entrega | Code Review cruzado + Dev Sprint 4 | — |
-| 13 | Sprint 4 | Reflexão: da ideia ao produto | ✏️ PROVA 2 | 👤 Sprint 4 Review + Estabilização | **✅ R-S4** / **P2** / **EI4** |
-| 14 | Ressonância | Ressonância: medir e aprender | Impacto social + futuro (IA) | 👤 Entrega formal ao stakeholder | — |
-| — | *São João* | 🔴 22/06 | 🔴 23/06 | — | — |
-| 15 | Ressonância | 🎤 Apresentações — Bloco 2 (29/06) | Segunda-chamada (30/06) | 🎤 Apresentações — Bloco 1 (25/06) | **✅ Final** |
-| 16 | — | — | — | Prova Final (02/07) | **PF** |
+| 1 | Sprint 0 | Abertura: mundo além do código | Ecossistema + Intro Sinfonia | Workshop Ágil + 👤 Backlog com stakeholder | — |
+| 2 | Sprint 0 | Modelos de processo | Metodologias ágeis | Consolidação ágil + Refinamento do backlog | — |
+| 3 | Sprint 0 | Requisitos e elicitação | User Stories e priorização | 👤 Validação protótipo + Fechamento escopo | **✅ R-S0** / **EI2** |
+| 4 | Sprint 0 | Princípios de design | C4 Model | Workshop de Arquitetura | — |
+| 5 | Sprint 0 | Fundamentos de Git | Branches e estratégias | Lab Git + Setup repositório do projeto real | **EI1** |
+| 6 | Sprint 0 | PR e Code Review | Licenças e ética | Lab Code Review + 👤 Prototipagem com stakeholder | — |
+| 7 | Sprint 1 | Qualidade de software | Medição de qualidade | Início do desenvolvimento Sprint 1 | — |
+| 8 | Sprint 1 | Tipos de teste e pirâmide | Cobertura e estratégias | Desenvolvimento + 👤 Sprint 1 Review | **✅ R-S1** |
+| 9 | Sprint 2 | Testes de aceitação | Ética, sociedade e cultura digital | Lab Testes (Vitest) + Desenvolvimento Sprint 2 | — |
+| 10 | Sprint 2 | Refactoring | Manutenção e dívida técnica | Desenvolvimento + 👤 Sprint 2 Review | **✅ R-S2** / **EI3** |
+| 11 | Sprint 3 | Impacto do design na qualidade | Debugging e robustez | Lab Refactoring + Desenvolvimento Sprint 3 | — |
+| 12 | Sprint 3 | Code Review revisitado | Documentação e entrega | 👤 Sprint 3 Review + Retrospectiva | **✅ R-S3** |
+| 13 | Sprint 4 | Reflexão: da ideia ao produto | Preparação apresentações | Code Review cruzado + Estabilização final | **EI4** |
+| 14 | Encerramento | O que você entregou? (reflexão) | Como você conta essa história? (roteiro) | 👤 Entrega formal ao stakeholder — formato feira | **✅ Enc. Extensão** |
+| 15 | Encerramento | 🎤 Apresentações — Bloco 1 | 🎤 Apresentações — Bloco 2 | Retrospectiva final + Encerramento | **✅ Final** |
 
-> Legenda: **👤** = interação com stakeholder | **✅ R-Sn** = Review do Sprint n | **EI** = Exercício Individual | **🎤** = Apresentação | **P1/P2** = Prova 1/2 | **PF** = Prova Final
+> Legenda: **👤** = interação com stakeholder | **✅ R-Sn** = Review do Sprint n | **EI** = Exercício Individual | **🎤** = Apresentação
 
 ---
 
@@ -760,12 +722,12 @@ O stakeholder participa de **7 momentos formais** ao longo do semestre, garantin
 | Semana | Momento | Propósito |
 |--------|---------|-----------|
 | 1 | Backlog | Entender contexto, problema e priorizar funcionalidades juntos |
-| 2 | Fechamento de escopo | Validar protótipo hi-fi, aprovar MVP |
-| 4 | Refinamento do backlog | Validar user stories levantadas e priorizar com feedback |
-| 7 | Sprint 1 Review | Validar primeiras funcionalidades |
-| 9 | Sprint 2 Review | Validar features core do MVP |
-| 11 | Sprint 3 Review | Validar qualidade e ajustes |
-| 13–14 | Sprint 4 Review + Entrega formal | Validação final + entrega do produto + feedback estruturado |
+| 3 | Fechamento de escopo | Validar protótipo hi-fi, aprovar MVP |
+| 6 | Prototipagem | Validar wireframes e fluxos iniciais |
+| 8 | Sprint 1 Review | Validar primeiras funcionalidades |
+| 10 | Sprint 2 Review | Validar features core do MVP |
+| 12 | Sprint 3 Review | Validar qualidade e ajustes |
+| 14 | Sprint 4 Review + Entrega formal | Validação final + entrega do produto + feedback estruturado |
 
 ---
 
@@ -773,13 +735,13 @@ O stakeholder participa de **7 momentos formais** ao longo do semestre, garantin
 
 | Habilidade Transversal | Práticas que a Desenvolvem | Momentos-Chave |
 |------------------------|---------------------------|----------------|
-| Mentalidade de resolução de problemas | Exercícios progressivos, debugging, sprints, problemas reais do stakeholder | Semanas 1, 8, 10, 11 |
-| Criatividade | Prototipagem, Canvas de Visão, brainstorming, design de soluções | Semanas 2, 4, 6 |
-| Trabalho em equipe | Projeto real em grupo (14 semanas), papéis, retrospectivas, sprints | Semanas 1–15 |
-| Habilidades interpessoais | 7 sessões com stakeholder real, code reviews, apresentações, feedback | Semanas 1, 2, 4, 7, 9, 11, 13–14 |
-| Relação com a sociedade e cultura digital | Debate sobre impacto social, viés, IA, extensão com impacto comunitário | Semanas 5, 14 |
-| Ética | Código de Conduta, responsabilidade com demandante, IA e autoria | Semanas 1, 14 |
-| Propriedade intelectual | Licenças, atribuição, código gerado por IA, acordo com stakeholder | *Momento prático a definir* |
+| Mentalidade de resolução de problemas | Exercícios progressivos, debugging, sprints, problemas reais do stakeholder | Semanas 1, 8, 11, 12 |
+| Criatividade | Prototipagem, Canvas de Visão, brainstorming, design de soluções | Semanas 3, 4, 6 |
+| Trabalho em equipe | Projeto real em grupo (14 semanas), papéis, retrospectivas, sprints | Semanas 2–15 |
+| Habilidades interpessoais | 7 sessões com stakeholder real, code reviews, apresentações, feedback | Semanas 1, 3, 6, 8, 10, 12, 14 |
+| Relação com a sociedade e cultura digital | Debate sobre impacto social, viés, IA, extensão com impacto comunitário | Semanas 3, 9, 14 |
+| Ética | Código de Conduta, licenças, responsabilidade com demandante, IA e autoria | Semanas 1, 6, 9 |
+| Propriedade intelectual | Licenças, atribuição, código gerado por IA, acordo com stakeholder | Semana 6 |
 
 ---
 
@@ -787,7 +749,7 @@ O stakeholder participa de **7 momentos formais** ao longo do semestre, garantin
 
 ### 7.1 Bibliografia Básica
 
-1. **GARCIA, V. C.** *Engenharia de Software em Dimensões: Da base conceitual à prática profissional.* ASSERT Lab, 2025 (ed. 2025.2.0). **(Livro-texto principal)**
+1. **GARCIA, V. C.** *Engenharia de Software em Dimensões: Da base conceitual à prática profissional.* ASSERT Lab, 2025. Versão 2025.2.0. ISBN 978-65-01-62882-0. **(Livro-texto principal — 18 capítulos)**
 2. FOX, A.; PATTERSON, D. *Engineering Software As a Service: An Agile Approach Using Cloud Computing.*
 3. MARTIN, R. C. *Clean Architecture: A Craftsman's Guide to Software Structure and Design.* Pearson, 1st ed.
 4. VALENTE, M. T. *Engenharia de Software Moderna.* 2022.
@@ -804,17 +766,17 @@ O stakeholder participa de **7 momentos formais** ao longo do semestre, garantin
 
 | Ferramenta | Propósito | Introdução |
 |------------|-----------|------------|
-| Node.js 20+ | Runtime JavaScript | Semana 3 |
-| Express | Framework backend | Semana 3 |
-| React (via Vite) | Framework frontend | Semana 3+ |
-| Vitest | Testes unitários | Semana 8 |
-| Playwright | Testes e2e/aceitação | Semana 9 |
-| ESLint + Prettier | Linter e formatter | Semana 3 |
-| Git / GitHub | Versionamento e colaboração | *Momento prático a definir* |
-| Jira (ou GitHub Projects) | Gestão de projeto (Kanban) | Semana 1 |
-| VS Code | IDE | Semana 3 |
-| Mermaid / draw.io | Diagramas C4 | Semana 7 |
-| Figma / Excalidraw | Prototipagem | Semana 2 |
+| Node.js 20+ | Runtime JavaScript | Semana 5 |
+| Express | Framework backend | Semana 5 |
+| React (via Vite) | Framework frontend | Semana 5 |
+| Vitest | Testes unitários | Semana 9 |
+| Playwright | Testes e2e/aceitação | Semana 10 |
+| ESLint + Prettier | Linter e formatter | Semana 5 |
+| Git / GitHub | Versionamento e colaboração | Semana 5 |
+| GitHub Projects | Gestão de projeto (Kanban) | Semana 1 |
+| VS Code | IDE | Semana 5 |
+| Mermaid / draw.io | Diagramas C4 | Semana 4 |
+| Figma / Excalidraw | Prototipagem | Semana 6 |
 | Vercel / Render | Deploy | Semana 7+ |
 | SQLite / PostgreSQL | Banco de dados | Conforme necessidade |
 
@@ -824,7 +786,7 @@ O stakeholder participa de **7 momentos formais** ao longo do semestre, garantin
 
 **Política de uso de IA:** Os alunos podem usar ferramentas de IA como auxiliares de aprendizagem (tirar dúvidas, entender conceitos, explorar alternativas de código), mas **todo código entregue deve ser compreendido, explicado e testado pelo aluno**. O uso de IA sem compreensão do output será tratado como equivalente a plágio. Os alunos devem documentar quando e como usaram IA nos seus commits e PRs.
 
-**Conexão com o futuro:** Em momentos estratégicos, o professor contextualiza como as práticas aprendidas serão transformadas pela IA nos semestres seguintes, criando um arco narrativo que culmina na disciplina ESAIA (IF1015) no 6º período. A mensagem central é: "Os fundamentos que vocês estão construindo aqui — testes, arquitetura, requisitos, qualidade — não serão substituídos pela IA; serão amplificados por ela."
+**Conexão com o futuro:** Em momentos estratégicos (Semanas 1, 6, 9, 14), o professor contextualiza como as práticas aprendidas serão transformadas pela IA nos semestres seguintes, criando um arco narrativo que culmina na disciplina ESAIA (IF1015) no 6º período. A mensagem central é: "Os fundamentos que vocês estão construindo aqui — Git, testes, arquitetura, requisitos, qualidade — não serão substituídos pela IA; serão amplificados por ela."
 
 ---
 
@@ -867,7 +829,7 @@ O código produzido é de propriedade compartilhada entre os alunos e a universi
 | Canvas de Design de Experimento | Experimento com IA | Protótipo hi-fi + definição de MVP + hipótese de valor |
 | Ciclos de desenvolvimento | Sprints Scrum completos | 4 sprints de ~2 semanas com reviews reais |
 | Testes e validação | Canvas de Testes completo | Vitest (unitários) + Playwright (e2e) |
-| Ressonância | Métricas de produção | Entrega formal + feedback real do stakeholder |
+| Ressonância | Métricas de produção | Entrega formal em formato feira + feedback do stakeholder por formulário estruturado |
 | Papéis | 8+ papéis especializados | 3–4 papéis genéricos por equipe |
 | Linguagem de programação | TypeScript (foco IA/web) | JavaScript (ES6+), TypeScript opcional |
 
@@ -875,6 +837,4 @@ A vivência com a Mini-Sinfonia no 2º período cria familiaridade com o framewo
 
 ---
 
-*Documento elaborado com base no Programa de Componente Curricular CIN0136, no livro "Engenharia de Software em Dimensões" (Garcia, 2025, ed. 2025.2.0), na Metodologia Sinfonia (Garcia & Medeiros, 2025), nas diretrizes do MEC para curricularização da extensão e em 13 anos de experiência na disciplina de Engenharia de Software no CIn-UFPE.*
-
-*Última atualização: 28/03/2026*
+*Documento elaborado com base no Programa de Componente Curricular CIN0136, no livro "Engenharia de Software em Dimensões" (Garcia, 2025), na Metodologia Sinfonia (Garcia & Medeiros, 2025), nas diretrizes do MEC para curricularização da extensão e em 13 anos de experiência na disciplina de Engenharia de Software no CIn-UFPE.*
