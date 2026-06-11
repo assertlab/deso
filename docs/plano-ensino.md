@@ -1,8 +1,7 @@
-# PLANO DE ENSINO — CIN0136: Desenvolvimento de Software (v6)
+# PLANO DE ENSINO — CIN0136: Desenvolvimento de Software (v7)
 
 ## Bacharelado em Sistemas de Informação | Centro de Informática — UFPE
 
-**Professores:** Kiev Santos da Gama & Vinicius Cardoso Garcia
 **Período Letivo:** 2026.1 | **Semestre Ideal:** 2º  
 **Carga Horária:** 120h (60h Teóricas + 60h Práticas)  
 **Créditos:** 6  
@@ -68,6 +67,7 @@ A disciplina utiliza o ecossistema JavaScript, alinhado às oportunidades de mer
 | Linter/Formatter | ESLint + Prettier | Qualidade e consistência de código desde o dia 1 |
 | Banco de dados | SQLite (início) → PostgreSQL (se necessário) | Simplicidade para 2º período; migração natural |
 | Deploy | Vercel (frontend) + Render ou Railway (backend) | Free tiers generosos; deploy simples |
+| Containerização | Docker + Docker Compose | Paridade de ambiente; padrão de mercado; introduzido na Semana 14 |
 
 **Nota sobre Next.js:** Embora seja uma ferramenta excelente e dominante no mercado, a mistura de server/client components e as convenções de roteamento de Next.js adicionam complexidade conceitual que compete com o foco da disciplina (engenharia de software, não domínio de framework). React via Vite mantém a separação frontend/backend explícita, reforçando os conceitos de modularização e arquitetura. Next.js é apresentado como "o que vocês encontrarão no mercado" — e poderá ser explorado na ESAIA.
 
@@ -120,7 +120,7 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 │                    ENCERRAMENTO — Entrega e Reflexão                   │
 │                        Semanas 14–15 (2 semanas)                       │
 │                                                                         │
-│  Sem 14: Reflexão + Preparação das apresentações + Entrega stakeholder  │
+│  Sem 14: Containerização (Docker) + Entrega formal ao stakeholder       │
 │  Sem 15: Apresentações acadêmicas + Retrospectiva + Encerramento       │
 │                                                                         │
 │  → Entrega: Produto funcional + Feedback + Reflexão individual          │
@@ -148,6 +148,7 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 | Testes de software | Cap. 7 e Cap. 8 — Qualidade e Testes | 7–9 |
 | Code Review | Cap. 2, seção 2.5 | 6, 12 |
 | Refactoring | Cap. 18, seções 18.3–18.4 | 10, 12 |
+| Containerização e deploy | Documentação oficial do Docker e Docker Compose | 14 |
 
 ---
 
@@ -620,25 +621,34 @@ O semestre é organizado em torno do ciclo de vida do projeto real, com a teoria
 
 ---
 
-#### 📅 Semana 14 — O que você entregou? + Como você conta essa história? + 👤 Entrega Formal ao Stakeholder
+#### 📅 Semana 14 — Containerização com Docker + 👤 Entrega Formal ao Stakeholder
 
-**🔵 SEG — O que você entregou?**
+**🔵 SEG — Do código ao container: introdução ao Docker**
 
-- Sem leitura prévia — traga o projeto aberto e honestidade
-- Aula de reflexão estruturada sem conteúdo novo: cada equipe olha para o próprio trabalho antes da entrega formal
-- Parte 1 — reflexão individual (25 min): quatro perguntas progressivas — qual era o problema real do stakeholder (não o que ele pediu); o que foi entregue resolve esse problema; o que mudaria com mais duas semanas; o que o stakeholder vai dizer que a equipe não espera ouvir
-- Parte 2 — discussão em equipe (35 min): leitura das respostas individuais em voz alta, identificação de divergências, definição de até três ajustes concretos para os próximos dois dias
-- Parte 3 — plenária (20 min): cada equipe compartilha sua resposta para a quarta pergunta; professor observa padrões no conjunto
-- 🎯 Documento de reflexão preenchido (individual + equipe)
+- Sem leitura prévia — traga o repositório do projeto acessível
+- O problema "na minha máquina funciona": raiz técnica e por que Docker resolve
+- Conceitos fundamentais: imagem vs. container (analogia receita/bolo)
+- Anatomia do Dockerfile: `FROM`, `WORKDIR`, `COPY`, `RUN`, `EXPOSE`, `CMD`
+- Dockerfile do backend PetFood (Node.js/Express): estratégia de cache de camadas e `npm ci --omit=dev`
+- Multi-stage build para o frontend React: Node compila, nginx serve, imagem final < 30MB
+- O arquivo `.dockerignore` e por que `node_modules` nunca deve entrar na imagem
+- Ciclo de vida básico: `docker build`, `docker run`, `docker ps`, `docker logs`, `docker stop`
+- Demonstração ao vivo com rebuild para evidenciar o funcionamento do cache de camadas
+- *Referência: documentação oficial do Docker — nenhum dos livros-texto cobre este tema diretamente*
 
-**🟢 TER — Como você conta essa história?**
+**🟢 TER — Orquestrando serviços com Docker Compose**
 
-- Sem leitura prévia — traga o material da segunda-feira
-- Apresentação e análise da estrutura narrativa das apresentações acadêmicas: quatro perguntas em sequência — O problema (quem é o stakeholder, qual era a dor, por que importava resolver); Como pensamos (descobertas antes de construir, decisões de escopo e design); O que construímos (demo, decisões técnicas relevantes, o que ficou de fora); O que aprendemos (o que faria diferente, o que a experiência ensinou que nenhuma aula ensina)
-- Análise comparativa de dois roteiros fictícios — bem e mal construídos — para identificar o que diferencia uma apresentação memorável de uma genérica (20 min)
-- Escrita do roteiro de apresentação por cada equipe: campos para cada parte, quem fala, tempo estimado — meta 12 minutos totais (35 min)
-- Ensaio de 3 minutos por equipe (apenas O problema e Como pensamos) com feedback escrito estruturado de outra equipe: o que ficou claro, o que ficou confuso, o que estava faltando (25 min)
-- 🎯 Roteiro escrito + feedback recebido
+- Sem leitura prévia — revisar mentalmente os conceitos de Docker da aula de segunda
+- O limite do Docker isolado para sistemas com múltiplos serviços
+- Anatomia do `docker-compose.yml`: `services`, `image`, `build`, `ports`, `expose`, `environment`, `depends_on`, `volumes`
+- DNS interno do Compose: nome do serviço como hostname — o que muda na `DATABASE_URL`
+- `docker-compose.yml` completo e comentado para o sistema PetFood (React/nginx + Express + PostgreSQL)
+- `expose` vs. `ports`: banco de dados nunca exposto diretamente ao host
+- Volumes nomeados e persistência de dados: diferença entre `stop`, `down` e `down -v`
+- Padrão `.env` + `.env.example` para credenciais — nunca commitar segredos
+- Conexão com plataformas de deploy (Railway, Render): o que acontece por baixo dos panos
+- Reflexão: `docker-compose.yml` como documentação executável vs. README
+- *Referência: documentação oficial do Docker Compose — nenhum dos livros-texto cobre este tema diretamente*
 
 **🟠 QUI — 👤 Entrega Formal ao Stakeholder (4h)**
 
@@ -777,7 +787,8 @@ O stakeholder participa de **7 momentos formais** ao longo do semestre, garantin
 | VS Code | IDE | Semana 5 |
 | Mermaid / draw.io | Diagramas C4 | Semana 4 |
 | Figma / Excalidraw | Prototipagem | Semana 6 |
-| Vercel / Render | Deploy | Semana 7+ |
+| Vercel / Render / Railway | Deploy | Semana 7+ |
+| Docker + Docker Compose | Containerização e orquestração local | Semana 14 |
 | SQLite / PostgreSQL | Banco de dados | Conforme necessidade |
 
 ---
@@ -838,3 +849,5 @@ A vivência com a Mini-Sinfonia no 2º período cria familiaridade com o framewo
 ---
 
 *Documento elaborado com base no Programa de Componente Curricular CIN0136, no livro "Engenharia de Software em Dimensões" (Garcia, 2025), na Metodologia Sinfonia (Garcia & Medeiros, 2025), nas diretrizes do MEC para curricularização da extensão e em 13 anos de experiência na disciplina de Engenharia de Software no CIn-UFPE.*
+
+*v7 — 11/06/2026: Semana 14 remodelada. Aulas de segunda e terça substituídas por conteúdo de containerização (Docker e Docker Compose), com estudo de caso ancorado no sistema PetFood. Justificativa: conteúdo de formação profissional essencial, aproveitando o espaço pós-Sprint 4 sem competir com entregas. Docker e Docker Compose adicionados à stack tecnológica e à tabela de correspondência ementa→semanas.*
