@@ -1,6 +1,6 @@
 # Avaliação
 
-**CIN0136: Desenvolvimento de Software · CIn-UFPE · 2026.1**
+**CIN0136: Desenvolvimento de Software · CIn-UFPE**
 
 ---
 
@@ -39,14 +39,16 @@ Engajamento nas leituras prévias e qualidade das contribuições nos debates em
 
 ### 1.2 Exercícios Práticos Individuais (EI1–EI4)
 
-Quatro entregas individuais ao longo do semestre. Enunciados completos em [`exercicios/`](../exercicios/):
+Quatro entregas individuais ao longo do semestre, ancoradas nas fases do projeto. Enunciados completos em [`exercicios/`](../exercicios/):
 
 | Exercício | Entrega | Tema |
 |-----------|---------|------|
-| [EI1 — Portfólio Git](../exercicios/EI1-portfolio-git.md) | 29/03 (Dom) | Repositório com 10+ commits semânticos, branches, merge e reflexão |
-| [EI2 — Documento de Requisitos](../exercicios/EI2-documento-requisitos.md) | 12/04 (Dom) | 5 user stories com critérios de aceitação, MoSCoW justificado |
-| [EI3 — Testes em JavaScript](../exercicios/EI3-testes-js.md) | 17/05 (Dom) | Suite Vitest + Playwright em módulo com bugs intencionais |
-| [EI4 — Reflexão Técnica e Profissional](../exercicios/EI4-reflexao-tecnica.md) | 14/06 (Dom) | Documento reflexivo 2–3 páginas sobre decisões, stakeholder e trajetória |
+| [EI1 — Portfólio Git](../exercicios/EI1-portfolio-git.md) | Sprint 0 | Repositório com 10+ commits semânticos, branches, merge e reflexão |
+| [EI2 — Documento de Requisitos](../exercicios/EI2-documento-requisitos.md) | Sprint 0 | 5 user stories com critérios de aceitação, MoSCoW justificado |
+| [EI3 — Testes em JavaScript](../exercicios/EI3-testes-js.md) | Sprint 2 | Suite Vitest + Playwright em módulo com bugs intencionais |
+| [EI4 — Reflexão Técnica e Profissional](../exercicios/EI4-reflexao-tecnica.md) | Sprint 4 | Documento reflexivo 2–3 páginas sobre decisões, stakeholder e trajetória |
+
+> As datas exatas de entrega estão na planilha de plano de aulas do semestre corrente.
 
 ### 1.3 Missões
 
@@ -64,20 +66,22 @@ O projeto é avaliado em dois blocos: os checkpoints incrementais ao longo dos s
 
 Cinco momentos formais de avaliação, cada um com o stakeholder presente. A equipe é avaliada como um todo — o feedback do parceiro integra a nota.
 
-| Checkpoint | Data | Peso no componente |
-|-----------|------|--------------------|
-| ✅ Review Sprint 0 | 09/04 | 10% |
-| ✅ Review Sprint 1 | 30/04 | 20% |
-| ✅ Review Sprint 2 | 14/05 | 25% |
-| ✅ Review Sprint 3 | 28/05 | 25% |
-| ✅ Review Sprint 4 | 11/06 | 20% |
+| Checkpoint | Peso no componente |
+|-----------|--------------------|
+| ✅ Review Sprint 0 | 10% |
+| ✅ Review Sprint 1 | 20% |
+| ✅ Review Sprint 2 | 25% |
+| ✅ Review Sprint 3 | 25% |
+| ✅ Review Sprint 4 | 20% |
+
+> As datas de cada review estão na planilha de plano de aulas do semestre corrente.
 
 **O que é avaliado em cada review:**
 
 | Checkpoint | Foco da avaliação |
 |-----------|-----------------|
-| Sprint 0 | Canvas de Visão · backlog priorizado · protótipo hi-fi · escopo aprovado pelo stakeholder |
-| Sprint 1 | Primeiras features funcionando · arquitetura documentada · testes iniciais |
+| Sprint 0 | Backlog priorizado · protótipo hi-fi · escopo do MVP aprovado pelo stakeholder |
+| Sprint 1 | Primeiras features funcionando · arquitetura documentada (C4, UML, ADR) · testes iniciais |
 | Sprint 2 | Features core do MVP · testes de aceitação com Playwright |
 | Sprint 3 | Qualidade aplicada · refactoring documentado · testes verdes |
 | Sprint 4 | MVP estabilizado · documentação completa · deploy funcional |
@@ -95,24 +99,24 @@ Cinco momentos formais de avaliação, cada um com o stakeholder presente. A equ
 
 ### 2.2 Entrega Final + Apresentação Acadêmica
 
-**Entrega formal ao stakeholder — Semana 14 (18/06)**
+**Entrega formal ao stakeholder — fase de Encerramento**
 
 A equipe entrega ao parceiro: repositório com código, deploy funcional, README completo e guia de uso. O stakeholder preenche o [Formulário de Feedback](../projeto/formulario-feedback-stakeholder.md), que integra a avaliação deste bloco.
 
-**Apresentação acadêmica — Semana 15 (29 e 30/06)**
+**Apresentação acadêmica — fase de Encerramento**
 
-12 minutos + 5 minutos de Q&A, seguindo obrigatoriamente os 4 movimentos da Mini-Sinfonia:
+12 minutos + 5 minutos de Q&A, seguindo a estrutura compartilhada pelos professores, que percorre o arco completo do projeto:
 
-1. **Exposição** — o problema, o stakeholder, o contexto
-2. **Composição** — as decisões de design, os protótipos, o Canvas de Visão
-3. **Ensaio** — a arquitetura, o código, os testes, os sprint reviews
-4. **Ressonância** — a entrega, o feedback real do stakeholder, as lições aprendidas
+1. **O problema** — quem é o stakeholder, qual era a dor, por que valia a pena resolver
+2. **As decisões** — o que foi descoberto antes de construir, as decisões de escopo e design
+3. **A construção** — a arquitetura, o código, os testes, a evolução ao longo dos sprints
+4. **Os aprendizados** — a entrega, o feedback real do stakeholder, o que faria diferente
 
 **Rubrica da apresentação:**
 
 | Critério | Peso | Descrição |
 |----------|------|-----------|
-| **Clareza narrativa** | 25% | A história do projeto é compreensível para quem não acompanhou? Os 4 movimentos estão claros? |
+| **Clareza narrativa** | 25% | A história do projeto é compreensível para quem não acompanhou? O arco está claro? |
 | **Profundidade técnica** | 30% | As decisões técnicas são explicadas com fundamento? Os desafios são apresentados honestamente? |
 | **Demonstração do produto** | 25% | O produto funciona ao vivo? A demo cobre os casos de uso principais? |
 | **Reflexão sobre o impacto** | 20% | A equipe articula o que o produto mudou para o stakeholder? O que faria diferente? |
@@ -123,10 +127,14 @@ A equipe entrega ao parceiro: repositório com código, deploy funcional, README
 
 Duas provas escritas individuais, de consulta fechada, com questões abertas que privilegiam raciocínio e aplicação sobre memorização.
 
-| Prova | Data | Conteúdo |
-|-------|------|-----------|
-| **Prova 1** | 05/05/2026 (Ter · Semana 8) | ES · Git · Code Review · Processos ágeis · Requisitos e User Stories · Princípios de design · C4 Model · Qualidade de software |
-| **Prova 2** | 09/06/2026 (Ter · Semana 13) | Testes (Vitest e Playwright) · Refactoring · Manutenção · Dívida técnica · Qualidade arquitetural · Code review avançado · Documentação |
+| Prova | Momento | Conteúdo |
+|-------|---------|-----------|
+| **Prova 1** | Sprint 2 (após o ciclo de arquitetura) | ES · Git · Code Review · Processos ágeis · Requisitos e User Stories · Princípios de design · C4 Model · Qualidade de software |
+| **Prova 2** | Encerramento | Testes (Vitest e Playwright) · Refactoring · Manutenção · Dívida técnica · Qualidade arquitetural · Code review avançado · Documentação |
+
+> As datas das provas estão na planilha de plano de aulas do semestre corrente.
+
+**Prova Final e Segunda-chamada.** São mecanismos institucionais da UFPE, à parte da nota base descrita acima. A **Segunda-chamada** repõe uma prova perdida por motivo justificado; a **Prova Final** é a avaliação de recuperação para quem não atingir a nota mínima na média das avaliações. Nenhuma das duas entra na composição dos 40% — elas seguem o regulamento institucional. As datas constam na planilha de plano de aulas.
 
 ---
 
@@ -147,4 +155,4 @@ Todas as entregas estão sujeitas à política descrita no [Código de Conduta](
 
 ---
 
-*CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
+*CIN0136 — Desenvolvimento de Software · CIn-UFPE*

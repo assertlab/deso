@@ -1,6 +1,6 @@
 # Metodologia
 
-**CIN0136: Desenvolvimento de Software · CIn-UFPE · 2026.1**
+**CIN0136: Desenvolvimento de Software · CIn-UFPE**
 
 ---
 
@@ -32,13 +32,12 @@ flowchart TB
         P1 --> P2 --> P3
     end
 
-    subgraph E3["Eixo 3 — Mini-Sinfonia"]
-        direction LR
-        M1("🔍 Exposição<br>Descobrir")
-        M2("🎨 Composição<br>Projetar")
-        M3("🔨 Ensaio<br>Construir")
-        M4("🎵 Ressonância<br>Entregar")
-        M1 --> M2 --> M3 --> M4
+    subgraph E3["Eixo 3 — Ciclos Ágeis por Sprints"]
+        direction TB
+        M1("🔍 Sprint 0<br>Descobrir e projetar")
+        M2("🔨 Sprints 1–4<br>Construir e testar")
+        M3("🚀 Encerramento<br>Entregar e refletir")
+        M1 --> M2 --> M3
     end
 
     E1 & E2 & E3 --> OUT("✅ Produto funcional · Aprendizado profundo · Impacto real")
@@ -54,13 +53,13 @@ O tempo presencial é um recurso escasso e caro demais para ser usado em transmi
 
 ### Como funciona na prática
 
-A estrutura semanal tem três tempos:
+A estrutura semanal tem três momentos:
 
-| Tempo | Quando | Propósito | Modo |
-|-------|--------|-----------|------|
-| **1º Tempo** — Preparação | Antes da aula (segunda ou terça) | Aquisição de conteúdo | Leitura individual do livro-texto ou fontes curadas |
-| **2º Tempo** — Debate e análise | Segunda e terça (2h cada) | Aprofundamento crítico | Debates estruturados, questões estruturantes, cenários de decisão |
-| **3º Tempo** — Prática e projeto | Quinta (4h) | Consolidação pela ação | Laboratórios, workshops, interação com stakeholder |
+| Momento | Quando | Propósito | Modo |
+|---------|--------|-----------|------|
+| **Preparação** | Antes da aula | Aquisição de conteúdo | Leitura individual do livro-texto ou fontes curadas |
+| **Debate e análise** | Encontros teóricos (segunda e terça) | Aprofundamento crítico | Debates estruturados, questões estruturantes, cenários de decisão |
+| **Prática e projeto** | Encontro prático (quinta, 4h) | Consolidação pela ação | Laboratórios, workshops, interação com stakeholder |
 
 ### O papel do professor
 
@@ -86,8 +85,8 @@ O projeto de extensão vinculado à disciplina atende à curricularização da e
 
 Os stakeholders são organizações externas — do terceiro setor, pequenas empresas, coletivos comunitários ou departamentos internos da UFPE — com demandas reais de software viáveis para um semestre. Os critérios de seleção são:
 
-- Problema com escopo entregável como MVP em 15 semanas
-- Disponibilidade para 9 sessões formais de interação com a equipe
+- Problema com escopo entregável como MVP dentro de um semestre
+- Disponibilidade para as sessões formais de interação ao longo do projeto (tipicamente uma por fase)
 - Compreensão de que o produto é desenvolvido por alunos em formação
 - Compromisso com feedback construtivo e pontual
 
@@ -96,22 +95,25 @@ Os stakeholders são organizações externas — do terceiro setor, pequenas emp
 | Parte | Compromissos |
 |-------|-------------|
 | **Equipe de alunos** | Entregar MVP funcional, documentado e testado; comunicação profissional e regular; respeito a prazos; honestidade sobre limitações |
-| **Stakeholder** | Disponibilidade para 9 sessões; feedback honesto e construtivo; clareza na comunicação de necessidades; compreensão do contexto formativo |
+| **Stakeholder** | Disponibilidade para as sessões de interação ao longo do projeto; feedback honesto e construtivo; clareza na comunicação de necessidades; compreensão do contexto formativo |
 | **Professor** | Mediação da relação; suporte técnico e pedagógico; garantia de que a extensão serve ao aprendizado e ao parceiro simultaneamente |
 
-### Os 9 momentos formais com o stakeholder
+### Os momentos formais com o stakeholder
 
-| Semana | Data | Momento | Propósito |
-|--------|------|---------|-----------|
-| 1 | 05/03 | 1º contato | Entender contexto, problema e expectativas |
-| 3 | 19/03 | Prototipagem | Validar wireframes e fluxos iniciais |
-| 4 | 26/03 | Backlog | Priorizar funcionalidades juntos |
-| 5 | 09/04 | Fechamento de escopo | Validar protótipo hi-fi, aprovar MVP |
-| 7 | 30/04 | Sprint 1 Review | Validar primeiras funcionalidades |
-| 9 | 14/05 | Sprint 2 Review | Validar features core do MVP |
-| 11 | 28/05 | Sprint 3 Review | Validar qualidade e ajustes |
-| 13 | 11/06 | Sprint 4 Review | Validação final antes da entrega |
-| 14 | 18/06 | Entrega formal | Entrega do produto + feedback estruturado |
+O stakeholder participa de momentos formais distribuídos ao longo de todo o projeto, garantindo que ele nunca se distancie das necessidades reais. Cada fase do projeto tem ao menos uma interação estruturada:
+
+| Fase | Momento | Propósito |
+|------|---------|-----------|
+| Sprint 0 | Construção do backlog | Entender contexto e problema; priorizar funcionalidades juntos |
+| Sprint 0 | Fechamento de escopo | Validar protótipo hi-fi e aprovar o MVP |
+| Sprint 0 | Contato de aprofundamento | Refinar entendimento das necessidades |
+| Sprint 1 | Sprint 1 Review | Validar primeiras funcionalidades sobre a arquitetura definida |
+| Sprint 2 | Sprint 2 Review | Validar features core do MVP |
+| Sprint 3 | Sprint 3 Review | Validar qualidade e ajustes |
+| Sprint 4 | Sprint 4 Review | Validar estabilização do MVP |
+| Encerramento | Entrega formal | Entrega do produto + feedback estruturado |
+
+> As datas exatas de cada momento estão na planilha de plano de aulas do semestre corrente.
 
 ### Propriedade intelectual
 
@@ -119,49 +121,39 @@ O código produzido é de propriedade compartilhada entre os alunos e a universi
 
 ---
 
-## Eixo 3 — Mini-Sinfonia como Framework do Projeto
+## Eixo 3 — Ciclos Ágeis Baseados em Sprints
 
-### O que é a Sinfonia
+### O princípio
 
-A Metodologia Sinfonia (Garcia & Medeiros, 2025) é um framework de desenvolvimento de produtos de software que organiza o trabalho em quatro movimentos com propósitos distintos. A **Mini-Sinfonia** é uma adaptação simplificada para o contexto do 2º período: mantém a estrutura dos quatro movimentos e seus artefatos centrais, mas reduz a cerimônia e adapta a linguagem para equipes com menos de um semestre de experiência em desenvolvimento colaborativo.
+O projeto é conduzido em ciclos incrementais curtos, no espírito das metodologias ágeis estudadas na disciplina. Em vez de planejar tudo no início e construir de uma vez, a equipe descobre, projeta, constrói e valida em ciclos sucessivos, com feedback real do stakeholder a cada etapa. A cadência é dimensionada para o nível de maturidade do 2º período: um Sprint 0 de descoberta e preparação, quatro sprints de construção e um encerramento de entrega e reflexão.
 
-### Os quatro movimentos
+A estrutura organiza o semestre em três fases, cada uma com um propósito distinto e um erro típico a evitar.
 
-```
-EXPOSIÇÃO → COMPOSIÇÃO → ENSAIO → RESSONÂNCIA
-```
+### 🔍 Sprint 0 — Descobrir e Projetar
 
-#### 🔍 Exposição — Descobrir (Semanas 1–3)
+O objetivo é entender o problema antes de qualquer solução e, em seguida, transformar esse entendimento em um plano validado. A equipe conhece o stakeholder, mapeia o contexto, realiza as primeiras sessões de descoberta, prototipa, prioriza o backlog e fecha o escopo do MVP que será construído.
 
-O objetivo é entender o problema antes de qualquer solução. A equipe conhece o stakeholder, mapeia o contexto, realiza as primeiras sessões de descoberta e constrói os primeiros esboços visuais.
+**O erro mais comum (descoberta):** querer propor soluções antes de entender o problema. Resistir a essa tentação é a habilidade central do início do projeto.
 
-**O erro mais comum:** querer propor soluções antes de entender o problema. Resistir a essa tentação é a habilidade central desta fase.
+**O erro mais comum (projeto):** prometer mais do que é possível construir no tempo disponível. O fechamento de escopo com o stakeholder existe justamente para tornar esse limite explícito e aceito por todas as partes.
 
-**Artefatos:** registro dos contatos com stakeholder · esboços e wireframes iniciais
-
-#### 🎨 Composição — Projetar (Semanas 3–5)
-
-O objetivo é transformar o entendimento do problema em um plano validado. A equipe prototipa, prioriza o backlog com o stakeholder e fecha o escopo do MVP que será construído.
-
-**O erro mais comum:** prometer mais do que é possível construir em 8 semanas. O Canvas de Visão existe para tornar esse limite explícito e aceito por todas as partes.
-
-**Artefatos:** protótipo hi-fi validado · Canvas de Visão · backlog MoSCoW com critérios de aceitação
+**Artefatos:** registro dos contatos com o stakeholder · protótipo hi-fi validado · backlog MoSCoW com critérios de aceitação · escopo do MVP aprovado
 
 **Marco:** ✅ Review Sprint 0 — aprovação formal do escopo pelo stakeholder
 
-#### 🔨 Ensaio — Construir e Testar (Semanas 6–13)
+### 🔨 Sprints 1–4 — Construir e Testar
 
-O objetivo é construir o produto de forma incremental, com feedback do stakeholder a cada sprint. São 4 sprints de aproximadamente 2 semanas cada, com review ao final de cada um.
+O objetivo é construir o produto de forma incremental, com feedback do stakeholder ao final de cada sprint. São quatro sprints de aproximadamente duas semanas cada, com uma review de fechamento em cada um. A teoria de cada sprint é calibrada para o que a equipe precisa naquele momento: arquitetura e documentação (C4, UML, ADR) no Sprint 1; testes no Sprint 2; refactoring e manutenção no Sprint 3; code review avançado e containerização no Sprint 4.
 
 **O erro mais comum:** acumular dívida técnica ao longo dos sprints e tentar resolver tudo no final. A regra da disciplina é clara: nenhuma feature é considerada pronta sem pelo menos um teste.
 
-**Artefatos por sprint:** features implementadas e testadas · retrospectiva documentada · backlog atualizado
+**Artefatos por sprint:** features implementadas e testadas · decisões arquiteturais registradas (ADR) · retrospectiva documentada · backlog atualizado
 
 **Marcos:** ✅ Sprint 1 Review · ✅ Sprint 2 Review · ✅ Sprint 3 Review · ✅ Sprint 4 Review
 
-#### 🎵 Ressonância — Entregar e Aprender (Semanas 14–15)
+### 🚀 Encerramento — Entregar e Refletir
 
-O objetivo é entregar o produto ao stakeholder, receber o feedback final e refletir sobre a jornada. "Ressonância" porque o que foi construído vai continuar existindo e sendo usado — ou não — depois que o semestre acabar. Essa consciência deve orientar as decisões de qualidade ao longo de todo o semestre.
+O objetivo é entregar o produto ao stakeholder, receber o feedback final e refletir sobre a jornada. O que foi construído vai continuar existindo e sendo usado — ou não — depois que o semestre acabar. Essa consciência deve orientar as decisões de qualidade ao longo de todo o projeto: constrói-se pensando em quem vai manter e usar o software depois.
 
 **Artefatos:** produto entregue (repositório + deploy + documentação) · formulário de feedback do stakeholder · documento de reflexão individual · apresentação acadêmica
 
@@ -173,18 +165,17 @@ Os três eixos não são paralelos — são interdependentes:
 
 - A **sala de aula invertida** fornece os conceitos e o vocabulário para entender o que está sendo construído
 - O **projeto com stakeholder** fornece o contexto real que dá sentido aos conceitos
-- A **Mini-Sinfonia** fornece a estrutura que transforma o projeto em aprendizado progressivo e não em caos
+- Os **ciclos ágeis por sprints** fornecem a estrutura que transforma o projeto em aprendizado progressivo e não em caos
 
-Um exemplo concreto: Git (Eixo 1, Semana 2) é ensinado porque o repositório da equipe precisa existir e funcionar (Eixo 2, Semana 2). O repositório segue a estrutura definida pela fase de Ensaio da Sinfonia (Eixo 3). Os três eixos convergem no mesmo momento, para o mesmo propósito.
+Um exemplo concreto: Git é ensinado (Eixo 1) porque o repositório da equipe precisa existir e funcionar desde o primeiro dia (Eixo 2). O repositório segue a estrutura e a cadência de entregas definidas pelos sprints (Eixo 3). Os três eixos convergem no mesmo momento, para o mesmo propósito — cada conceito teórico é introduzido quando o projeto cria a necessidade concreta dele.
 
 ---
 
 ## Referências
 
 - GARCIA, V. C. *Engenharia de Software em Dimensões.* ASSERT Lab, 2025.
-- GARCIA, V. C.; MEDEIROS, R. P. *Sinfonia: Metodologia para Desenvolvimento de Produtos de IA.* TDS Books, 2025.
 - Resolução CNE/CES nº 7, de 18 de dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira.
 
 ---
 
-*CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
+*CIN0136 — Desenvolvimento de Software · CIn-UFPE*
