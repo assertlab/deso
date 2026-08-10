@@ -1,15 +1,13 @@
 # Semana 1 — Terça-feira
-## Ecossistema do desenvolvimento de software + Introdução à Sinfonia
+## Ecossistema do desenvolvimento de software
 
-**CIN0136: Desenvolvimento de Software · CIn-UFPE · 2026.1**
-**03/03/2026 · E232 · 18:50–20:30**
+**CIN0136: Desenvolvimento de Software · CIn-UFPE**
 
 ---
 
 ## Leitura Prévia
 
 📖 *Engenharia de Software em Dimensões* — Cap. 1, seções 1.4, 1.5, 1.6 e 1.7
-📖 *Sinfonia* — Cap. 2: Visão Geral dos 4 Movimentos
 
 **Traga para a aula:** uma dúvida ou uma discordância do que você leu — não uma pergunta de confirmação, mas algo que te fez pensar "espera, mas e se...".
 
@@ -20,7 +18,7 @@
 Ao final desta aula, você deve ser capaz de:
 
 - Mapear os papéis, atividades e artefatos do ecossistema de desenvolvimento de software
-- Descrever os 4 movimentos da Mini-Sinfonia e relacioná-los com o semestre
+- Compreender como o semestre se organiza em ciclos ágeis baseados em sprints
 - Saber quem são os membros da sua equipe e qual projeto será desenvolvido
 - Ter assinado o [Código de Conduta e Ética](../../docs/codigo-conduta.md)
 
@@ -44,7 +42,7 @@ Durante a aula, a turma vai construir coletivamente um mapa dos três eixos abai
 
 **Atividades** — o que precisa acontecer, da ideia ao produto em produção?
 
-*Descuberta · Construção · Entrega*
+*Descoberta · Construção · Entrega*
 
 **Artefatos** — o que é produzido em cada fase?
 
@@ -67,61 +65,58 @@ Este semestre é incomum: cada equipe de 4–5 pessoas vai cobrir quase todos os
 
 ---
 
-## 2. A Mini-Sinfonia: o framework do projeto
+## 2. Como o semestre se organiza: ciclos ágeis por sprints
 
-O projeto que você vai desenvolver este semestre segue a estrutura da **Mini-Sinfonia** — uma adaptação da Metodologia Sinfonia (Garcia & Medeiros, 2025) para o contexto do 2º período.
+O projeto que você vai desenvolver este semestre é conduzido em **ciclos ágeis baseados em sprints** — ciclos curtos e incrementais, no espírito das metodologias ágeis que você vai estudar já na Semana 2. Em vez de planejar tudo no início e construir de uma vez, a equipe descobre, projeta, constrói e valida em ciclos sucessivos, com feedback real do parceiro a cada etapa.
+
+O semestre percorre três grandes fases:
 
 ```
-EXPOSIÇÃO → COMPOSIÇÃO → ENSAIO → RESSONÂNCIA
-Descobrir    Projetar    Construir  Entregar e aprender
-Sem 1–3      Sem 3–5     Sem 6–13   Sem 14–15
+SPRINT 0          SPRINTS 1–4              ENCERRAMENTO
+Descobrir e       Construir e testar       Entregar e
+projetar          (4 ciclos incrementais)  refletir
 ```
 
-### O que cada movimento significa na prática
+### O que cada fase significa na prática
 
-**🔍 Exposição — Semanas 1 a 3**
+**🔍 Sprint 0 — Descobrir e projetar**
 
-Você ainda não sabe o suficiente para construir nada. O objetivo é *descobrir*: conhecer o parceiro, entender o problema real, explorar o contexto.
+No começo você ainda não sabe o suficiente para construir nada. O objetivo é *descobrir*: conhecer o parceiro, entender o problema real, explorar o contexto. Em seguida, *projetar*: prototipar, priorizar o backlog e fechar o escopo do MVP com o parceiro. Só quando o escopo está aprovado o desenvolvimento começa.
 
-> O erro mais comum: querer propor soluções antes de entender o problema.
+> O erro mais comum: querer propor soluções antes de entender o problema — e prometer mais do que é possível construir no tempo disponível.
 
-**🎨 Composição — Semanas 3 a 5**
+**🔨 Sprints 1–4 — Construir e testar**
 
-Você projeta a solução: wireframes, protótipos, backlog de funcionalidades, Canvas de Visão. Ao final da Semana 5, o parceiro aprova o escopo. Só então o desenvolvimento começa.
+O produto é construído de forma incremental, em quatro sprints de aproximadamente duas semanas cada. Cada sprint termina com uma revisão (Sprint Review) com o parceiro, que valida o que foi entregue e ajuda a priorizar o próximo ciclo.
 
-> O erro mais comum: prometer mais do que é possível construir em 8 semanas.
+> O erro mais comum: acumular dívida técnica ao longo dos sprints e tentar resolver tudo no final. A regra da disciplina é clara: nenhuma feature é considerada pronta sem pelo menos um teste.
 
-**🔨 Ensaio — Semanas 6 a 13**
+**🚀 Encerramento — Entregar e refletir**
 
-Oito semanas de construção em 4 sprints de 2 semanas cada. Cada sprint termina com uma revisão com o parceiro.
+Entrega formal ao parceiro, apresentação acadêmica e retrospectiva. O produto vai continuar existindo e sendo usado — ou não — depois que o semestre acabar. Essa consciência deve orientar suas decisões de qualidade desde o primeiro dia.
 
-> O erro mais comum: acumular dívida técnica e tentar resolver tudo no final.
-
-**🎵 Ressonância — Semanas 14 e 15**
-
-Entrega formal ao parceiro, apresentação acadêmica, retrospectiva. "Ressonância" porque o produto vai continuar existindo depois que o semestre acabar.
-
-> O erro mais comum: deixar documentação e deploy para esta fase.
+> O erro mais comum: deixar documentação e deploy para o final.
 
 ---
 
-### Calendário dos marcos
+### Os marcos do projeto
 
-| Fase | Semanas | Marco |
-|------|---------|-------|
-| Exposição | 1–3 | Protótipos low-fi validados com o parceiro |
-| Composição | 3–5 | ✅ Canvas de Visão + backlog aprovado — Review Sprint 0 (09/04) |
-| Ensaio · Sprint 1 | 6–7 | ✅ Primeiras funcionalidades (30/04) |
-| Ensaio · Sprint 2 | 8–9 | ✅ Features core do MVP (14/05) |
-| Ensaio · Sprint 3 | 10–11 | ✅ Qualidade e refactoring (28/05) |
-| Ensaio · Sprint 4 | 12–13 | ✅ MVP estabilizado (11/06) |
-| Ressonância | 14–15 | 🎯 Entrega formal (18/06) + Apresentações (29–30/06) |
+| Fase | Marco |
+|------|-------|
+| Sprint 0 | Escopo do MVP aprovado pelo parceiro — ✅ Review Sprint 0 |
+| Sprint 1 | Primeiras funcionalidades sobre a arquitetura definida — ✅ Sprint 1 Review |
+| Sprint 2 | Features core do MVP + testes — ✅ Sprint 2 Review |
+| Sprint 3 | Qualidade e refactoring — ✅ Sprint 3 Review |
+| Sprint 4 | MVP estabilizado — ✅ Sprint 4 Review |
+| Encerramento | 🎯 Entrega formal + apresentações acadêmicas |
+
+> As datas de cada marco estão na planilha de plano de aulas do semestre corrente.
 
 ---
 
 ## 3. Qualidade contínua
 
-O Cap. 1.4 do livro apresenta o conceito de **qualidade contínua**: garantir que a qualidade seja uma prioridade em todas as fases do desenvolvimento, não apenas no final.
+A seção 1.4 do livro apresenta o conceito de **qualidade contínua**: garantir que a qualidade seja uma prioridade em todas as fases do desenvolvimento, não apenas no final.
 
 Na prática, isso se traduz em:
 
@@ -135,7 +130,7 @@ Você vai aprender e praticar os três ao longo do semestre. O importante agora 
 
 ## 4. Carreiras em Engenharia de Software
 
-O Cap. 1.6 apresenta a diversidade de trajetórias na área:
+A seção 1.6 apresenta a diversidade de trajetórias na área:
 
 | Trajetória | Foco |
 |-----------|------|
@@ -152,7 +147,7 @@ Competências valorizadas em **todas** as trajetórias: adaptabilidade, trabalho
 
 ## 5. Código de Conduta e Ética
 
-Você vai receber o documento impresso durante a aula. Leia com atenção antes de assinar e identifique:
+Você vai receber o documento durante a aula. Leia com atenção antes de assinar e identifique:
 
 - Uma cláusula que achou **surpreendente**
 - Uma cláusula que acha **difícil de cumprir**
@@ -180,8 +175,9 @@ A composição das equipes e a alocação dos stakeholders está em → [equipes
 📖 **Leia antes da aula:** [Roteiro para o 1º Contato com o Stakeholder](../../projeto/roteiro-primeiro-contato.md)
 
 **Na quinta você vai:**
-- 2h de nivelamento de JavaScript (foco na transição de Python/C para JS)
-- Primeiro encontro com o stakeholder do seu projeto
+- Participar de um workshop ágil: como um processo de trabalho ajuda uma equipe a colaborar
+- Configurar o quadro Kanban da equipe (GitHub Projects)
+- Ter o primeiro encontro com o stakeholder do seu projeto para construir o backlog inicial
 
 **Prepare-se:**
 - Leia o roteiro com atenção
@@ -190,6 +186,5 @@ A composição das equipes e a alocação dos stakeholders está em → [equipes
 
 ---
 
-*CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
-*Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 1, seções 1.4–1.7.*
-*Garcia, V. C.; Medeiros, R. P. Sinfonia: Metodologia para Desenvolvimento de Produtos de IA. TDS Books, 2025. Cap. 2.*
+*CIN0136 — Desenvolvimento de Software · CIn-UFPE*
+*Referência: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 1, seções 1.4–1.7.*

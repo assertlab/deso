@@ -1,8 +1,7 @@
 # Semana 1 — Segunda-feira
 ## O mundo além do código
 
-**CIN0136: Desenvolvimento de Software · CIn-UFPE · 2026.1**
-**02/03/2026 · E132 · 17:00–18:40**
+**CIN0136: Desenvolvimento de Software · CIn-UFPE**
 
 ---
 
@@ -109,11 +108,11 @@ O programador fez tudo funcionar nos casos normais. O engenheiro de software ter
 Este semestre, você vai trabalhar em equipe para desenvolver um **MVP (Produto Mínimo Viável)** para uma organização parceira real. Isso significa:
 
 - Um **problema real** trazido por alguém de fora da universidade
-- **9 encontros formais** com o parceiro ao longo do semestre
-- Desenvolvimento em **sprints** com entregas a cada 2–3 semanas
+- **Encontros formais** com o parceiro ao longo do semestre, um em cada fase do projeto
+- Desenvolvimento em **sprints**, com entregas incrementais e revisões a cada ciclo
 - Um **produto funcional, testado e documentado** ao final
 
-A estrutura que guia esse processo é a **Mini-Sinfonia** — você vai aprender mais sobre ela amanhã.
+O processo é conduzido em **ciclos ágeis baseados em sprints** — você vai entender melhor como o semestre se organiza na próxima aula.
 
 Os projetos disponíveis e a alocação das equipes estão em → [equipes.md](../../equipes.md)
 
@@ -129,11 +128,11 @@ Esta não tem resposta certa. É uma pergunta para carregar com você ao longo d
 
 ## 7. Para a próxima aula (Terça-feira)
 
-📖 **Leitura obrigatória:** Cap. 1, seções 1.4 a 1.7 + *Sinfonia* Cap. 2 (Visão Geral dos 4 Movimentos)
+📖 **Leitura obrigatória:** Cap. 1, seções 1.4 a 1.7
 
 **Traga para a aula:** uma dúvida ou uma discordância do que você leu. Não uma pergunta de confirmação — algo que te fez pensar "espera, mas e se...".
 
 ---
 
-*CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
+*CIN0136 — Desenvolvimento de Software · CIn-UFPE*
 *Referência: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 1.*
