@@ -1,6 +1,6 @@
 # Semana 14 — Containerização + Entrega formal
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 📅 15–18 de junho de 2026
 
 ---
@@ -98,4 +98,4 @@ A Semana 15 traz as apresentações acadêmicas, onde cada equipe conta a histó
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE*

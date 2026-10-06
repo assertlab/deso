@@ -2,7 +2,7 @@
 
 ## User Stories, backlog e priorização formal
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |**  **E132 | 17:00–18:50**
 
 ---
 
@@ -320,4 +320,4 @@ Esta é a sessão de fechamento de escopo do Sprint 0. A partir daí, o que vai 
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referência principal: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 7._ _Referência complementar: Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3. engsoftmoderna.info_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referência principal: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 7._ _Referência complementar: Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3. engsoftmoderna.info_

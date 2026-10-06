@@ -1,6 +1,6 @@
 # 📅 Semana 5 — Qualidade de Software
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 
 > **Sprint 0 → Sprint 1** · Transição Composição → Ensaio · O início da construção com mentalidade de qualidade
 
@@ -75,4 +75,4 @@ O Definition of Done que será criado na quinta-feira (09/04) é o primeiro arte
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE*

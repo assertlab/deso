@@ -2,7 +2,7 @@
 
 ## Impacto das decisões de design na qualidade
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **25/05/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -211,6 +211,6 @@ A terça é sobre debugging real — e o melhor caso para debugar é o seu próp
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2026. Cap. 14, seções 14.7–14.8._
 _Valente, M. T. Engenharia de Software Moderna. Independente, 2022. Cap. 5 e Cap. 7._

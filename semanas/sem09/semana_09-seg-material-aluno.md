@@ -2,7 +2,7 @@
 
 ## Por que testar? Tipos de teste, pirâmide e cobertura
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **11/05/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -264,4 +264,4 @@ Sua resposta:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 9, seções 9.1–9.4._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 8 — Testes._
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 9, seções 9.1–9.4._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 8 — Testes._

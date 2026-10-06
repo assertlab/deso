@@ -2,7 +2,7 @@
 
 ## Manutenção, evolução e dívida técnica
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **19/05/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -233,5 +233,5 @@ Sua resposta inicial:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 19, seções 19.1 e 19.4. Valente, M. T. Engenharia de Software Moderna. 2020. Cap. 9._

@@ -2,7 +2,7 @@
 
 ## Metodologias ágeis: Scrum, Kanban e a escolha do processo
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **10/03/2026 | E232 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E232 | 18:50–20:30**
 
 ---
 
@@ -245,4 +245,4 @@ Sua questão escolhida e resposta inicial:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referência: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 4, seções 4.3–4.5._
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referência: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 4, seções 4.3–4.5._

@@ -2,7 +2,7 @@
 
 ## Strateegia: visão do escopo do projeto
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** | **23/03/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 

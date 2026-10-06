@@ -1,6 +1,6 @@
 # Semana 4 — Strateegia: escopo e backlog do produto
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 **Período:** 23 a 26 de março de 2026
 
 ---
@@ -90,5 +90,5 @@ Na semana seguinte, começa o ciclo de testes — e os critérios de aceitação
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE*
 *Última atualização: 26/03/2026*

@@ -2,7 +2,7 @@
 
 ## Introdução ao Design e Projeto de Arquitetura de Software
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **06/04/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -107,6 +107,56 @@ Sua resposta e justificativa:
 
 ```
 
+### 2.4 DNS — nomes em vez de números
+
+Ninguém digita `128.32.244.172` no navegador. O **DNS (Domain Name System)** é o serviço que mapeia nomes (`exemplo.com`) para endereços IP. Antes de abrir a conexão TCP, o navegador pergunta ao servidor DNS: "qual é o IP deste nome?".
+
+### 2.5 Cookies — dando memória ao HTTP
+
+HTTP é **sem estado**: cada requisição é independente, e o servidor não sabe se duas requisições vieram da mesma pessoa. Como guiar o usuário por um fluxo de páginas (login, carrinho)?
+
+| Ideia | Problema |
+|-------|----------|
+| Identificar pelo endereço IP | Computadores públicos e redes compartilham o mesmo IP |
+| Embutir a identificação do usuário na URI | Quebra o uso de cache |
+| **Cookies** | Funciona: o servidor envia um cookie na resposta, e o navegador o devolve automaticamente em toda requisição seguinte |
+
+Os frameworks (Express, por exemplo) cuidam dos detalhes mais delicados dos cookies para você.
+
+### 2.6 AJAX — a resposta deixa de ser a página inteira
+
+Na Web 1.0, a resposta HTTP trazia a **página** para exibir. Com o AJAX (Web 2.0), a resposta traz **dados** (JSON), e uma função JavaScript no navegador usa esses dados para atualizar o que já está na tela. É a ideia por trás do React que você usa no projeto (uma *single-page application*).
+
+Consequência: requisição e resposta HTTP passam a funcionar como **chamar uma função**. A Web vira um conjunto de serviços independentes e combináveis, e é daí que nasce a **arquitetura orientada a serviços** (seção 5).
+
+### 2.7 Teste rápido
+
+**Pergunta 1.** Sobre as requisições `GET /foo/bar` e `POST /foo/bar`, qual afirmação é verdadeira?
+
+- a) São indistinguíveis para um aplicativo SaaS
+- b) São distinguíveis e devem ter comportamentos diferentes
+- c) São distinguíveis e podem ter comportamentos diferentes
+- d) Um aplicativo pode tratar uma ou outra, mas não ambas
+
+<details><summary>Resposta</summary>
+
+**c.** Uma rota é método + URI, então as duas são distinguíveis. A aplicação decide o comportamento de cada uma (a convenção REST recomenda comportamentos diferentes, mas nada obriga).
+
+</details>
+
+**Pergunta 2.** Quando dois serviços são compostos em uma SOA, quais condições são necessárias?
+
+- a) Ambos devem ser escritos na mesma linguagem ou framework
+- b) O código que "une" os dois serviços deve ser JavaScript rodando no navegador
+- c) Os dois serviços não devem exigir autenticação (login)
+- d) Nenhuma das opções acima é condição necessária
+
+<details><summary>Resposta</summary>
+
+**d.** A interface (a API) esconde a linguagem e a implementação de cada serviço; é isso que permite compô-los.
+
+</details>
+
 ---
 
 ## 3. Arquitetura em 3 Camadas
@@ -159,6 +209,27 @@ Meu argumento (escreva antes da discussão):
                      ┌─── App Server 1 ───┐
 Load Balancer ──────►├─── App Server 2 ───┤──► Banco de Dados
                      └─── App Server 3 ───┘
+```
+
+### 3.3 Persistência: sharding × replicação
+
+Escalar servidores de aplicação é fácil (shared-nothing). Escalar o **banco de dados** não é, porque os dados precisam ficar consistentes. As duas estratégias clássicas:
+
+| Estratégia | Como funciona | Ganha | Perde |
+|------------|---------------|-------|-------|
+| **Sharding** | Os dados são particionados entre vários "shards" | Escala | Operações que acessam mais de uma tabela ou shard ficam ruins (ex.: perfil de usuário) |
+| **Replicação** | Cópias dos dados em todos os lugares | Consultas que combinam várias tabelas ficam rápidas | Difícil escalar: toda escrita precisa ser propagada (inconsistência temporária; ex.: *likes* e posts no mural) |
+
+> 💡 Não existe jeito mágico de escalar a camada de persistência. É um assunto de pesquisa e desenvolvimento ativos (inclusive NoSQL), que voltará mais adiante na disciplina.
+
+### 3.4 Do laptop ao ambiente de produção
+
+No seu laptop, frontend, API e banco rodam na mesma máquina. Em uma implantação de média escala, são **processos separados em máquinas diferentes**, e as aplicações costumam rodar empacotadas em contêineres.
+
+```
+Para discutir:
+- Por que usar máquinas pequenas para o banco de dados?
+- Quantos processos e quantas máquinas existem no seu ambiente de desenvolvimento? E em produção?
 ```
 
 ---
@@ -241,7 +312,22 @@ User Story escolhida: ________________________________
 
 ---
 
-## 7. Questão estruturante
+## 7. Vocabulário do arco: mesma palavra, significados diferentes
+
+Quatro palavras que você acabou de usar vão mudar de significado nas próximas aulas. Quando isso acontecer, volte a esta tabela.
+
+| Termo | Hoje | Onde o significado muda |
+|-------|------|-------------------------|
+| **Service** | Componente que expõe uma funcionalidade por uma interface de rede (SOA) | Princípios de design: camada de lógica de negócio no código (`services/`). Estilos arquiteturais: microsserviço, unidade de implantação independente |
+| **Component** | Parte substituível de um sistema, com responsabilidade definida | C4: componente é um módulo dentro de um contêiner, não um componente de UI (React) |
+| **Contêiner** | Ambiente isolado que empacota e executa uma aplicação | C4: contêiner é um processo em execução independente (API, frontend, banco), não necessariamente Docker |
+| **Architecture** | Organização de alto nível: camadas, serviços, protocolos | Estilos arquiteturais e seus trade-offs; depois, a arquitetura documentada em diagramas (C4) |
+
+> Quando alguém disser "service" ou "contêiner", pergunte: **em que nível de abstração?**
+
+---
+
+## 8. Questão estruturante
 
 > _"Se a arquitetura em camadas complica o código, por que equipes profissionais continuam adotando-a mesmo em projetos pequenos?"_
 
@@ -254,7 +340,7 @@ Sua reflexão (escreva ao final da aula, não antes):
 
 ---
 
-## 8. Para a próxima aula (Terça-feira)
+## 9. Para a próxima aula
 
 📖 **Leitura:** Cap. 14, seções 14.1.1–14.1.2 (continuação, se ainda não terminou) + _Engenharia de Software Moderna_, Cap. 5 (Princípios de Projeto: Coesão, Acoplamento, Ocultamento de Informação)
 
@@ -274,5 +360,5 @@ Sua reflexão (escreva ao final da aula, não antes):
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14. | Valente, M. T. Engenharia de Software Moderna, 2020. Cap. 7._

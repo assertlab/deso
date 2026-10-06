@@ -2,7 +2,7 @@
 
 ## Do código ao container: introdução ao Docker
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **15/06/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 

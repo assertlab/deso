@@ -1,6 +1,6 @@
 # Semana 13 — Reflexão + Prova 2 + Sprint 4 Review
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 **08 a 11 de junho de 2026**
 
 ---
@@ -126,5 +126,5 @@ O **Ensaio** durou oito semanas. A Semana 13 é o seu compasso final: reflexão,
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Sprint 4 — último sprint do Ensaio da Mini-Sinfonia_

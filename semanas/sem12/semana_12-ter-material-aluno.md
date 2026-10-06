@@ -2,7 +2,7 @@
 
 ## Documentação, README e preparação para entrega
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **02/06/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -306,6 +306,6 @@ Na quinta-feira, vocês vão realizar o code review cruzado entre equipes. Para 
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 19, seção 19.4._
 _Valente, M. T. Engenharia de Software Moderna. 2020. Cap. 9 — Refactoring (code smells e código como documentação implícita)._

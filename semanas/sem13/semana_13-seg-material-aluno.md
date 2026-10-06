@@ -2,7 +2,7 @@
 
 ## Reflexão: da ideia ao produto
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **08/06/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -292,5 +292,5 @@ Temas cobertos:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Aula de reflexão — sem referência bibliográfica nova. Conteúdo coberto: Semanas 8–12._

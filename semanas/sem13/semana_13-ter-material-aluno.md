@@ -2,7 +2,7 @@
 
 ## ✏️ PROVA 2
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **09/06/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -167,7 +167,7 @@ EI4 — Reflexão Técnica e Profissional: entrega **domingo, 14/06**, via formu
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Conteúdo avaliado: Semanas 8–12._
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 9, 14, 19._
 _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 5, 7, 8, 9._

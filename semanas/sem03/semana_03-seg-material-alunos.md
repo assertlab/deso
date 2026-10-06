@@ -2,7 +2,7 @@
 
 ## Requisitos funcionais, não funcionais e técnicas de elicitação
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |**  **E132 | 18:50–20:30**
 
 ---
 
@@ -272,4 +272,4 @@ para [benefício / resultado esperado].
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referência principal: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 6._ _Referência complementar: Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3. engsoftmoderna.info_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referência principal: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 6._ _Referência complementar: Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3. engsoftmoderna.info_

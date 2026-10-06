@@ -2,7 +2,7 @@
 
 ## Refactoring: melhorar sem quebrar
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **18/05/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -218,5 +218,5 @@ Sua resposta inicial:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 19, seções 19.2 e 19.3.1. Valente, M. T. Engenharia de Software Moderna. 2020. Cap. 9._

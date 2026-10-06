@@ -1,6 +1,6 @@
 # Semana 11 — Design, Debugging + Sprint 3 Review
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 Sprint 3 · Semanas 10–11 · Ensaio
 
 ---
@@ -90,5 +90,5 @@ E quinta é o momento de mostrar. O stakeholder vai experimentar o produto, não
 
 ---
 
-_CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Última atualização: maio/2026_

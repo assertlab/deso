@@ -2,7 +2,7 @@
 
 ## Por que versionar? Fundamentos de Git
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **09/03/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -237,4 +237,4 @@ Não é uma pergunta com resposta certa. É uma pergunta de julgamento — e voc
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referência: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 3, seções 3.1–3.3._
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referência: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 3, seções 3.1–3.3._

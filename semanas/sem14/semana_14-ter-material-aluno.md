@@ -2,7 +2,7 @@
 
 ## Orquestrando serviços com Docker Compose
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **16/06/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 

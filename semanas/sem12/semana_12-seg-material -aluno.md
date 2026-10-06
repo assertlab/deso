@@ -2,7 +2,7 @@
 
 ## Code Review como prática profissional (revisitado)
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **01/06/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -194,6 +194,6 @@ Sua resposta inicial:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 3, seção 3.5.1; Cap. 14, seção 14.6._
 _Valente, M. T. Engenharia de Software Moderna. 2020. Cap. 10 — DevOps, seção 10.2._

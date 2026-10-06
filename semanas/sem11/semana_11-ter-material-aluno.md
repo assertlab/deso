@@ -2,7 +2,7 @@
 
 ## Debugging, robustez e preparação para Sprint Review
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **26/05/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -338,5 +338,5 @@ Use este checklist para garantir que a demo não vai travar:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Sem leitura prévia formal. Referência de apoio: documentação do VS Code Debugger (https://code.visualstudio.com/docs/editor/debugging) e MDN Web Docs — Error handling (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)._

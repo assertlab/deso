@@ -1,6 +1,6 @@
 # Semana 12 — Code Review + Documentação + Sprint 4
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 **Sprint 4 — Semanas 12 e 13 | 🎼 Movimento: Ensaio (fase final)**
 
 ---
@@ -95,5 +95,5 @@ O code review cruzado desta semana não é um exercício didático: é um ensaio
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. | Valente, M. T. Engenharia de Software Moderna. 2020._

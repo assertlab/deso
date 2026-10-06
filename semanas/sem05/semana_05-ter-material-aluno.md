@@ -2,7 +2,7 @@
 
 ## Medição de qualidade e cultura de qualidade contínua
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **31/03/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **31/03/2026 | E132 | 17:00–18:40**
 
 ---
 

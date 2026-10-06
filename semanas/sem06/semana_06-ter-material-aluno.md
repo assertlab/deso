@@ -2,7 +2,7 @@
 
 ## O que são APIs + Princípios de design de software
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **07/04/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -25,6 +25,8 @@ Ao final desta aula, você deve ser capaz de:
 - Identificar coesão alta e acoplamento baixo como propriedades desejáveis no código
 - Aplicar os princípios de separação de responsabilidades e nomes significativos em código JavaScript
 - Reconhecer, no código do seu próprio projeto, pelo menos uma violação de design e propor uma refatoração
+- Ler um diagrama de sequência simples (`POST /register`) e relacionar cada seta a uma fronteira de responsabilidade
+- Registrar uma decisão de arquitetura em um ADR (formato Nygard), usando o Compasso como exemplo
 
 ---
 
@@ -218,6 +220,52 @@ Uma função que valida dados, acessa banco e envia e-mail tem **três razões p
 
 **Teste:** Se você não consegue descrever o propósito de um arquivo em uma frase curta, ele provavelmente mistura responsabilidades.
 
+### O caminho de uma requisição: o diagrama de sequência
+
+O desenho abaixo tem nome: **diagrama de sequência**. Ele mostra o caminho de uma requisição `POST /register` pelo código da **Versão B**. Cada seta atravessa uma fronteira de responsabilidade: o controller valida e responde, o service aplica a regra de negócio, o repository fala com o banco e o `emailService` envia o e-mail.
+
+```mermaid
+sequenceDiagram
+    participant Cliente
+    participant Controller as userController
+    participant Service as userService
+    participant Repository as userRepository
+    participant Email as emailService
+
+    Cliente->>Controller: POST /register (name, email, password)
+    Controller->>Controller: validateRegistration(body)
+    alt dados inválidos
+        Controller-->>Cliente: 400 (erro de validação)
+    else dados válidos
+        Controller->>Service: registerUser(body)
+        Service->>Repository: findByEmail(email)
+        Repository-->>Service: usuário ou null
+        alt e-mail já cadastrado
+            Service-->>Controller: ConflictError
+            Controller-->>Cliente: 409 (e-mail já cadastrado)
+        else e-mail livre
+            Service->>Service: bcrypt.hash(password)
+            Service->>Repository: create(name, email, hash)
+            Repository-->>Service: user
+            Service-->>Controller: user
+            Controller->>Email: sendWelcome(user)
+            Controller-->>Cliente: 201 (user)
+        end
+    end
+```
+
+> 💡 O desenho é uma versão simplificada: `validateRegistration` vive em `userValidator.js` (aparece aqui como chamada do controller), e o código mostrado não converte o `ConflictError` em 409; o desenho assume um tratamento de erro que faz essa conversão.
+
+**Exercício:** siga com o dedo o caminho do erro **409**. Quais participantes foram acionados? Quais **não** foram?
+
+```
+Sua resposta:
+
+
+```
+
+Você vai rever esse tipo de diagrama quando as camadas virarem componentes no C4.
+
 ### Princípio 2 — Coesão
 
 > **Tudo dentro de um módulo deve falar sobre o mesmo assunto.**
@@ -299,15 +347,115 @@ frontend/
     ├── components/      ← Blocos reutilizáveis de UI
     ├── hooks/           ← Lógica de estado e efeitos (React)
     └── services/        ← Chamadas à API do backend
+
+docs/
+├── diagramas C4/        ← Contexto, Contêiner e Componente (em Mermaid)
+├── ADRs/                ← ADR-001.md, ADR-002.md ... (uma decisão por arquivo)
+└── README.md
+```
+
+A pasta `docs/` não é opcional. É onde a equipe registra **por que** tomou as decisões de arquitetura, não só o quê.
+
+---
+
+## 6. O Compasso: nosso sistema de referência
+
+Nas próximas aulas, usaremos um sistema de exemplo, o **Compasso**, para mostrar diagramas, ADRs e decisões de arquitetura. A estrutura dele é a mesma que a do seu projeto: routes, controllers, services, repositories.
+
+| | |
+|---|---|
+| **O que é** | Plataforma de time tracking: horas trabalhadas por projeto |
+| **Atores** | O **Colaborador** registra horas. O **Gestor** aprova e vê relatórios por projeto |
+| **Stack** | React/Vite + Node.js/Express + SQLite |
+| **Rota central** | `POST /time-entry` (o colaborador registra uma entrada de horas) |
+
+```mermaid
+flowchart LR
+    Colab([Colaborador]) --> FE["Frontend React/Vite"]
+    Gestor([Gestor]) --> FE
+    FE -->|"HTTP/JSON"| R
+    subgraph API ["API Node.js / Express"]
+        direction LR
+        R[routes] --> C[controllers] --> S[services] --> Rep[repositories]
+    end
+    Rep --> DB[("SQLite")]
+```
+
+> ⚠️ Não confunda `POST /time-entry` (Compasso) com `POST /register`, que pertence ao exercício dos dois códigos.
+
+---
+
+## 7. ADR: registrando o porquê das decisões
+
+Um **ADR (Architecture Decision Record)** é um pequeno documento que registra uma decisão de arquitetura. **O código só mostra o quê; o ADR registra o porquê.** Usamos o **formato Nygard**: um título e quatro seções, em um arquivo versionado junto com o código (`docs/ADR-00X.md`).
+
+```
+# ADR-00X: [Título da decisão]
+
+## Status
+Proposto, aceito ou substituído?
+
+## Contexto
+Que situação nos obriga a decidir?
+
+## Decisão
+O que vamos fazer, e por quê?
+
+## Consequências
+O que fica mais fácil e mais difícil?
+```
+
+### Exemplo: ADR-001 do Compasso
+
+```
+# ADR-001: Usar SQLite como banco de dados
+
+## Status
+Aceito
+
+## Contexto
+O Compasso é um sistema de time tracking desenvolvido em 4 semanas por uma
+equipe de 4 pessoas. Não temos infraestrutura de servidor, e o volume de
+registros é baixo e previsível.
+
+## Decisão
+Vamos usar SQLite, porque ele roda embutido na aplicação, sem servidor de
+banco para instalar ou administrar.
+
+## Consequências
+Mais fácil: setup imediato, sem servidor de banco para administrar.
+Mais difícil: não escala para produção com múltiplos projetos. Aceitamos esse
+limite para este contexto.
+```
+
+Repare nas **Consequências**: registramos o que perdemos, não só o que ganhamos. E por que trocar de banco no futuro é viável? Porque só `repositories/` precisaria mudar (acoplamento e isolamento do banco, como na seção 4).
+
+**Agora com o seu projeto:** escolha uma decisão que a equipe já tomou (banco de dados, estrutura de pastas, biblioteca de autenticação...) e escreva o ADR.
+
+```
+# ADR-001: ___________________________________
+
+## Status
+
+
+## Contexto
+
+
+## Decisão
+
+
+## Consequências
+Mais fácil:
+Mais difícil:
 ```
 
 ---
 
-## 6. Diagnóstico do seu projeto
+## 8. Diagnóstico do seu projeto
 
 Usando os princípios desta aula, avalie o estado atual do código da equipe:
 
-### 6.1 Código que você trouxe — o que incomoda?
+### 8.1 Código que você trouxe — o que incomoda?
 
 ```
 Trecho que te incomoda:
@@ -325,7 +473,7 @@ Como ficaria melhor?
 
 ```
 
-### 6.2 Serviços que o projeto já tem (ou deveria ter)
+### 8.2 Serviços que o projeto já tem (ou deveria ter)
 
 Olhando para o backlog da equipe, quais serviços existem ou precisam existir?
 
@@ -338,7 +486,7 @@ Olhando para o backlog da equipe, quais serviços existem ou precisam existir?
 
 ---
 
-## 7. Questão estruturante
+## 9. Questão estruturante
 
 > _"Como a organização interna de um sistema influencia a capacidade de uma equipe de mantê-lo e evoluí-lo ao longo do tempo?"_
 
@@ -353,11 +501,9 @@ Sua reflexão:
 
 ---
 
-## 8. Para as próximas aulas
+## 10. Para as próximas aulas
 
-**Quinta-feira (09/04 — Lab da Semana 5, deslocado):** Definição de Done e testes de aceitação — tragam o backlog da equipe.
-
-**Quinta-feira (23/04 — Lab da Semana 6):** Workshop de arquitetura — vamos mapear a arquitetura do projeto nas 3 camadas e identificar violações dos princípios de hoje. Venha com o repositório aberto.
+**Lab de quinta (Workshop de Arquitetura):** vamos mapear a arquitetura do projeto nas 3 camadas, identificar violações dos princípios de hoje e registrar as decisões da equipe em ADRs na pasta `docs/`. Venha com o repositório aberto.
 
 📖 **Leitura para a Semana 7:** Cap. 14, seções 14.3.1–14.3.3 (C4 Model) e seção 14.4 (C4 vs UML). Traga um esboço mental dos atores externos e blocos técnicos do projeto.
 
@@ -375,5 +521,5 @@ Sua reflexão:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14. | Valente, M. T. Engenharia de Software Moderna, 2020. Cap. 5._

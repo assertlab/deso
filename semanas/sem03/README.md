@@ -1,6 +1,6 @@
 # Semana 3 — Requisitos: do problema ao backlog formal
 
-**CIN0136: Desenvolvimento de Software · CIn-UFPE · 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 Sprint 0 · Semanas 1–5 · Fase: Composição 🎼
 
 ---
@@ -112,4 +112,4 @@ Sem 6+: Construímos 🚀
 
 ---
 
-*CIN0136 — Desenvolvimento de Software · CIn-UFPE · 2026.1*
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE*

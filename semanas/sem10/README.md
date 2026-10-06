@@ -1,7 +1,6 @@
 # Semana 10 — Refactoring, Manutenção e Dívida Técnica
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
-**Sprint 3 — Semanas 10 e 11**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **Sprint 3 — Semanas 10 e 11**
 
 ---
 
@@ -83,5 +82,5 @@ A conexão com a Sinfonia é direta: estamos no movimento de **Ensaio**, que é 
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE*
 *Última atualização: 18/05/2026*

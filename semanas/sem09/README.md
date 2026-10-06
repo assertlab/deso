@@ -1,6 +1,6 @@
 # 📅 Semana 9 — Testes de Software + BDD + Sprint 2 Review
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 
 > **Sprint 2** · Fase Ensaio (Sinfonia) · Features Core do MVP
 
@@ -73,4 +73,4 @@ A Semana 10 traz Refactoring — e refatorar com segurança **exige** testes. A 
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_

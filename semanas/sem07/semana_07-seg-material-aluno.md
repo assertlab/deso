@@ -2,10 +2,7 @@
 
 ## Estilos Arquiteturais: como as grandes decisões moldam o sistema
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
-**27/04/2026 | E132 | 18:50–20:30**
-
-> ⚠️ Aula deslocada: feriado de Tiradentes (20/04). Ocorre em 27/04.
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
@@ -28,6 +25,8 @@ Ao final desta aula, você deve ser capaz de:
 - Descrever pelo menos três estilos arquiteturais (Camadas, SOA, Microsserviços) com suas forças e fraquezas
 - Argumentar os trade-offs de monolito vs. distribuído para um contexto concreto
 - Identificar qual estilo arquitetural descreve melhor o que a sua equipe está construindo
+- Distinguir os três sentidos da palavra *service* (pasta `services/`, SOA, microsserviços)
+- Registrar uma decisão de arquitetura em um ADR (formato Nygard) e relacionar a decisão ao porquê
 
 ---
 
@@ -65,7 +64,7 @@ O Big Ball of Mud não é uma escolha — é o que acontece quando não há esco
 
 **Quando surge:** pressão de entrega alta, sem planejamento arquitetural, equipes que cresceram sem parar para refatorar.
 
-**Por que importa para o seu projeto:** é exatamente o que pode acontecer quando 4 pessoas codam em velocidade alta sem combinarem a estrutura antes. O diagrama C4 que vocês vão produzir amanhã é uma das ferramentas para evitar isso.
+**Por que importa para o seu projeto:** é exatamente o que pode acontecer quando 4 pessoas codam em velocidade alta sem combinarem a estrutura antes. O diagrama C4 que vocês vão produzir na próxima aula é uma das ferramentas para evitar isso. Voltaremos a este anti-padrão no fechamento do arco.
 
 ```
 Você já viu algo parecido com Big Ball of Mud em algum código que escreveu ou viu?
@@ -104,7 +103,7 @@ Estilos arquiteturais são estruturas reconhecíveis que encapsulam um conjunto 
 
 ### 3.1 Arquitetura em Camadas (aprofundamento)
 
-Você já trabalhou com isso nas Semanas 6–7: Apresentação → Negócio → Persistência.
+Você já trabalhou com isso na Semana 6: Apresentação → Negócio → Persistência. É o estilo da estrutura de pastas do Compasso (e do seu projeto): `routes` → `controllers` → `services` → `repositories`.
 
 **O conceito-chave:** camadas fechadas vs. camadas abertas. Uma camada **fechada** exige que todas as requisições passem por ela. Uma camada **aberta** permite que uma requisição "pule" para a camada abaixo diretamente.
 
@@ -148,16 +147,35 @@ SOA organiza o sistema em **serviços independentes** coordenados por um orquest
 
 **Diferença importante:** SOA é comum em sistemas corporativos com serviços granulares e regras de integração complexas — diferente de microsserviços, onde cada serviço é autônomo.
 
+### Pausa de vocabulário: mesma palavra, significados diferentes
+
+A palavra **service** já apareceu em três sentidos, e *component* e *contêiner* vão confundir você na próxima aula.
+
+| Palavra | Contexto | O que significa |
+|---------|----------|-----------------|
+| **service** | Pasta `services/` do Compasso | Camada de lógica de negócio dentro do monolito (ex.: `TimeEntryService`) |
+| | SOA | Unidade autônoma do sistema, orquestrada por um ESB |
+| | Microsserviços | Processo independente, com seu próprio banco de dados |
+| **component** | React/Vite | Bloco de UI reutilizável |
+| | C4 Nível 3 | Módulo dentro de um contêiner |
+| **contêiner** | C4 Nível 2 | Qualquer processo em execução independente (ex.: a API Node.js) |
+| | Docker/DevOps | Ambiente de execução isolado |
+
+> Mesma palavra, outro mundo. Sempre pergunte: **em que contexto?**
+
+```
+Dê um exemplo de cada sentido de "service" no Compasso (ou no seu projeto):
+
+
+```
+
 ### 3.3 Microsserviços
 
 Uma aplicação composta por serviços **pequenos e autônomos**, cada um executando em seu próprio processo e comunicando-se via API (geralmente HTTP/REST ou mensageria).
 
 **Princípio central:** cada microsserviço tem seu próprio banco de dados, sua própria equipe, seu próprio ciclo de deploy.
 
-**O conceito de Bounded Context (DDD):**
-- Cada microsserviço opera dentro de um contexto de domínio bem delimitado
-- Serviços não compartilham estado diretamente — comunicam-se por APIs ou eventos
-- Exemplo: num e-commerce, o Serviço de Pedidos não acessa diretamente o banco do Serviço de Pagamentos
+**Bounded Context (só a intuição, por ora):** cada serviço tem o seu próprio modelo e os seus próprios dados, e os serviços não compartilham estado diretamente: comunicam-se por APIs ou eventos. Exemplo: num e-commerce, o Serviço de Pedidos não acessa diretamente o banco do Serviço de Pagamentos. O conceito vem do Domain-Driven Design (DDD) e será aprofundado na **Semana 11**.
 
 **Forças:** escalabilidade independente por serviço, times autônomos, deploy isolado, tecnologias heterogêneas
 **Fraquezas:** complexidade operacional enorme, consistência de dados distribuída difícil, latência de rede em cada chamada, debugging complexo
@@ -190,9 +208,147 @@ Que trade-off você está conscientemente aceitando:
 
 ```
 
+### 4.1 O Compasso como monolito modular
+
+Imagine que a equipe acabou de criar o **Compasso**, uma plataforma de time tracking. Depois das primeiras reuniões e do levantamento de requisitos, o backend Express nasce organizado em camadas: `routes` → `controllers` → `services` → `repositories`. O resultado é **um único processo** (um monolito modular) que atende o Colaborador e o Gestor: um deploy, um processo, um banco.
+
+```mermaid
+flowchart LR
+    U1["Colaborador"] --> FE["Frontend<br/>React/Vite"]
+    U2["Gestor"] --> FE
+    subgraph API["Compasso: processo único Node.js/Express"]
+        R["routes/"] --> C["controllers/"]
+        C --> S["services/"]
+        S --> REPO["repositories/"]
+    end
+    FE -->|"HTTP/JSON"| R
+    REPO --> DB[("SQLite")]
+```
+
+### 4.2 E se o Compasso fosse distribuído? (hipótese, não é o que vamos construir)
+
+Cada área funcional vira um microsserviço próprio (TimeEntry, Project e User), cada um com o seu banco de dados. O frontend não fala direto com eles: passa por um **API Gateway**. Os mesmos módulos do monolito, agora como **três processos, três bancos e chamadas de rede**.
+
+```mermaid
+flowchart LR
+    FE["Frontend React"] --> GW["API Gateway"]
+    GW --> TE["TimeEntry Service"]
+    GW --> PR["Project Service"]
+    GW --> US["User Service"]
+    TE --> TEDB[("DB TimeEntry")]
+    PR --> PRDB[("DB Project")]
+    US --> USDB[("DB User")]
+    TE -.->|"REST: projeto existe?"| PR
+    TE -.->|"REST: quem é o colaborador?"| US
+```
+
+```
+Pense no custo disso para 4 pessoas em 4 semanas. Que benefícios dos microsserviços
+(times independentes, deploy isolado, tecnologias diferentes) a sua equipe realmente aproveitaria?
+
+
+```
+
+### 4.3 Como escolher: três fatores
+
+| Fator | Pergunta |
+|-------|----------|
+| **Escalabilidade** | Como o sistema vai lidar com o aumento de usuários e dados? |
+| **Manutenibilidade** | O sistema será fácil de modificar e corrigir? |
+| **Requisitos de negócio** | Quais são as necessidades específicas do negócio (funcionalidade, desempenho, segurança)? |
+
+### 4.4 Transições entre estilos
+
+- **Migração gradual:** novos serviços entram em uma nova arquitetura enquanto a antiga continua funcionando. Transição suave, risco menor.
+- **Migração *big bang*:** a arquitetura antiga é substituída de uma só vez. Mais rápida, mas com maior risco de falhas e interrupções.
+
+As arquiteturas **não são estáticas**: evoluem ao longo de longos períodos, à medida que as tecnologias amadurecem, e também durante o curso normal de projetar um sistema.
+
 ---
 
-## 5. Qual estilo descreve o projeto da sua equipe?
+## 5. ADR: registrando uma decisão de arquitetura
+
+Escolhemos monolito modular para o Compasso. **Por quê?** A Segunda Lei da Arquitetura de Software (Richards & Ford) diz:
+
+> **Por que é mais importante do que como.**
+
+Um arquiteto consegue olhar um sistema e ver *como* ele é estruturado, mas dificilmente explica *por que* certas escolhas foram feitas. É para isso que serve o **ADR** (formato Nygard, visto na aula anterior): o Contexto e a Decisão registram o porquê.
+
+```
+# ADR-002: Usar monolito modular
+
+## Status
+Aceito
+
+## Contexto
+O Compasso será construído por uma equipe de 4 pessoas em um prazo de 4 semanas,
+sem necessidade de escala horizontal.
+
+## Decisão
+Vamos construir um monolito modular (Node.js/Express com camadas separadas:
+routes, controllers, services e repositories), porque a equipe é pequena e o
+prazo é curto.
+
+## Consequências
+Mais fácil: um único deploy, simples de desenvolver e testar.
+Mais difícil: migrar para microsserviços no futuro será custoso. Aceitamos esse
+custo para este contexto.
+```
+
+Repare nas Consequências: um ADR bom registra o que a decisão **custa**, não só o que ela ganha. E se o contexto mudar, a decisão pode ser revista: o ADR não é apagado, ganha o status *"substituído por ADR-00X"*, e o histórico do porquê fica preservado. Se um dia migrarmos, a migração gradual (4.4) reduz o risco.
+
+**Agora com o seu projeto:**
+
+```
+Que decisão arquitetural do seu projeto vale um ADR?
+
+Contexto (que forças pesam?):
+
+Decisão (o que e por quê):
+
+Consequências: mais fácil / mais difícil:
+
+```
+
+---
+
+## 6. Da conversa escrita à conversa visual: o C4
+
+O ADR registra o **porquê** das decisões. O **C4 Model** desenha o **quê** e como as partes se conectam: é a mesma conversa, em forma visual.
+
+### 6.1 Suas pastas já são um diagrama C4
+
+A estrutura de pastas que você já usa no backend é, na prática, o que o C4 chama de **nível 3**. Na próxima aula, cada bloco ganha nome e nível.
+
+```mermaid
+flowchart LR
+    subgraph API["Contêiner: API Node.js/Express (C4 N2)"]
+        R["routes/<br/>POST /time-entry"] --> C["controllers/<br/>TimeEntryController"]
+        C --> US["services/<br/>UserService"]
+        C --> TES["services/<br/>TimeEntryService"]
+        TES --> PS["services/<br/>ProjectService"]
+        TES --> REPO["repositories/<br/>TimeEntryRepository"]
+    end
+    REPO --> DB[("SQLite")]
+```
+
+- **Contêiner · C4 N2:** a API Node.js/Express inteira, um processo em execução (a caixa externa).
+- **Componentes · C4 N3:** cada módulo das pastas (controller, service, repository), como `TimeEntryService` (as caixas internas).
+
+### 6.2 Quatro zooms sobre o mesmo sistema
+
+| Nível | Nome | Pergunta |
+|-------|------|----------|
+| N1 | Contexto | Quem usa o sistema e com quais outros sistemas ele conversa? |
+| N2 | Contêineres | Quais processos em execução compõem o sistema? |
+| N3 | Componentes | Quais módulos existem dentro de um contêiner? |
+| N4 | Código | Como um componente é implementado (classes, funções)? |
+
+Foque em N1, N2 e N3; o N4 é só mencionado. E cuidado com o vocabulário: **contêiner não é Docker** e **componente não é React** (veja a tabela de vocabulário acima).
+
+---
+
+## 7. Qual estilo descreve o projeto da sua equipe?
 
 O objetivo desta seção é conectar o conteúdo ao seu projeto real.
 
@@ -231,7 +387,7 @@ Por que não chegamos lá ainda:
 
 ---
 
-## 6. Questão estruturante para reflexão
+## 8. Questão estruturante para reflexão
 
 > _"Se um arquiteto de software não pode justificar por que tomou uma decisão arquitetural, essa decisão é um risco — não uma escolha. Qual decisão arquitetural o seu projeto tomou que você consegue justificar claramente? Qual não consegue?"_
 
@@ -239,7 +395,7 @@ Esta não tem resposta certa. É uma pergunta para levar para a reunião de equi
 
 ---
 
-## 7. Para a próxima aula (Terça-feira)
+## 9. Para a próxima aula
 
 📖 **Leitura obrigatória:** Garcia, Cap. 14, seções 14.3.1–14.3.3 (Estrutura hierárquica do C4 Model) e seção 14.4 (C4 vs UML)
 
@@ -261,5 +417,5 @@ Esta não tem resposta certa. É uma pergunta para levar para a reunião de equi
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE1_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14, seções 14.3–14.5. Valente, M. T. Engenharia de Software Moderna. Cap. 7._

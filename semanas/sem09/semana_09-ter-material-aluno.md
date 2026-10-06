@@ -2,7 +2,7 @@
 
 ## Testes de aceitação + BDD e Gherkin como especificação executável
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **12/05/2026 | E132 | 17:00–18:40**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -290,4 +290,4 @@ Na quinta vocês têm a **Sprint 2 Review com o stakeholder**. Prepare-se:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 9, seção 9.2.4; Cap. 7._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 8 — Testes de Sistema._
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 9, seção 9.2.4; Cap. 7._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 8 — Testes de Sistema._

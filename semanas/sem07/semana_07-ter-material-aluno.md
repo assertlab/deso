@@ -2,10 +2,7 @@
 
 ## C4 Model: desenhando a arquitetura do projeto real
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
-**28/04/2026 | E132 | 17:00–18:40**
-
-> ⚠️ Aula deslocada: feriado de Tiradentes (21/04). Ocorre em 28/04.
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 17:00–18:40**
 
 ---
 
@@ -27,7 +24,8 @@ Ao final desta aula, você deve ser capaz de:
 - Criar um Diagrama de Contexto (N1) para o seu projeto
 - Criar um Diagrama de Contêiner (N2) para o seu projeto com tecnologias explícitas
 - Esboçar um Diagrama de Componente (N3) para o back-end do seu projeto
-- Escolher entre Mermaid e draw.io para manter os diagramas vivos no repositório
+- Escrever os diagramas em Mermaid e mantê-los vivos no repositório
+- Distinguir contêiner C4 de contêiner Docker e componente C4 de componente React
 
 ---
 
@@ -66,6 +64,15 @@ O C4 Model resolve isso com simplicidade: **quatro níveis progressivos de zoom*
 | 3 | Componente | O que há dentro de cada bloco? | Desenvolvedores |
 | 4 | Código | Como as classes se relacionam? | Raramente documentado |
 
+### Antes de seguir: duas palavras com sentido diferente no C4
+
+| No C4 | O que significa | O que NÃO significa | No Compasso |
+|-------|-----------------|---------------------|-------------|
+| **Contêiner** | Qualquer processo em execução independente: uma aplicação ou um banco de dados | **Não é um container Docker** | Frontend (React/Vite), API (Node.js/Express) e banco (SQLite) |
+| **Componente** | Um módulo dentro de um contêiner C4, com uma responsabilidade clara | **Não é um componente React** | Dentro da API: `TimeEntryController`, `TimeEntryService`, `TimeEntryRepository`, `ProjectService` e `UserService` |
+
+Mesmo sem Docker, o Compasso tem três contêineres C4. E a API não tem nenhum componente React, mas tem cinco componentes C4.
+
 **Regra prática para o seu projeto:** Níveis 1, 2 e 3 são suficientes. O Nível 4 é o código em si — se o código precisar de um diagrama para ser entendido, o problema provavelmente é o código, não a falta de diagrama.
 
 ---
@@ -83,13 +90,23 @@ O C4 Model resolve isso com simplicidade: **quatro níveis progressivos de zoom*
 
 Este é o diagrama que você mostra ao **parceiro na Sprint Review**. Qualquer pessoa deve conseguir entender sem saber programar.
 
-### Exemplo: Sistema de Gestão de Tarefas para ONG
+### Exemplo: o Compasso
 
+O **Compasso** é uma plataforma de time tracking: o Colaborador registra as horas trabalhadas por projeto, e o Gestor aprova horas e vê relatórios por projeto. Duas pessoas, uma caixa:
+
+```mermaid
+C4Context
+  title Diagrama de Contexto — Compasso
+
+  Person(colaborador, "Colaborador", "Registra as horas trabalhadas por projeto")
+  Person(gestor, "Gestor", "Aprova horas e visualiza relatórios por projeto")
+  System(compasso, "Compasso", "Plataforma de time tracking")
+
+  Rel(colaborador, compasso, "Registra horas")
+  Rel(gestor, compasso, "Aprova horas e consulta relatórios")
 ```
-[Voluntário] ──usa──► [Sistema de Gestão de Tarefas] ◄──usa── [Coordenador]
-                                    │
-                                    └──envia via── [API de E-mail (externo)]
-```
+
+Nesta versão, o Compasso não tem sistema externo. Se passasse a avisar o Gestor por e-mail, uma nova caixa (um sistema externo de e-mail) apareceria no diagrama, e nada mais mudaria no Nível 1.
 
 **Agora faça para o SEU projeto:**
 
@@ -127,24 +144,28 @@ Sistemas externos integrados (APIs, serviços de terceiros):
 
 **Regra de ouro:** sempre indique a tecnologia. "Backend" não é suficiente — "Backend API (Node.js/Express)" é.
 
-### Exemplo: o mesmo sistema de tarefas
+### Exemplo: o Compasso
 
-```
-[Coordenador] ──HTTPS──► [Frontend (React/Vite)]
-[Voluntário]  ──HTTPS──► [Frontend (React/Vite)]
-                                  │
-                              HTTP/REST
-                                  │
-                                  ▼
-                        [Backend API (Node.js/Express)]
-                                  │
-                          leitura e escrita
-                                  │
-                                  ▼
-                        [Banco de Dados (SQLite)]
+```mermaid
+C4Container
+  title Diagrama de Contêineres — Compasso
 
-                        [Backend API] ──SMTP──► [API de E-mail (externo)]
+  Person(colaborador, "Colaborador", "Registra horas")
+  Person(gestor, "Gestor", "Aprova horas e consulta relatórios")
+
+  System_Boundary(compasso, "Compasso") {
+    Container(web, "Frontend", "React/Vite", "Telas de registro de horas, aprovação e relatórios")
+    Container(api, "API", "Node.js/Express", "Regras de negócio e endpoints HTTP")
+    ContainerDb(db, "Banco de dados", "SQLite", "Entradas de horas, projetos e usuários")
+  }
+
+  Rel(colaborador, web, "Usa", "HTTPS")
+  Rel(gestor, web, "Usa", "HTTPS")
+  Rel(web, api, "Chama", "JSON/HTTP")
+  Rel(api, db, "Lê e escreve", "SQL")
 ```
+
+Repare que cada caixa diz a tecnologia. Repare também que existe **uma única API**: é a decisão registrada no ADR-002 (monolito modular). Um sistema maior poderia ter vários microsserviços neste nível.
 
 **Agora faça para o SEU projeto:**
 
@@ -187,6 +208,78 @@ Normalmente escolhemos o **back-end** para detalhar no N3, porque é onde a lóg
 
 **Dica:** se a estrutura de pastas do seu projeto reflete o diagrama de componentes, você já tem metade da documentação feita.
 
+### Exemplo: dentro da API do Compasso
+
+```mermaid
+C4Component
+  title Diagrama de Componentes — API Node.js do Compasso
+
+  Container(web, "Frontend", "React/Vite", "Interface do usuário")
+  ContainerDb(db, "Banco de dados", "SQLite", "Persistência")
+
+  Container_Boundary(api, "API Node.js/Express") {
+    Component(tec, "TimeEntryController", "Controller", "Recebe a requisição POST /time-entry")
+    Component(tes, "TimeEntryService", "Service", "Valida regras de negócio: horas positivas e data válida")
+    Component(ter, "TimeEntryRepository", "Repository", "Persiste as entradas no SQLite")
+    Component(ps, "ProjectService", "Service", "Verifica se o projeto existe e pertence ao colaborador")
+    Component(us, "UserService", "Service", "Autentica o colaborador")
+  }
+
+  Rel(web, tec, "POST /time-entry", "JSON/HTTP")
+  Rel(tec, us, "Autentica")
+  Rel(tec, tes, "Delega o registro")
+  Rel(tes, ps, "Verifica o projeto")
+  Rel(tes, ter, "Salva a entrada")
+  Rel(ter, db, "INSERT", "SQL")
+```
+
+Todos esses componentes vivem dentro do contêiner API: é o zoom na caixa "API" do diagrama anterior. Cada componente tem uma frase de responsabilidade. **Se você não consegue escrever essa frase, o módulo provavelmente mistura assuntos** (coesão baixa, vista na Semana 6).
+
+### Dos componentes à requisição real: `POST /time-entry`
+
+O C4 mostra **quem existe**. O diagrama de sequência mostra **quem chama quem** em uma requisição real.
+
+```mermaid
+sequenceDiagram
+  actor C as Colaborador
+  participant TC as TimeEntryController
+  participant TS as TimeEntryService
+  participant TR as TimeEntryRepository
+  participant DB as SQLite
+
+  C->>TC: POST /time-entry (projeto, data, horas)
+  TC->>TS: registrarEntrada(dados)
+  TS->>TS: valida horas positivas e data válida
+  TS->>TR: criar(entrada)
+  TR->>DB: INSERT INTO time_entries
+  DB-->>TR: id gerado
+  TR-->>TS: entrada criada
+  TS-->>TC: entrada criada
+  TC-->>C: 201 Created
+```
+
+> 💡 Versão simplificada: `ProjectService` e `UserService` também participam (veja o diagrama de componentes).
+
+### E o Nível 4 (código)?
+
+Raramente documentado. Faz sentido para algoritmos muito complexos, padrões de design não óbvios ou integrações específicas com bibliotecas externas. Na prática, o código é a documentação. Um exemplo para o `TimeEntryService`, que depende de uma abstração do repositório, e não de uma implementação ligada ao SQLite (Princípio da Inversão de Dependência):
+
+```mermaid
+classDiagram
+  class TimeEntryService {
+    +registrar(entrada)
+  }
+  class ITimeEntryRepository {
+    <<interface>>
+    +criar(entrada)
+  }
+  class TimeEntryRepository {
+    +criar(entrada)
+  }
+  TimeEntryService --> ITimeEntryRepository : depende de
+  TimeEntryRepository ..|> ITimeEntryRepository : implementa
+```
+
 **Para o seu projeto — dentro do back-end:**
 
 ```
@@ -212,36 +305,21 @@ alocada a nenhum componente? O que você faria com ela?
 
 ---
 
-## 7. Ferramentas: Mermaid vs. draw.io
+## 7. Ferramenta: Mermaid
 
-### Mermaid
+Usamos **Mermaid**: diagramas escritos como texto, que vivem no repositório, versionam junto com o código e qualquer PR pode atualizar. O GitHub renderiza blocos ` ```mermaid ` direto no Markdown.
 
-Diagramas escritos como texto — integra diretamente com o GitHub Markdown.
+| Tipo de diagrama | Formato Mermaid |
+|------------------|-----------------|
+| C4 Contexto (N1) | `C4Context` |
+| C4 Contêiner (N2) | `C4Container` |
+| C4 Componente (N3) | `C4Component` |
+| Sequência (uma requisição) | `sequenceDiagram` |
+| Fluxo ou processo | `flowchart TD` ou `flowchart LR` |
 
-```mermaid
-graph TD
-    U[Usuário] -->|HTTPS| F[Frontend - React/Vite]
-    F -->|HTTP/REST| B[Backend API - Node.js/Express]
-    B -->|SQL| D[(Banco de Dados - SQLite)]
-```
+**Como trabalhar:** escreva o código no [Mermaid Live Editor](https://mermaid.live), confira o resultado, e cole o bloco no `README.md` ou em `docs/`. A sintaxe C4 do Mermaid é considerada experimental: se algum diagrama não renderizar no seu ambiente, teste no editor online.
 
-**Vantagem:** vive no repositório, versiona junto com o código, qualquer PR pode atualizar o diagrama.
-**Desvantagem:** layout automático nem sempre fica bonito.
-
-### draw.io
-
-Interface gráfica drag-and-drop. Exporta SVG ou PNG para o repositório.
-
-**Vantagem:** mais controle visual, diagramas mais bonitos para apresentar ao stakeholder.
-**Desvantagem:** o arquivo `.drawio` não é legível como texto — versionar mudanças é opaco.
-
-**Recomendação para o projeto:**
-
-| Nível | Ferramenta sugerida | Por quê |
-|-------|--------------------|---------| 
-| N1 (Contexto) | draw.io ou Mermaid | Mostrado ao parceiro — visual importa |
-| N2 (Contêiner) | Mermaid | Versiona bem, fácil de manter |
-| N3 (Componente) | Mermaid | Atualiza junto com o código |
+**Desvantagem:** o layout automático nem sempre fica bonito. Para o N1 que será mostrado ao parceiro, vale conferir o resultado com cuidado e, se preciso, simplificar o diagrama.
 
 ---
 
@@ -253,13 +331,28 @@ Interface gráfica drag-and-drop. Exporta SVG ou PNG para o repositório.
 | Curva de aprendizado | Baixa | Alta |
 | Legibilidade para não-técnicos | Alta | Baixa |
 | Adequado para times ágeis | Sim | Com ressalvas |
-| Ferramentas | Mermaid, draw.io | Enterprise Architect, Astah |
+| Ferramentas | Mermaid | Enterprise Architect, Astah |
 
 Para o nosso contexto — projeto iterativo, equipe pequena, arquitetura em evolução — **C4 é a escolha certa**. UML faz sentido em projetos com requisitos estáveis que exigem especificação técnica precisa.
 
 ---
 
-## 9. Reflexão: a arquitetura que vocês planejaram vs. a que vocês têm
+## 9. Fechando o arco: sem mapa, o sistema vira um Big Ball of Mud
+
+Na aula de estilos arquiteturais, vimos o **Big Ball of Mud**: código desorganizado, acoplamento excessivo, baixa coesão, difícil de manter e de evoluir. Ele costuma emergir quando equipes trabalham sob pressão e sem planejamento.
+
+| Big Ball of Mud | O Compasso, com mapa |
+|-----------------|----------------------|
+| Código desorganizado, sem estrutura clara | Camadas: `routes` → `controllers` → `services` → `repositories` |
+| Acoplamento excessivo e baixa coesão | ADRs: SQLite (001) e monolito modular (002) |
+| Difícil de manter e de evoluir | Diagramas C4 (N1 a N3) em `docs/` |
+| Cresce sem controle, sob pressão e sem planejamento | Quem chega à equipe sabe onde mexer |
+
+Para evitar o Big Ball of Mud: modularização, separação de responsabilidades e uma documentação viva, o **mapa** que a equipe consulta e atualiza.
+
+---
+
+## 10. Reflexão: a arquitetura que vocês planejaram vs. a que vocês têm
 
 Na Sprint Week, vocês codaram sob pressão. Talvez algumas decisões arquiteturais foram feitas no momento, sem discussão.
 
@@ -284,7 +377,7 @@ Responda:
 
 ---
 
-## 10. Questão estruturante para reflexão
+## 11. Questão estruturante para reflexão
 
 > _"Considerando que a arquitetura de um software evolui ao longo do desenvolvimento, qual é o valor de documentá-la desde o início do projeto?"_
 
@@ -298,9 +391,9 @@ Resposta revisada (se mudou):
 
 ---
 
-## 11. Para a próxima semana (Quinta-feira — Sprint 1 Review)
+## 12. Para o próximo encontro (lab de quinta — Sprint 1 Review)
 
-Na **quinta-feira (30/04)**, vocês têm o **Sprint 1 Review com o parceiro**. Isso significa:
+Na **quinta-feira**, vocês têm o **Sprint 1 Review com o parceiro**. Isso significa:
 
 - O **Diagrama de Contexto (N1)** deve estar pronto para mostrar ao parceiro — ele não sabe programar, mas consegue validar se os atores e conexões fazem sentido
 - O **Diagrama de Contêiner (N2)** deve estar no repositório — commitado, não só no papel
@@ -322,5 +415,5 @@ Na **quinta-feira (30/04)**, vocês têm o **Sprint 1 Review com o parceiro**. I
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
 _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14, seções 14.3–14.4. Valente, M. T. Engenharia de Software Moderna. Cap. 7._

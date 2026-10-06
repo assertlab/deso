@@ -1,6 +1,6 @@
 # Semana 2 — Modelos de Processo de Software
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE**
 Sprint 0 · Semanas 1–5 · 🎼 Sinfonia: Exposição
 
 ---
@@ -114,4 +114,4 @@ O processo que a equipe define nesta semana vai ditar como as próximas 8 semana
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE*

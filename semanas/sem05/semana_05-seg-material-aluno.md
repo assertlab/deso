@@ -2,7 +2,7 @@
 
 ## O que é qualidade de software? (Não é só "funcionar")
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE | 2026.1** **30/03/2026 | E132 | 18:50–20:30**
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |** **30/03/2026 | E132 | 18:50–20:30**
 
 ---
 
