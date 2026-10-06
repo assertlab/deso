@@ -1,16 +1,18 @@
 # Semana 4 — Segunda-feira
 
-## Strateegia: visão do escopo do projeto
+## Escopo do Produto Assistido por IA — Lab prático (caso PetFood)
 
 **CIN0136: Desenvolvimento de Software | CIn-UFPE |** **E132 | 18:50–20:30**
 
 ---
 
-## Sem leitura prévia formal para hoje
+## Leitura Prévia
 
-Você não precisa chegar com nenhuma leitura nova — o insumo desta aula é o que você já sabe: as conversas com o stakeholder, os requisitos levantados na semana passada e a visão que você tem do projeto da sua equipe.
+📖 _Engenharia de Software em Dimensões_ — Cap. 6, seções 6.1–6.2 (elicitação, vieses cognitivos) — revisão da Semana 3 📖 _Engenharia de Software Moderna_ (Valente) — Cap. 3 (MVP, escopo, personas)
 
-Se quiser revisar antes de vir, releia os slides das aulas L07 (Requisitos) e L08 (User Stories) da Semana 3.
+**Traga para a aula:** seu material da Semana 3 e um notebook com acesso a um assistente de IA (Claude ou equivalente).
+
+> ⚠️ **Regra de ouro desta aula:** a IA ajuda a **explorar e estruturar** o espaço do problema — mas o **recorte do escopo** (o que fica dentro e o que fica fora do MVP) é decisão da equipe, defendida com argumento. A IA amplia sua visão; ela não decide o produto por você.
 
 ---
 
@@ -18,136 +20,160 @@ Se quiser revisar antes de vir, releia os slides das aulas L07 (Requisitos) e L0
 
 Ao final desta aula, você deve ser capaz de:
 
-- Descrever em até 5 frases o escopo essencial do seu projeto, identificando o problema, as personas e o valor entregue
-- Reconhecer as divergências de visão dentro da sua equipe como informação útil, não como problema
-- Conectar o que você sabe sobre requisitos funcionais, não funcionais e técnicas de elicitação ao contexto real do seu projeto
+- Reconhecer que a equipe **não enxerga o mesmo escopo** antes de alinhá-lo explicitamente
+- Usar IA para **explorar o espaço do problema** — personas, cenários e o problema por trás do problema — sem se ancorar na primeira ideia
+- Construir um **Canvas de Visão enxuto** assistido por IA (problema, personas, proposta de valor)
+- Definir a **fronteira do MVP** (dentro/fora) com justificativa — o passo que não se terceiriza
+- Iniciar a **instrução de projeto** da equipe, que será completada na aula de terça
 
 ---
 
-## 1. Por que começar pela visão, não pelas funcionalidades?
+## 1. Divergência às cegas (antes de qualquer IA)
 
-Fred Brooks escreveu em 1975 que a parte mais difícil da construção de um software é definir o que construir. Cinquenta anos depois, a afirmação continua sendo o maior fonte de retrabalho em projetos de software.
+Antes de abrir qualquer assistente, um experimento. **Sozinho, sem conversar com ninguém e sem IA**, escreva em 3–4 frases qual é o escopo essencial do PetFood: que problema resolve, para quem, e qual o valor entregue.
 
-O erro mais comum nas primeiras semanas de um projeto não é técnico. É este: cada membro da equipe tem uma imagem ligeiramente diferente do que está sendo construído — e ninguém percebe. O desenvolvimento começa, as divergências aparecem só quando as peças precisam se encaixar, e o retrabalho é caro.
+```
+Sua visão do escopo do PetFood (individual, sem consultar ninguém):
 
-A dinâmica de hoje existe para surfacar essas divergências enquanto ainda é barato corrigi-las.
+
+
+
+```
+
+Agora comparem, em equipe. Quantas visões diferentes apareceram?
+
+```
+O que divergiu entre as visões da equipe:
+
+
+
+```
+
+> A lição: **"escopo" não é óbvio.** Mesmo em uma equipe pequena, cada pessoa enxerga um produto ligeiramente diferente. Alinhar essa visão é trabalho de engenharia — e é por isso que existe um artefato para isso (o Canvas de Visão). Se você deixar a IA falar primeiro, todo mundo se ancora na versão dela e essa divergência valiosa desaparece. Por isso pensamos sozinhos primeiro.
 
 ---
 
-## 2. O que é escopo?
+## 2. Explorar o espaço do problema com IA
 
-Escopo é o conjunto de decisões que definem o que o sistema **faz** e o que ele **não faz**. Um escopo bem definido responde a três perguntas:
+Agora a IA entra — não para decidir o escopo, mas para **ampliar** o que a equipe consegue enxergar. Um bom assistente, bem instruído, funciona como um parceiro que pergunta "e você pensou em...?".
 
-| Pergunta | O que define |
+### Notas fictícias do "stakeholder PetFood" (seu insumo)
+
+> _"A gente é uma ONG que recebe doações de ração e distribui para famílias de baixa renda que têm pets. Hoje controlamos tudo no WhatsApp e numa planilha, e vive dando confusão: a família diz que não recebeu, a gente não sabe quanto tem em estoque, e os doadores querem saber pra onde foi a ração deles. Precisava de um jeito de registrar as doações que chegam, ver quanto tem em estoque, e agendar as retiradas pelas famílias. Ah, e o doador adoraria ver que a doação dele foi entregue."_
+
+Peça ao assistente que, a partir dessas notas, **levante** (não decida):
+
+- Personas que talvez a equipe não tenha considerado (quem mais toca esse sistema?)
+- Cenários de uso além do óbvio
+- O "problema por trás do problema" (o que a ONG realmente quer resolver?)
+
+Anote 2 coisas que a IA levantou e que a equipe **não** tinha pensado:
+
+```
+1.
+
+2.
+```
+
+> 🧠 **Conexão com os vieses do Cap. 6:** a IA mal instruída sofre de **ancoragem** — fixa na primeira interpretação — e reforça seu **viés de confirmação** (concorda com o que você já pensava). Peça explicitamente que ela **desafie** sua visão, traga o que está faltando, aponte quem você esqueceu. É assim que ela vira ferramenta de ampliação, não espelho.
+
+---
+
+## 3. Canvas de Visão enxuto (assistido)
+
+Consolide o que emergiu em um **Canvas de Visão enxuto**. A IA ajuda a estruturar e redigir; a equipe decide o conteúdo.
+
+```
+CANVAS DE VISÃO — PetFood
+
+PROBLEMA
+(qual dor real da ONG estamos resolvendo?)
+
+
+PERSONAS PRINCIPAIS
+(quem usa o sistema — e o papel de cada um)
+
+
+PROPOSTA DE VALOR
+(por que esse produto é melhor que o WhatsApp + planilha de hoje?)
+
+
+```
+
+> A IA é boa em transformar suas ideias soltas em texto organizado. Use-a para isso. Mas leia cada linha e pergunte: _"isso é verdade sobre o PetFood, ou é uma suposição genérica que ela inventou?"_ Corte o que for genérico.
+
+---
+
+## 4. A fronteira do MVP — o passo que não se terceiriza
+
+Aqui está a decisão mais importante da aula, e a que **você não pode pedir pronta à IA**: o que entra no MVP e o que fica de fora.
+
+Preencha em equipe. Cada item precisa de uma **justificativa de uma linha** — por que dentro, ou por que fora _por enquanto_.
+
+| DENTRO do MVP | Por quê? |
 |---|---|
-| **Para quem?** | As personas — quem usa o sistema e com que objetivos |
-| **Qual problema?** | O problema central que o sistema resolve |
-| **Qual valor?** | O benefício concreto que a organização parceira recebe |
+| | |
+| | |
+| | |
 
-Um escopo mal definido é reconhecível: ele usa "usuário" genérico, descreve funcionalidades técnicas em vez de valor, e não menciona o que fica **fora** do sistema.
+| FORA (por enquanto) | Por quê? |
+|---|---|
+| | |
+| | |
+| | |
 
-**Exemplo fraco de escopo:**
-> "Um sistema web para gerenciar informações."
+Agora use a IA como **advogado do diabo do recorte**: peça que ela questione suas escolhas ("por que rastrear a entrega ao doador está fora, se foi algo que o stakeholder pediu?"). Você **não precisa concordar** — o objetivo é estressar sua justificativa.
 
-**Exemplo forte de escopo:**
-> "Um sistema que permite à coordenação do projeto X registrar, acompanhar e exportar relatórios de presença dos participantes, eliminando o controle manual em planilhas e reduzindo o tempo de consolidação de dados de 3 horas para menos de 15 minutos por evento."
+```
+O contra-argumento mais forte que a IA levantou sobre nossa fronteira:
 
-A diferença? O segundo tem persona identificada, problema concreto, valor mensurável.
+
+
+Mantivemos ou mudamos a decisão? Por quê?
+
+```
+
+> 🎯 Um bom recorte de MVP é aquele que você **consegue defender**. Se a IA derrubou sua justificativa com um argumento, ou a justificativa era fraca (revise) ou você precisa de mais informação do stakeholder (anote como pergunta em aberto).
 
 ---
 
-## 3. A dinâmica de hoje: Ponto de Debate no Strateegia
+## 5. Semente da instrução de projeto
 
-Você vai acessar a plataforma **strateegia.digital** e responder à **Questão 1** do ponto de debate da sua equipe.
+Amanhã (terça) sua equipe vai gerar o backlog com apoio de IA — e para isso precisará de uma **instrução de projeto**: um bloco de contexto reutilizável que "ensina" o assistente a trabalhar do jeito da equipe. Ela **começa hoje**.
 
-### O que você precisa responder
-
-> *Descreva, com suas próprias palavras e em até 5 frases, o escopo essencial do nosso projeto: qual problema ele resolve, para quem, e qual é o valor principal que deve entregar ao stakeholder. Seja específico — "usuário" genérico não conta.*
-
-### Como responder bem
-
-Antes de digitar, pense nas três perguntas do escopo:
+Registre as primeiras linhas com o que você já sabe:
 
 ```
-Para quem é o sistema?
-→ Não escreva "usuário". Pense nas personas reais que conversaram com vocês.
+CONTEXTO DO PROJETO
+- Produto: PetFood — [uma frase do canvas]
+- Personas principais: [do canvas]
+- Fronteira do MVP: [resumo do que está dentro]
 
-
-Qual é o problema central?
-→ O que acontece hoje sem o sistema? Qual é o custo desse problema?
-
-
-Qual é o valor entregue?
-→ O que muda concretamente para o parceiro depois que o sistema existir?
-
-
-```
-
-### O que NÃO fazer
-
-- Não descreva funcionalidades técnicas ("terá tela de login, cadastro e dashboard")
-- Não use linguagem vaga ("vai melhorar os processos da organização")
-- Não repita o que o parceiro pediu palavra por palavra — traduza com suas palavras
-
----
-
-## 4. Depois de todos responderem: leitura coletiva
-
-Quando o professor sinalizar, a turma vai ler as respostas de todos os membros da equipe juntos.
-
-Use este espaço para anotar o que chamou sua atenção:
-
-```
-O que apareceu na minha resposta e não apareceu nas outras?
-
-
-O que apareceu nas respostas dos colegas e eu não havia pensado?
-
-
-Qual é a maior divergência de visão dentro da equipe?
-
-
+(amanhã completaremos com: papel do assistente, formato de história,
+INVEST, formato Gherkin, o que não fazer)
 ```
 
 ---
 
-## 5. Questão estruturante para reflexão
+## 6. Entregáveis do lab
 
-> *"Se cada pessoa da sua equipe tem uma imagem ligeiramente diferente do que está sendo construído, qual é o risco concreto para o desenvolvimento? O que precisaria acontecer para que vocês saíssem desta aula com uma visão alinhada?"*
+Ao final da aula, sua equipe deve ter:
 
-Anote sua perspectiva antes da discussão:
+1. ✅ **Canvas de Visão PetFood enxuto** (problema, personas, proposta de valor)
+2. ✅ **Fronteira do MVP** (dentro/fora) com justificativa por item
+3. ✅ **Esboço inicial da instrução de projeto** (contexto do produto)
 
-```
-Sua resposta inicial:
-
-
-```
+> 💾 Guarde esses três artefatos: eles são o **insumo da aula de terça**, onde viram o backlog.
 
 ---
 
-## 6. Conexão com as semanas anteriores
+## 7. Para a próxima aula (Terça-feira)
 
-Nas últimas três semanas, você praticou técnicas que alimentam diretamente o que acontece hoje:
+Amanhã pegamos o Canvas de Visão e a fronteira do MVP definidos hoje e os traduzimos em um **backlog de histórias de usuário** — com INVEST, Gherkin e priorização — tudo assistido por IA.
 
-| Semana | O que você fez | Como se conecta hoje |
-|---|---|---|
-| Semana 1 | Primeiro contato com o stakeholder | As personas que aparecem no escopo vieram desse encontro |
-| Semana 3 (Seg) | Levantamento de requisitos funcionais e não funcionais | O escopo delimita quais requisitos entram no sistema |
-| Semana 3 (Ter) | User stories com critérios INVEST e MoSCoW | Amanhã vocês vão escrever as primeiras stories do backlog real |
+**Traga:** os três entregáveis de hoje e o mesmo acesso ao assistente de IA.
 
----
-
-## 7. Para amanhã (Terça-feira)
-
-Não há leitura prévia formal — mas há uma tarefa de reflexão:
-
-Antes de vir para a aula de terça, responda mentalmente:
-
-- Quais são os **3 Épicos** principais do seu projeto? (as grandes áreas funcionais)
-- Qual funcionalidade, se entregue sozinha, já entregaria valor ao parceiro?
-- Alguma user story que você escreveu na Semana 3 se aplica ao projeto real da equipe?
-
-Na terça, você vai escrever user stories reais — uma por resposta no Strateegia.
+> 🔎 A tarefa de transferência para o **projeto real** virá na terça. Adianto o espírito dela: como o escopo do seu projeto real **já foi aprovado pelo stakeholder** (Semana 2), você não vai recriá-lo — vai **auditá-lo e refiná-lo** com o processo que treinou aqui.
 
 ---
 
@@ -163,5 +189,4 @@ Na terça, você vai escrever user stories reais — uma por resposta no Stratee
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1*
-*Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 6 e 7. | Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3.*
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_ _Referências: Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 6 (seções 6.1–6.2)._ _Valente, M. T. Engenharia de Software Moderna. 2022. Cap. 3 — Requisitos._

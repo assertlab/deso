@@ -1,94 +1,87 @@
-# Semana 4 — Strateegia: escopo e backlog do produto
+# Semana 4 — Escopo e Backlog do Produto
 
-**CIN0136: Desenvolvimento de Software | CIn-UFPE**
-**Período:** 23 a 26 de março de 2026
+**CIN0136: Desenvolvimento de Software | CIn-UFPE |**
+**Fase da Sinfonia:** 🎼 Composição (Semanas 3–5) | **Sprint:** Sprint 0
 
----
-
-## Aulas desta semana
-
-| Dia | Data | Tipo | Tema | Materiais |
-|---|---|---|---|---|
-| Segunda | 23/03 | Teórica (2h) | Strateegia: visão do escopo do projeto | [Material do aluno](semana_04-seg-material-aluno.md) · [Guia do professor](semana_04-seg-material-professor.md) |
-| Terça | 24/03 | Teórica (2h) | Strateegia: construção inicial do backlog | [Material do aluno](semana_04-ter-material-aluno.md) · [Guia do professor](semana_04-ter-material-professor.md) |
-| Quinta | 26/03 | Lab (4h) | Refinamento do backlog com feedback dos stakeholders | — *(sessão prática com stakeholder, sem material de aula)* |
+> Nesta semana o projeto ganha forma: saímos de "entendemos o problema" para "sabemos o que vamos construir e em que ordem". A visão de escopo é alinhada, o backlog inicial nasce com histórias de qualidade e o stakeholder valida o rumo.
 
 ---
 
-## O que você vai fazer esta semana
+## Aulas da semana
 
-Esta semana não tem aula expositiva. Em vez disso, você vai trabalhar diretamente no seu projeto, usando a plataforma **strateegia.digital** como espaço colaborativo de reflexão e construção.
+| Dia | Horário | Tema | Materiais |
+|-----|---------|------|-----------|
+| 🔵 **Segunda** | 18:50–20:30 | **Escopo do Produto Assistido por IA** — lab prático (caso PetFood) · *zoom out* | [Material do Aluno](./semana_04-seg-material-aluno.md) · Guia do Professor *(privado)* |
+| 🟢 **Terça** | 17:00–18:40 | **Engenharia de Requisitos Assistida por IA** — lab prático (caso PetFood) · *zoom in* | [Material do Aluno](./semana_04-ter-material-aluno.md) · Guia do Professor *(privado)* |
+| 🟠 **Quinta** | 17:00–20:30 | 👤 Refinamento do backlog com feedback dos stakeholders | *Sessão com stakeholder — Guia do Professor (privado)* |
 
-O ponto de debate da sua equipe tem duas questões:
-
-**Questão 1 — Segunda-feira**
-> Descreva, em até 5 frases, o escopo essencial do projeto: qual problema ele resolve, para quem, e qual valor entrega ao stakeholder.
-
-**Questão 2 — Terça-feira**
-> Escreva user stories do projeto real — uma por resposta. Cada story deve incluir o épico, avaliação INVEST e critério de aceitação em Gherkin com caminho feliz e caso de falha.
-
-Na quinta, cada equipe apresenta os resultados ao stakeholder e refina o backlog com base no feedback.
+> ⚙️ **Mudança em relação ao plano original:** as duas dinâmicas de Strateegia (visão de escopo na segunda, backlog na terça) foram substituídas por um **arco de duas aulas assistidas por IA**. Segunda faz o *zoom out* (Canvas de Visão + fronteira do MVP); terça faz o *zoom in* (backlog de histórias com INVEST, Gherkin e MoSCoW). O output da segunda é o insumo da terça. O objetivo pedagógico é o mesmo do plano original — visão de escopo e backlog de qualidade — mas agora treinando o uso **crítico** de IA. Tudo é treinado em PetFood; o projeto real vira tarefa de transferência.
 
 ---
 
 ## Leituras prévias por dia
 
-| Dia | Leitura prévia |
-|---|---|
-| Segunda | Nenhuma leitura nova — revise os slides L07 (Requisitos) e L08 (User Stories) da Semana 3 se precisar |
-| Terça | Nenhuma leitura nova — revise os slides L08, especialmente a seção de critérios de aceitação e Gherkin |
-| Quinta | Nenhuma — prepare a síntese da visão de escopo (Questão 1) e selecione as 5–8 stories mais representativas para apresentar ao stakeholder |
+| Dia | Leitura | Observação |
+|-----|---------|------------|
+| 🔵 Segunda | _Eng. de Software em Dimensões_ — Cap. 6, seções 6.1–6.2 · _Eng. de Software Moderna_ (Valente) — Cap. 3 | Elicitação, vieses cognitivos, MVP, personas |
+| 🟢 Terça | _Eng. de Software em Dimensões_ — Cap. 7, seções 7.1.2–7.2.4 · _Eng. de Software Moderna_ (Valente) — Cap. 3 | **Revisão** da Semana 3 (User Stories, INVEST, MoSCoW, priorização) |
+| 🟠 Quinta | — | Sessão com stakeholder; sem leitura prévia formal |
+
+> 🧰 **Para segunda e terça, traga:** seu material da Semana 3 (formato de user story, INVEST, exemplo de Gherkin) **e** acesso a um assistente de IA (Claude ou equivalente). Na terça, traga também os três artefatos produzidos na segunda (Canvas de Visão, fronteira do MVP, esboço da instrução de projeto).
 
 ---
 
 ## Objetivos da semana
 
-Ao final desta semana, você deve ser capaz de:
+Ao final da Semana 4, sua equipe deve ser capaz de:
 
-- Articular em até 5 frases o escopo essencial do projeto com persona identificada, problema concreto e valor verificável
-- Escrever user stories no formato padrão com avaliação INVEST e critérios de aceitação em Gherkin
-- Identificar e reconciliar divergências de visão dentro da equipe
-- Apresentar o backlog inicial ao stakeholder e coletar feedback estruturado
+- Construir um **Canvas de Visão enxuto** assistido por IA (problema, personas, proposta de valor) e recortar a **fronteira do MVP** com justificativa
+- Distinguir o uso **ingênuo** do uso **engenheirado** de IA em escopo e requisitos
+- Manter uma **instrução de projeto** reutilizável que padronize os artefatos da equipe (contexto, formato de história, INVEST, Gherkin)
+- Produzir um **backlog inicial de qualidade**: histórias no formato correto, avaliadas por INVEST, com critérios de aceitação em Gherkin (incluindo caminho triste) e priorizadas por MoSCoW
+- Levar ao stakeholder **boas perguntas em aberto** — as lacunas reveladas na exploração e na auditoria assistidas
+- **Refinar o backlog** com base no feedback real do stakeholder e consolidá-lo na ferramenta de gestão
 
 ---
 
-## Entregável da semana
+## Entregáveis com prazo
 
-| Entregável | Prazo | Onde entregar |
-|---|---|---|
-| Backlog refinado e priorizado no Jira, com feedback do stakeholder registrado | Domingo, 29/03 | Jira da equipe + registro de reunião no repositório |
+| Entregável | Quando | Onde |
+|------------|--------|------|
+| Canvas de Visão PetFood + fronteira do MVP + esboço da instrução de projeto | Ao final da aula de segunda | Produzido no lab |
+| Instrução de projeto completa + 3–4 histórias PetFood (INVEST + Gherkin + MoSCoW) | Ao final da aula de terça | Produzido no lab |
+| **Tarefa de transferência:** auditoria do escopo **real** aprovado + backlog inicial do projeto real (5–8 histórias com INVEST, Gherkin com caso de falha, MoSCoW) + perguntas em aberto | **Antes da sessão de quinta** | Repositório / ferramenta de gestão da equipe |
+| Backlog refinado com feedback do stakeholder + priorização MoSCoW inicial | Ao final da quinta | GitHub Projects ou Jira |
 
-O backlog deve conter:
-- Ao menos 8 user stories com persona, INVEST e critérios de aceitação em Gherkin
-- Priorização MoSCoW inicial (pelo menos Must Have e Won't Have identificados)
-- Registro das divergências identificadas nas dinâmicas e como foram resolvidas
-- Registro do feedback do stakeholder na quinta-feira
+> ⚠️ A tarefa de transferência não é opcional nem "extra": ela é o **insumo da sessão de quinta**. Sem backlog inicial e sem perguntas em aberto, a conversa de refinamento com o stakeholder perde a maior parte do seu valor.
 
 ---
 
 ## Recursos relevantes
 
-- 🌐 [strateegia.digital](https://strateegia.digital) — plataforma usada nas dinâmicas de segunda e terça
-- 📖 Garcia, *Engenharia de Software em Dimensões* — Cap. 6 (seções 6.1–6.2) e Cap. 7 (seções 7.1.2–7.2.4)
-- 📖 Valente, *Engenharia de Software Moderna* — Cap. 3 (User Stories, INVEST, MoSCoW, MVP) — disponível em [engsoftmoderna.info](https://engsoftmoderna.info)
-- 📄 Slides L07 — Requisitos Funcionais, Não Funcionais e Elicitação *(disponível no repositório da disciplina)*
-- 📄 Slides L08 — User Stories, Backlog e Priorização Formal *(disponível no repositório da disciplina)*
+- 📖 Garcia, V. C. _Engenharia de Software em Dimensões_ — Cap. 6 (elicitação, vieses cognitivos) e Cap. 7 (User Stories, backlog, INVEST, MoSCoW, WSJF)
+- 📖 Valente, M. T. _Engenharia de Software Moderna_ — [Cap. 3 — Requisitos](https://engsoftmoderna.info/cap3.html)
+- 🧾 Material da Semana 3 (base conceitual: RF/RNF, elicitação, formato de história, INVEST, Gherkin)
+- 🤖 Assistente de IA (Claude ou equivalente) — ferramenta de trabalho do lab de terça
 
 ---
 
-## Por que esta semana importa para o Sprint 0
+## Por que esta semana importa
 
-A Semana 4 está no coração do **Sprint 0 — Descoberta e Preparação** (Semanas 1 a 4). É o momento em que a equipe passa de "entendemos o problema" para "sabemos o que vamos construir".
+Esta é a semana em que o **Sprint 0** entrega seu artefato mais importante: um backlog no qual a equipe confia. Tudo o que vem depois — as 8 semanas de construção do Ensaio — se apoia nas histórias e prioridades definidas aqui.
 
-Nas semanas anteriores, vocês fizeram a descoberta: primeiro contato com o stakeholder (Semana 1), entendimento dos processos ágeis (Semana 2), levantamento formal de requisitos e user stories (Semana 3). Esta semana é onde essa descoberta se materializa em um backlog real — a fonte única da verdade sobre o que será construído.
+```
+Sem 1: Entendemos o que é desenvolver software — e conhecemos o stakeholder
+Sem 2: Aprendemos como organizar o trabalho em equipe (processos ágeis, Scrum, Kanban)
+Sem 3: Formalizamos os requisitos (RF/RNF, elicitação, user stories, INVEST, Gherkin)
+Sem 4: ← VOCÊ ESTÁ AQUI — Construímos e refinamos o backlog do produto (escopo + prioridades)
+Sem 5: Definimos qualidade e Definition of Done, e começamos a construir (Sprint 1)
+Sem 6+: Construímos, mostramos ao stakeholder e ajustamos 🚀
+```
 
-O que acontece aqui determina diretamente a qualidade do Sprint 1. Um backlog construído sobre divergências de visão não resolvidas vai produzir funcionalidades que o stakeholder não reconhece. Um backlog com stories mal formadas vai gerar sprints impossíveis de estimar.
-
-A quinta-feira desta semana — o refinamento com o stakeholder — é um dos encontros mais estratégicos do semestre. É a primeira vez que o backlog enfrenta a realidade. O feedback do stakeholder aqui é ouro: revela o que a equipe entendeu certo, o que entendeu errado, e o que ainda precisa ser descoberto.
-
-Na semana seguinte, começa o ciclo de testes — e os critérios de aceitação em Gherkin que vocês escrevem esta semana serão o ponto de partida direto para as especificações de teste. Não jogue esses critérios fora depois da quinta.
+O arco de segunda e terça carrega a lição que atravessa o semestre inteiro: **a IA amplifica o julgamento de engenharia, não o substitui.** Na segunda, o passo que não se terceiriza é a **fronteira do MVP** (o que fica dentro e fora); na terça, é a **crítica INVEST** de cada história. Nos dois casos, o atalho — "peça o escopo pronto", "gere um backlog" — produz algo genérico e inútil, e as aulas são desenhadas para tornar isso evidente. O aluno só produz artefatos bons se dominar os conceitos da Semana 3 e trouxer o conhecimento real do problema.
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE*
-*Última atualização: 26/03/2026*
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE1_
+_Fase da Sinfonia: Composição | Sprint 0_
