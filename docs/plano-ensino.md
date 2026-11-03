@@ -78,7 +78,7 @@ A disciplina utiliza o ecossistema JavaScript, alinhado às oportunidades de mer
 | Componente | Peso | Descrição |
 |------------|------|-----------|
 | Projeto em Equipe | 60% | Sprint 0 review + 4 sprint reviews com stakeholder + entrega formal + apresentação acadêmica |
-| Provas (2 × 20%) | 40% | Duas provas escritas individuais (Semana 9 e Semana 14) |
+| Provas (2 × 20%) | 40% | Duas provas escritas individuais (previstas para as Semanas 9 e 14; a semana pode mudar conforme o calendário, mas a Prova 1 cobre sempre as Semanas 1–7 e a Prova 2, todo o semestre) |
 | Participação, Exercícios Individuais e Missões | +10% *(extra)* | Engajamento nos debates, 4 exercícios individuais (EI1–EI4) e missões opcionais ao longo do semestre |
 
 > A nota base é formada pelo Projeto (60%) e pelas Provas (40%). O componente extra é adicional podendo ser apicado ou não, a critérios dos professores. Detalhamento completo em `docs/avaliacao.md`.

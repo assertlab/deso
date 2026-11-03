@@ -95,7 +95,7 @@ Durante a Sprint Week, as equipes codaram com autonomia. Agora é hora de olhar 
 
 O **C4 Model** é a ferramenta que permite responder essas perguntas visualmente, e mais do que isso: permite comunicar as respostas para o stakeholder. Na Sprint 1 Review (quinta), o parceiro vai ver um diagrama de contexto — não código. Ele vai poder dizer se o sistema que a equipe está construindo é o sistema que ele imaginou. Essa é a função da documentação arquitetural neste estágio: criar alinhamento antes que o custo de mudar seja alto.
 
-Nas semanas seguintes, a arquitetura vai ser revisitada. A Prova 1 (Semana 8) cobre o conteúdo das Semanas 1–7, incluindo estilos arquiteturais e C4. A Semana 9 revisita os diagramas com o projeto mais maduro. A Semana 11 olha retrospectivamente para as decisões de arquitetura e pergunta: valeram a pena?
+Nas semanas seguintes, a arquitetura vai ser revisitada. A Prova 1 (aplicada logo após esta semana; a data exata está na planilha de plano de aulas) cobre o conteúdo das Semanas 1–7, incluindo estilos arquiteturais e C4. A Semana 9 revisita os diagramas com o projeto mais maduro. A Semana 11 olha retrospectivamente para as decisões de arquitetura e pergunta: valeram a pena?
 
 Tudo começa aqui.
 
