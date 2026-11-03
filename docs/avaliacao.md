@@ -125,14 +125,26 @@ A equipe entrega ao parceiro: repositório com código, deploy funcional, README
 
 ## 3. Provas — 40% (2 × 20%)
 
-Duas provas escritas individuais, de consulta fechada, com questões abertas que privilegiam raciocínio e aplicação sobre memorização.
+Duas provas escritas individuais, de consulta fechada, chamadas institucionalmente de **Exercícios Escolares** (EE1 e EE2). Em qualquer formato, as questões privilegiam raciocínio e aplicação sobre memorização: cenários concretos, decisões a analisar e consequências a prever.
 
 | Prova | Momento | Conteúdo |
 |-------|---------|-----------|
-| **Prova 1** | Sprint 2 (após o ciclo de arquitetura) | ES · Git · Code Review · Processos ágeis · Requisitos e User Stories · Princípios de design · C4 Model · Qualidade de software |
-| **Prova 2** | Encerramento | Testes (Vitest e Playwright) · Refactoring · Manutenção · Dívida técnica · Qualidade arquitetural · Code review avançado · Documentação |
+| **Prova 1 (EE1)** | Após o ciclo de arquitetura (via de regra, Semana 8 ou 9) | Conteúdo das **Semanas 1–7**: ES · Git · Processos ágeis · Requisitos e User Stories · Qualidade de software · Princípios de design · Arquitetura · C4 Model · ADR |
+| **Prova 2 (EE2)** | Encerramento | **Todo o conteúdo do semestre**, incluindo os temas da segunda metade: Testes (Vitest e Playwright) · Refactoring · Manutenção · Dívida técnica · Qualidade arquitetural · Code review avançado · Documentação · Containerização |
 
-> As datas das provas estão na planilha de plano de aulas do semestre corrente.
+> **Semana de aplicação.** A semana de cada prova pode mudar conforme o andamento do semestre (feriados, eventos ou outras alterações no calendário de aulas). A regra que se mantém é a de **escopo**: a Prova 1 cobre as primeiras 7 semanas de conteúdo e a Prova 2 cobre todo o semestre. As datas exatas estão na planilha de plano de aulas do semestre corrente.
+
+**Formato das questões.** Cada prova pode adotar um dos formatos abaixo, que é informado aos alunos antes da aplicação:
+
+| Formato | Como funciona |
+|---------|---------------|
+| **Objetiva direta** | Questões de múltipla escolha tradicionais, com uma única alternativa correta |
+| **Objetiva somatório** | Cada alternativa vale uma potência de 2 conforme a posição (2, 4, 8, 16…); o aluno marca as verdadeiras e informa a soma. Marcar qualquer alternativa falsa zera a questão; marcar só parte das verdadeiras gera nota proporcional. Detalhes em [`exercicios-escolares/`](../exercicios-escolares/README.md#o-modelo-somatório) |
+| **Mista** | Questões objetivas (de qualquer um dos tipos acima) combinadas com questões subjetivas (dissertativas), corrigidas por rubrica |
+
+Em turmas grandes, a mesma prova pode ser aplicada em **tipos paralelos** (por exemplo, A, B, C e D), que cobrem os mesmos temas com o mesmo nível de dificuldade, mas diferem na ordem das alternativas ou em detalhes do cenário.
+
+> 📚 **Provas anteriores:** os Exercícios Escolares já aplicados, com espelho de correção comentado, estão em [`exercicios-escolares/`](../exercicios-escolares/). São um bom material de estudo para as próximas provas.
 
 **Prova Final e Segunda-chamada.** São mecanismos institucionais da UFPE, à parte da nota base descrita acima. A **Segunda-chamada** repõe uma prova perdida por motivo justificado; a **Prova Final** é a avaliação de recuperação para quem não atingir a nota mínima na média das avaliações. Nenhuma das duas entra na composição dos 40% — elas seguem o regulamento institucional. As datas constam na planilha de plano de aulas.
 

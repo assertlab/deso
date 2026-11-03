@@ -17,8 +17,8 @@ A Semana 13 é a semana de fechamento do **Ensaio** — o maior movimento da Min
 
 | Dia | Data | Tema | Materiais | Sala | Horário |
 |-----|------|------|-----------|------|---------|
-| 🔵 Segunda | 08/06 | Reflexão: da ideia ao produto | [Aluno](./semana_13-seg-material-aluno.md) · [Professor](./semana_13-seg-material-professor.md) | E132 | 18:50–20:30 |
-| 🟢 Terça | 09/06 | ✏️ PROVA 2 | [Aluno](./semana_13-ter-material-aluno.md) · [Professor](./semana_13-ter-material-professor.md) | E132 | 17:00–18:40 |
+| 🔵 Segunda | 08/06 | Reflexão: da ideia ao produto | [Aluno](./semana_13-seg-material-aluno.md) · Professor *(guia privado)* | E132 | 18:50–20:30 |
+| 🟢 Terça | 09/06 | ✏️ PROVA 2 | [Aluno](./semana_13-ter-material-aluno.md) · Professor *(guia privado)* | E132 | 17:00–18:40 |
 | 🟠 Quinta | 11/06 | Sprint 4 Review + Estabilização final do MVP | *(sessão com stakeholder — sem material teórico)* | Grad04 | 17:00–20:30 |
 
 ---
@@ -94,11 +94,11 @@ A Prova 2 (terça, 09/06) cobre as **Semanas 8 a 12**:
 
 ### Materiais das semanas anteriores (revisão para a prova)
 
-- [Semana 8 — Balanço + Prova 1](../semana_08/)
-- [Semana 9 — Testes: Vitest e Playwright](../semana_09/)
-- [Semana 10 — Refactoring e Manutenção](../semana_10/)
-- [Semana 11 — Qualidade arquitetural e Debugging](../semana_11/)
-- [Semana 12 — Code Review e Documentação](../semana_12/)
+- [Semana 8 — Balanço + Prova 1](../sem08/)
+- [Semana 9 — Testes: Vitest e Playwright](../sem09/)
+- [Semana 10 — Refactoring e Manutenção](../sem10/)
+- [Semana 11 — Qualidade arquitetural e Debugging](../sem11/)
+- [Semana 12 — Code Review e Documentação](../sem12/)
 
 ### Ferramentas para o Sprint 4 Review
 

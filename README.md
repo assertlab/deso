@@ -159,14 +159,18 @@ cin0136-2026-1/
 ├── projeto/
 │   ├── roteiro-primeiro-contato.md
 │   ├── formulario-feedback-stakeholder.md
-│   ├── template-adr.md
+│   ├── adr-template.md
 │   └── rubrica-code-review.md
 │
-└── exercicios/
-    ├── EI1-portfolio-git.md
-    ├── EI2-documento-requisitos.md
-    ├── EI3-testes-js.md
-    └── EI4-reflexao-tecnica.md
+├── exercicios/
+│   ├── EI1-portfolio-git.md
+│   ├── EI2-documento-requisitos.md
+│   ├── EI3-testes-js.md
+│   └── EI4-reflexao-tecnica.md
+│
+└── exercicios-escolares/      ← Provas já aplicadas + espelhos de correção
+    ├── README.md
+    └── 2026-2/EE1/
 ```
 
 ---
@@ -182,7 +186,7 @@ cin0136-2026-1/
 ### Materiais do projeto de extensão
 - 🗣️ [Roteiro para o 1º Contato com o Stakeholder](projeto/roteiro-primeiro-contato.md)
 - 📋 [Formulário de Feedback do Stakeholder](projeto/formulario-feedback-stakeholder.md)
-- 🧩 [Template de ADR](projeto/template-adr.md)
+- 🧩 [Template de ADR](projeto/adr-template.md)
 - 🔍 [Rubrica de Code Review](projeto/rubrica-code-review.md)
 
 ### Exercícios individuais
@@ -190,6 +194,10 @@ cin0136-2026-1/
 - [EI2 — Documento de Requisitos](exercicios/EI2-documento-requisitos.md) · entrega: Sprint 0
 - [EI3 — Testes em JavaScript](exercicios/EI3-testes-js.md) · entrega: Sprint 2
 - [EI4 — Reflexão Técnica e Profissional](exercicios/EI4-reflexao-tecnica.md) · entrega: Sprint 4
+
+### Exercícios escolares (provas aplicadas)
+- ✏️ [Exercícios Escolares + espelhos de correção](exercicios-escolares/) · material de estudo e banco de questões comentadas
+- [EE1 — 2026.2](exercicios-escolares/2026-2/EE1/) · Semanas 1–7 · prova (tipos A–D) + espelho
 
 ### Materiais por semana
 | Semana | Tema central |
@@ -209,7 +217,9 @@ cin0136-2026-1/
 | [Sem 13](semanas/sem13/) | Containerização (Docker) · Estabilização · 👤 ✅ Sprint 4 |
 | [Sem 14](semanas/sem14/) | Reflexão · ✏️ **Prova 2** · 👤 Entrega formal (feira) |
 | [Sem 15](semanas/sem15/) | 🎤 Apresentações acadêmicas · Segunda-chamada |
-| [Sem 16](semanas/sem16/) | ✏️ Prova Final |
+| Sem 16 | ✏️ Prova Final *(sem material de aula)* |
+
+> As semanas das provas são as previstas. Elas podem mudar conforme o andamento do semestre, mas a Prova 1 cobre sempre as Semanas 1–7 e a Prova 2, todo o conteúdo do semestre. Ver [docs/avaliacao.md](docs/avaliacao.md#3-provas--40-2--20).
 
 ---
 
