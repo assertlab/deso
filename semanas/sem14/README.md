@@ -1,7 +1,6 @@
 # Semana 14 — Containerização + Entrega formal
 
 **CIN0136: Desenvolvimento de Software | CIn-UFPE**
-📅 15–18 de junho de 2026
 
 ---
 
@@ -15,47 +14,55 @@ No plano da **formação profissional**, é a semana em que a disciplina olha al
 
 ---
 
-## Aulas da semana
+## Aulas desta semana
 
-| Data | Tipo | Tema | Leitura prévia | Materiais |
-|---|---|---|---|---|
-| Seg 15/06 | 📘 Teórica | Do código ao container: introdução ao Docker | — | [Material do aluno](semana_14-seg-material-aluno.md) · [Guia do professor](semana_14-seg-material-professor.md) |
-| Ter 16/06 | 📘 Teórica | Orquestrando serviços com Docker Compose | — | [Material do aluno](semana_14-ter-material-aluno.md) · [Guia do professor](semana_14-ter-material-professor.md) |
-| Qui 18/06 | 🟠 Lab/Entrega | Entrega formal ao stakeholder + Coleta de feedback real | — | — |
+| Dia | Horário | Sala | Tema | Materiais |
+|-----|---------|------|------|-----------|
+| 🔵 Segunda | 18:50–20:30 | E132 | Do código ao container: introdução ao Docker | [Material do Aluno](./semana_14-seg-material-aluno.md) · [Slides](./CIN0136-DESO-W14L41-Do-Código-ao-Container.pdf) · Guia do Professor |
+| 🟢 Terça | 17:00–18:40 | E132 | Orquestrando serviços com Docker Compose (e onde entra o Kubernetes) | [Material do Aluno](./semana_14-ter-material-aluno.md) · [Slides](./CIN0136-DESO-W14L42-Orquestrando-Serviços-com-Docker-Compose.pdf) · Guia do Professor |
+| 🟠 Quinta | 17:00–20:30 | Grad04 | Entrega formal ao stakeholder + Coleta de feedback real | — |
 
 ---
 
 ## Leituras prévias por dia
 
-| Dia | Leitura |
-|---|---|
-| Segunda 15/06 | Nenhuma. Venha com o repositório do projeto acessível. |
-| Terça 16/06 | Nenhuma. Revise mentalmente os conceitos de Docker da aula de segunda. |
-| Quinta 18/06 | Nenhuma. Prepare a demo e os artefatos de entrega da equipe. |
+### 🔵 Segunda-feira
+
+Nenhuma. Venha com o **repositório do projeto acessível**.
+
+### 🟢 Terça-feira
+
+Nenhuma. Revise mentalmente os conceitos de Docker da aula de segunda — em especial o `nginx.conf` do frontend.
+
+### 🟠 Quinta-feira
+
+Nenhuma. Prepare a demo e os artefatos de entrega da equipe.
 
 ---
 
 ## Objetivos da semana
 
-Ao final desta semana, o aluno será capaz de:
+Ao final desta semana, você deve ser capaz de:
 
 1. Explicar o problema de paridade de ambiente que Docker resolve, com exemplos da própria experiência no semestre
-2. Distinguir imagem de container com precisão conceitual
-3. Ler, interpretar e escrever um `Dockerfile` para aplicações Node.js e React
-4. Entender e utilizar `docker-compose.yml` para orquestrar um sistema com frontend, backend e banco de dados
-5. Compreender como o nome de serviço funciona como hostname na rede interna do Compose
-6. Conectar os conceitos de containerização com o que plataformas como Railway e Render fazem por baixo dos panos
-7. Realizar a entrega formal do produto ao stakeholder com clareza e profissionalismo
+2. Descrever um container como processo isolado que compartilha o kernel do host, e distingui-lo de uma máquina virtual
+3. Distinguir imagem de container com precisão conceitual
+4. Ler, interpretar e escrever um `Dockerfile` para aplicações Node.js e React
+5. Entender e utilizar `docker-compose.yml` para subir um sistema com frontend, backend e banco de dados
+6. Compreender como o nome de serviço funciona como hostname na rede interna do Compose
+7. Conectar os conceitos de containerização com o que plataformas como Railway e Render fazem por baixo dos panos
+8. Distinguir Docker, Docker Compose e Kubernetes, e argumentar quando um orquestrador vale o custo
+9. Realizar a entrega formal do produto ao stakeholder com clareza e profissionalismo
 
 ---
 
-## Entregáveis e prazos
+## Entregáveis com prazo
 
-| Entregável | Prazo | Responsável |
-|---|---|---|
-| Produto entregue ao stakeholder (repositório + deploy + documentação) | Qui 18/06 durante a aula | Equipe |
-| Feedback formal do stakeholder preenchido | Qui 18/06 durante a aula | Equipe + stakeholder |
-| Material de preparação para apresentação acadêmica | Qui 18/06 ao final da aula | Equipe |
+| Entregável | Descrição | Prazo |
+|------------|-----------|-------|
+| **Produto entregue ao stakeholder** | Repositório + deploy + documentação | Quinta, durante a aula |
+| **Feedback formal do stakeholder** | Formulário preenchido pela equipe com o stakeholder | Quinta, durante a aula |
+| **Material de preparação para apresentação acadêmica** | Insumos da equipe para a Semana 15 | Quinta, ao final da aula |
 
 > **Nota:** Não há entregável técnico associado às aulas de Docker (segunda e terça). O conteúdo é formativo — faz parte da sua bagagem profissional, não do Sprint 4.
 
@@ -63,21 +70,27 @@ Ao final desta semana, o aluno será capaz de:
 
 ## Recursos relevantes
 
-### Docker — documentação e referências
+### Docker e Kubernetes — documentação e referências
 
 - 📄 [Docker — Get Started](https://docs.docker.com/get-started/) — guia oficial de introdução
 - 📄 [Dockerfile reference](https://docs.docker.com/reference/dockerfile/) — referência completa das instruções
 - 📄 [Docker Compose — Getting Started](https://docs.docker.com/compose/gettingstarted/) — guia oficial do Compose
 - 📄 [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) — incluindo a estratégia de cache de camadas
-
-### Artefatos desta semana
-
-- 📋 [Outline de slides — segunda (Docker)](semana_14-seg-outline-slides.md)
-- 📋 [Outline de slides — terça (Docker Compose)](semana_14-ter-outline-slides.md)
+- 📄 [Node.js — calendário de versões](https://nodejs.org/en/about/previous-releases) — qual versão usar no `FROM` (use uma LTS com suporte ativo)
+- 📄 [Kubernetes — Overview](https://kubernetes.io/docs/concepts/overview/) — para quem quiser ir além (fora da avaliação)
+- 📄 [Kompose](https://kompose.io) — converte um `docker-compose.yml` em manifestos Kubernetes (fora da avaliação)
 
 ### Referências bibliográficas da disciplina
 
-Os livros-texto da disciplina (Garcia e Valente) não cobrem Docker diretamente — o tema pertence ao domínio de infraestrutura e DevOps, que amadureceu depois das edições de referência. A documentação oficial do Docker é a fonte primária para este conteúdo.
+Os livros-texto não têm um capítulo sobre Docker — a documentação oficial é a fonte primária deste conteúdo. Mas o tema aparece em pontos que vale conectar:
+
+- Garcia, V. C. *Engenharia de Software em Dimensões*. ASSERT Lab, 2025. **Cap. 10, seção 10.3.2** (container scanning no pipeline de CI/CD) e **Cap. 14, seção 14.5.2** (plataformas de orquestração de contêineres)
+- Valente, M. T. *Engenharia de Software Moderna*. **Cap. 10, seção 10.4** (Deployment Contínuo) — o contexto de entrega automatizada em que containers se inserem
+
+### Ferramentas
+
+- **Docker Desktop** (Windows/macOS) ou **Docker Engine** (Linux)
+- **Podman** — alternativa compatível: os mesmos comandos, trocando `docker` por `podman`
 
 ---
 
@@ -98,4 +111,4 @@ A Semana 15 traz as apresentações acadêmicas, onde cada equipe conta a histó
 
 ---
 
-*CIN0136 — Desenvolvimento de Software | CIn-UFPE*
+*CIN0136 — Desenvolvimento de Software | CIn-UFPE | Sprint 4*
