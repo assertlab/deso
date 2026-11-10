@@ -8,7 +8,7 @@
 
 ## Leitura Prévia
 
-Não há leitura prévia. Revise mentalmente o que vimos ontem: imagem, container, Dockerfile, ciclo de vida básico. Hoje construímos em cima disso.
+Não há leitura prévia. Revise mentalmente o que vimos ontem: imagem, container, Dockerfile, ciclo de vida básico — e o `nginx.conf` do frontend, que apontava para um tal de `backend`. Hoje construímos em cima disso.
 
 ---
 
@@ -19,7 +19,8 @@ Ao final desta aula, você deve ser capaz de:
 - Explicar o problema que Docker Compose resolve em relação ao Docker isolado
 - Ler e interpretar um arquivo `docker-compose.yml` com múltiplos serviços
 - Entender como serviços se comunicam dentro de uma rede Compose
-- Identificar o papel de volumes e variáveis de ambiente numa orquestração real
+- Identificar o papel de volumes, healthchecks e variáveis de ambiente num sistema real
+- Distinguir Docker, Docker Compose e Kubernetes, e argumentar quando cada um faz sentido
 
 ---
 
@@ -47,6 +48,8 @@ Para rodar isso com Docker puro, você precisaria de três `docker run` separado
 docker compose up
 ```
 
+> Neste curso, "orquestrar" com o Compose significa **coordenar vários containers numa mesma máquina**. Quando o mercado fala em "orquestrador", quase sempre está falando de outra ferramenta — veremos qual na seção 8.
+
 ---
 
 ## 2. Anatomia do docker-compose.yml
@@ -64,6 +67,7 @@ services:        # obrigatório — define os containers
     environment: # variáveis de ambiente
     depends_on:  # ordem de inicialização
     volumes:     # montagem de volumes
+    healthcheck: # como saber se o serviço está pronto de verdade
 
 volumes:         # opcional — define volumes nomeados
   nome-volume:
@@ -71,82 +75,90 @@ volumes:         # opcional — define volumes nomeados
 networks:        # opcional — Docker Compose cria uma rede padrão automaticamente
 ```
 
+> Você pode encontrar arquivos antigos começando com `version: "3.8"`. Essa chave é obsoleta na especificação atual do Compose e pode ser omitida.
+
 ---
 
 ## 3. docker-compose.yml do PetFood — completo e comentado
 
 ```yaml
 # docker-compose.yml — Sistema PetFood
-# Orquestra: frontend (React/nginx), backend (Express), banco (PostgreSQL)
+# Sobe frontend (React/nginx), backend (Express) e banco (PostgreSQL)
+# Os valores ${...} vêm do arquivo .env (ver seção 6)
 
 services:
 
   # ── Serviço 1: banco de dados ───────────────────────────────────────────────
   db:
-    # Usamos a imagem oficial do PostgreSQL versão 15
+    # Imagem oficial do PostgreSQL 15, variante alpine
     # Não precisamos de Dockerfile para o banco — a imagem oficial é suficiente
     image: postgres:15-alpine
 
-    # Variáveis de ambiente que o PostgreSQL usa na inicialização
-    # Em produção real, use um arquivo .env ou um secrets manager
-    environment:
-      POSTGRES_DB: petfood
-      POSTGRES_USER: petfood_user
-      POSTGRES_PASSWORD: petfood_pass
-
-    # Volume nomeado para persistir os dados entre reinicializações
-    # Sem isso, os dados são perdidos quando o container é removido
-    volumes:
-      - db_data:/var/lib/postgresql/data
-
-    # Expõe a porta do banco apenas internamente (sem publicar no host)
-    # O backend se conecta via rede interna do Compose
+    # Expõe a porta do banco apenas na rede interna (sem publicar no host)
     expose:
       - "5432"
 
+    # Variáveis que o PostgreSQL usa na inicialização
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+
+    volumes:
+      # Volume nomeado: os dados sobrevivem quando o container é removido
+      - pgdata:/var/lib/postgresql/data
+      # (opcional) script SQL executado só na primeira inicialização do banco
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    # Como o Compose descobre que o banco está PRONTO, não só iniciado
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   # ── Serviço 2: backend ──────────────────────────────────────────────────────
   backend:
-    # Constrói a imagem a partir do Dockerfile no diretório ./backend
+    # Constrói a imagem a partir do Dockerfile em ./backend (aula de ontem)
     build: ./backend
 
-    # Publica a porta 3000 do container na porta 3000 do host
+    # Publica a porta 3000 no host — útil para testar a API direto no dev
     ports:
       - "3000:3000"
 
-    # Variáveis de ambiente passadas para a aplicação Node.js
     environment:
       NODE_ENV: production
-      # Dentro da rede Compose, "db" é o hostname do serviço de banco
-      # (o nome do serviço vira DNS automático)
-      DATABASE_URL: postgresql://petfood_user:petfood_pass@db:5432/petfood
+      # "db" é o nome do serviço do banco: o Compose o resolve como hostname
+      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@db:5432/${DB_NAME}
       PORT: 3000
 
-    # O backend só inicia depois que o container do banco estiver de pé
-    # Atenção: depends_on garante ordem de START, não de READINESS
-    # O banco pode ainda estar inicializando quando o backend tentar conectar
+    # Só sobe depois que o healthcheck do banco passar.
+    # Sem a condição, depends_on garante apenas a ordem de START,
+    # e o backend poderia tentar conectar num banco ainda inicializando.
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   # ── Serviço 3: frontend ─────────────────────────────────────────────────────
   frontend:
-    # Constrói a partir do Dockerfile no diretório ./frontend
-    # (o multi-stage build que vimos ontem)
-    build: ./frontend
+    # O multi-stage build de ontem, com o ARG do Vite
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: /api   # o navegador chama /api no próprio nginx
 
     # Publica a porta 80 do nginx na porta 8080 do host
     # Acesse o sistema em http://localhost:8080
     ports:
       - "8080:80"
 
-    # O frontend só inicia depois do backend
     depends_on:
       - backend
 
 # ── Volumes nomeados ───────────────────────────────────────────────────────────
-# Volumes nomeados são gerenciados pelo Docker e persistem entre `docker compose down`
-# Use `docker compose down -v` se quiser remover os dados também
+# Persistem entre `docker compose down`; `docker compose down -v` os apaga
 volumes:
-  db_data:
+  pgdata:
 ```
 
 ---
@@ -158,19 +170,26 @@ Dentro de uma rede Docker Compose, **cada serviço é acessível pelo seu própr
 No exemplo acima:
 
 - O backend se conecta ao banco usando o hostname `db` (não `localhost`, não um IP)
-- O frontend acessa o backend usando `http://backend:3000` (dentro da rede interna)
+- O nginx do frontend repassa as chamadas `/api` para `http://backend:3000` — é o `nginx.conf` de ontem, que agora funciona porque o nome `backend` existe
+
+**Atenção a um equívoco comum:** quem chama a API não é o "container do frontend", é o **navegador**, que roda no seu computador e não conhece o nome `backend`. Por isso o React usa o caminho relativo `/api`: o navegador fala com o nginx, e o nginx (que está dentro da rede) fala com o backend.
 
 ```
-Host (seu computador)
+Seu computador
 │
-├── localhost:8080 ──▶ frontend (container)
-│                          │
-│                          └──▶ backend:3000 (via rede interna)
-│                                    │
-└── localhost:3000 ──▶ backend       └──▶ db:5432 (via rede interna)
+├── Navegador ──▶ localhost:8080 ──▶ frontend (nginx)
+│                  /  → arquivos do React       │
+│                  /api/... ───────────────────┘
+│                                   proxy_pass  │
+│                                               ▼
+│                                   backend:3000 ──▶ db:5432
+│                                   (rede interna)   (rede interna)
+│
+└── curl / Postman ──▶ localhost:3000 ──▶ backend
+                       (publicado só para facilitar testes no dev)
 ```
 
-**Por que isso importa?** Suas variáveis de ambiente de conexão mudam dependendo de onde o código está rodando. Em desenvolvimento local sem Docker, você usa `localhost`. Dentro do Compose, você usa o nome do serviço. Quem configura o ambiente configura a string de conexão.
+**Por que isso importa?** Suas variáveis de conexão mudam dependendo de onde o código está rodando. Em desenvolvimento local sem Docker, você usa `localhost`. Dentro do Compose, você usa o nome do serviço — dentro de um container, `localhost` é o próprio container. Quem configura o ambiente configura a string de conexão.
 
 ---
 
@@ -186,8 +205,11 @@ docker compose logs -f
 # Ver logs de um serviço específico
 docker compose logs -f backend
 
-# Ver o status de todos os serviços
+# Ver o status de todos os serviços (inclui o estado do healthcheck)
 docker compose ps
+
+# Abrir um shell dentro de um serviço em execução
+docker compose exec backend sh
 
 # Parar todos os serviços (mantém containers e volumes)
 docker compose stop
@@ -198,9 +220,11 @@ docker compose down
 # Parar, remover containers, rede E volumes (apaga dados do banco!)
 docker compose down -v
 
-# Reconstruir imagens antes de subir (após mudança no Dockerfile)
+# Reconstruir imagens antes de subir (após mudança no Dockerfile ou no código)
 docker compose up -d --build
 ```
+
+> **Usa Podman?** O `podman compose` (ou o `podman-compose`) lê o mesmo arquivo.
 
 **Anote aqui** — qual é a diferença entre `docker compose stop` e `docker compose down`?
 
@@ -214,26 +238,30 @@ Sua resposta:
 
 ## 6. Variáveis de ambiente e o arquivo .env
 
-Colocar senhas diretamente no `docker-compose.yml` funciona, mas não é uma boa prática — você não quer commitar credenciais no repositório. A convenção é usar um arquivo `.env` na raiz do projeto:
+Repare que o `docker-compose.yml` da seção 3 não tem nenhuma senha escrita. Os valores `${...}` vêm de um arquivo `.env` na raiz do projeto, que o Docker Compose carrega automaticamente:
 
 ```bash
 # .env (nunca commite este arquivo — adicione ao .gitignore)
-POSTGRES_DB=petfood
-POSTGRES_USER=petfood_user
-POSTGRES_PASSWORD=petfood_pass
-DATABASE_URL=postgresql://petfood_user:petfood_pass@db:5432/petfood
+DB_USER=petfood_user
+DB_PASSWORD=troque_esta_senha
+DB_NAME=petfood
 ```
 
-E referenciar no `docker-compose.yml` com a sintaxe `${VARIAVEL}`:
+A convenção usa dois arquivos complementares:
 
-```yaml
-environment:
-  POSTGRES_DB: ${POSTGRES_DB}
-  POSTGRES_USER: ${POSTGRES_USER}
-  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+|Arquivo|Conteúdo|Vai para o Git?|
+|---|---|---|
+|`.env`|Valores reais (senhas, chaves)|**Nunca** — vai no `.gitignore` e no `.dockerignore`|
+|`.env.example`|As mesmas chaves, sem valores|**Sempre** — quem clona sabe o que precisa preencher|
+
+```bash
+# .env.example
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
 ```
 
-O Docker Compose carrega automaticamente o `.env` do diretório atual. O `.env` vai no `.gitignore` e no `.dockerignore`. Você distribui um `.env.example` com as variáveis necessárias mas sem os valores reais.
+O mesmo `docker-compose.yml` serve para qualquer máquina de desenvolvimento ou teste: muda só o `.env`.
 
 ---
 
@@ -241,26 +269,64 @@ O Docker Compose carrega automaticamente o `.env` do diretório atual. O `.env` 
 
 Você pode estar pensando: "uso Vercel e Railway, o que Docker Compose tem a ver com isso?"
 
-A resposta é: **Railway e similares aceitam containers como unidade de deploy**. Quando você conecta um repositório ao Railway, a plataforma detecta o `Dockerfile` (ou o `docker-compose.yml`) e constrói a imagem por conta própria.
+A resposta é: **Railway, Render e similares aceitam containers como unidade de deploy**. Quando você conecta um repositório, a plataforma detecta o `Dockerfile` de cada serviço e constrói a imagem por conta própria. O `docker-compose.yml`, em geral, **não é executado em produção**: cada serviço (backend, banco) é configurado separadamente na plataforma.
 
-O `docker-compose.yml` que você escreve para desenvolvimento local é também a base de entendimento para o que acontece em produção — mesmo que a plataforma abstraia a execução. Saber o que está dentro da caixa torna você capaz de depurar quando algo dá errado no deploy, configurar corretamente as variáveis de ambiente da plataforma, e entender os logs de erro que aparecem.
+Os conceitos, porém, são os mesmos:
+
+|No Compose|Na plataforma|
+|---|---|
+|Nome do serviço como hostname (`db`)|Hostname privado gerado pela plataforma, normalmente injetado como `DATABASE_URL`|
+|`.env`|Variáveis de ambiente configuradas no painel|
+|Volume nomeado|Disco persistente ou banco gerenciado|
+|`healthcheck` / `depends_on`|Health checks da plataforma e ordem de deploy|
+
+Saber o que está dentro da caixa torna você capaz de depurar quando algo dá errado no deploy, configurar corretamente as variáveis de ambiente da plataforma, e entender os logs de erro que aparecem.
 
 ---
 
-## 8. Tabela de referência rápida
+## 8. E o Kubernetes?
+
+Quando o mercado fala em "orquestrador", quase sempre está falando do **Kubernetes**. Eles não competem — cada um responde a uma pergunta diferente:
+
+| |Docker|Docker Compose|Kubernetes|
+|---|---|---|---|
+|**Pergunta**|Como empacoto minha aplicação para rodar igual em qualquer lugar?|Como subo juntos os vários serviços do meu sistema?|Como mantenho o sistema no ar em várias máquinas, mesmo com falhas e picos de carga?|
+|**Escopo**|1 container|1 máquina|Várias máquinas (cluster)|
+|**Arquivo**|`Dockerfile`|`docker-compose.yml`|Manifestos YAML|
+
+**A imagem é o elo comum.** O Kubernetes não constrói imagens: ele executa as mesmas imagens que o `docker build` gera. (Você pode ter lido que "o Kubernetes abandonou o Docker": em 2022 ele trocou o motor interno que usa para rodar containers, mas as imagens continuam funcionando normalmente.)
+
+**Declarar uma vez × vigiar sempre.** O Compose aplica o estado que você descreveu, uma vez, numa máquina. O Kubernetes compara o tempo todo o que está rodando com o que foi declarado (`replicas: 3`): se um container cai, ele sobe outro; se uma máquina falha, as cópias vão para outra. Na analogia de ontem: você não diz "asse um bolo", você declara "quero sempre 3 bolos na vitrine", e o gerente da confeitaria cuida do resto.
+
+**O que o Compose já te ensinou continua valendo:**
+
+|No Compose|No Kubernetes|
+|---|---|
+|Nome do serviço como hostname|Mesma ideia, pelo nome do `Service`|
+|`.env` para credenciais|`Secret` e `ConfigMap`|
+|Volume nomeado|`PersistentVolumeClaim`|
+|`healthcheck`|_Probes_ (readiness, liveness)|
+|`depends_on`|Não existe: a aplicação precisa tolerar dependências fora do ar e tentar de novo|
+
+**Então meu projeto precisa de Kubernetes?** Muito provavelmente não. Ele passa a valer o custo quando o sistema precisa de mais de uma máquina, a carga varia muito, ficar fora do ar custa caro, há muitas equipes publicando muitos serviços — e existe alguém para operar o cluster. Para um sistema com poucos serviços e poucos usuários, Compose numa máquina ou uma plataforma gerenciada resolve com muito menos esforço. **Escolher a ferramenta pelo problema, não pela fama, é uma decisão de engenharia.**
+
+---
+
+## 9. Tabela de referência rápida
 
 |Cenário|Comando|
 |---|---|
 |Subir o ambiente pela primeira vez|`docker compose up -d --build`|
 |Acompanhar o que está acontecendo|`docker compose logs -f`|
-|Checar se os serviços subiram|`docker compose ps`|
+|Checar se os serviços subiram (e se estão saudáveis)|`docker compose ps`|
+|Entrar num serviço para investigar|`docker compose exec backend sh`|
 |Parar sem perder dados|`docker compose stop`|
 |Destruir tudo e recomeçar|`docker compose down -v`|
 |Reconstruir após mudança no código|`docker compose up -d --build`|
 
 ---
 
-## 9. Questão estruturante para reflexão
+## 10. Questão estruturante para reflexão
 
 > _"Se o docker-compose.yml é o 'manual de montagem' do ambiente de desenvolvimento, o que ele diz sobre a responsabilidade de documentação de um engenheiro de software? Qual é a relação disso com o README que você escreveu para o seu projeto?"_
 
@@ -284,4 +350,5 @@ Sua resposta:
 
 ---
 
-_CIN0136 — Desenvolvimento de Software | CIn-UFPE | 2026.1_
+_CIN0136 — Desenvolvimento de Software | CIn-UFPE_
+_Referências: Documentação oficial do Docker Compose (docs.docker.com/compose). | Kubernetes — Overview (kubernetes.io/docs/concepts/overview). | Garcia, V. C. Engenharia de Software em Dimensões. ASSERT Lab, 2025. Cap. 14, seção 14.5.2 (plataformas de orquestração de contêineres). | Valente, M. T. Engenharia de Software Moderna. Cap. 10, seção 10.4 (Deployment Contínuo)._
