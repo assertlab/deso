@@ -208,7 +208,7 @@ docs/
 ```
 
 ## Equipe
-
+```
 [Lista de membros e contatos]
 ```
 
@@ -223,7 +223,7 @@ Anote aqui:
 ---
 
 ## 5. Checklist de entrega — documentação
-
+```
 Use este checklist antes da quinta-feira:
 
 **README**
@@ -246,7 +246,7 @@ Use este checklist antes da quinta-feira:
 **Código**
 - [ ] Sem comentários `// TODO` ou `// fix this later` não resolvidos na entrega
 - [ ] Sem código comentado sem justificativa
-
+```
 ---
 
 ## 6. A pergunta que mais importa
