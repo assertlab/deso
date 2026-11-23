@@ -212,12 +212,12 @@ cin0136-2026-1/
 | [Sem 5](semanas/sem05/) | 🏃 Sprint Week (evento) · Qualidade de Software |
 | [Sem 6](semanas/sem06/) | Design e Arquitetura (Parte 1): camadas, APIs, princípios |
 | [Sem 7](semanas/sem07/) | Arquitetura (Parte 2) · C4 · UML · ADR · 👤 ✅ Sprint 1 |
-| [Sem 8](semanas/sem08/) | Testes: pirâmide, cobertura, BDD · Lab Vitest |
+| [Sem 8](semanas/sem09/) | Testes: pirâmide, cobertura, BDD · Lab Vitest (sem material próprio: ver Sem 9) |
 | [Sem 9](semanas/sem09/) | ✏️ **Prova 1** · Testes de aceitação (Playwright) · 👤 ✅ Sprint 2 |
 | [Sem 10](semanas/sem10/) | Refactoring · Manutenção · Dívida técnica |
 | [Sem 11](semanas/sem11/) | Qualidade arquitetural · Debugging · 👤 ✅ Sprint 3 |
 | [Sem 12](semanas/sem12/) | Code Review avançado · Documentação |
-| [Sem 13](semanas/sem13/) | Containerização (Docker) · Estabilização · 👤 ✅ Sprint 4 |
+| [Sem 13](semanas/sem14/) | Containerização (Docker) · Estabilização · 👤 ✅ Sprint 4 |
 | [Sem 14](semanas/sem14/) | Reflexão · ✏️ **Prova 2** · 👤 Entrega formal (feira) |
 | [Sem 15](semanas/sem15/) | 🎤 Apresentações acadêmicas · Segunda-chamada |
 | Sem 16 | ✏️ Prova Final *(sem material de aula)* |
