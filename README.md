@@ -170,7 +170,9 @@ cin0136-2026-1/
 │
 └── exercicios-escolares/      ← Provas já aplicadas + espelhos de correção
     ├── README.md
-    └── 2026-2/EE1/
+    └── 2026-2/
+        ├── EE1/
+        └── EE2/
 ```
 
 ---
@@ -198,6 +200,7 @@ cin0136-2026-1/
 ### Exercícios escolares (provas aplicadas)
 - ✏️ [Exercícios Escolares + espelhos de correção](exercicios-escolares/) · material de estudo e banco de questões comentadas
 - [EE1 — 2026.2](exercicios-escolares/2026-2/EE1/) · Semanas 1–7 · prova (tipos A–D) + espelho
+- [EE2 — 2026.2](exercicios-escolares/2026-2/EE2/) · Todo o conteúdo do semestre · prova (tipos A–D) + espelho
 
 ### Materiais por semana
 | Semana | Tema central |

@@ -15,6 +15,7 @@
 | Semestre | Avaliação | Data | Escopo | Formato | Prova | Espelho |
 |----------|-----------|------|--------|---------|-------|---------|
 | 2026.2 | [EE1](2026-2/EE1/) | 13/10/2026 | Semanas 1–7 | Somatório · 10 questões + 1 bônus · 4 tipos (A–D) | [PDF](2026-2/EE1/CIN0136_2026_2_EE1.pdf) | [PDF](2026-2/EE1/CIN0136_2026_2_EE1_Espelho.pdf) |
+| 2026.2 | [EE2](2026-2/EE2/) | 17/11/2026 | Todo o conteúdo do semestre | Somatório · 10 questões + 2 bônus · 4 tipos (A–D) | [PDF](2026-2/EE2/CIN0136_2026_2_EE2.pdf) | [PDF](2026-2/EE2/CIN0136_2026_2_EE2_Espelho.pdf) |
 
 > Uma avaliação só é publicada aqui **depois** de aplicada e corrigida.
 
@@ -22,15 +23,16 @@
 
 ## O modelo somatório
 
-Os Exercícios Escolares podem ser objetivos diretos, objetivos no modelo somatório ou mistos (objetivas + dissertativas); ver [docs/avaliacao.md](../docs/avaliacao.md#3-provas--40-2--20). O EE1 de 2026.2 usou o **modelo somatório com nota parcial**:
+Os Exercícios Escolares podem ser objetivos diretos, objetivos no modelo somatório ou mistos (objetivas + dissertativas); ver [docs/avaliacao.md](../docs/avaliacao.md#3-provas--40-2--20). O EE1 e o EE2 de 2026.2 usaram o **modelo somatório com nota parcial**:
 
-- Cada questão traz um cenário e de 5 a 7 alternativas.
+- Cada questão traz um cenário e de 4 a 7 alternativas (EE1: 5 a 7; EE2: 4 a 7).
 - Cada alternativa vale uma potência de 2 conforme a sua posição: a 1ª vale 2, a 2ª vale 4, a 3ª vale 8, e assim por diante (2, 4, 8, 16, 32, 64, 128).
 - O aluno marca as alternativas que julga verdadeiras e escreve a **soma** dos valores marcados.
 - Correção de cada questão (vale 1,0 ponto):
   - marcou **qualquer alternativa falsa** → a questão vale 0,0;
   - marcou **só verdadeiras, mas não todas** → nota proporcional: (corretas marcadas ÷ total de corretas) × 1,0;
   - marcou **todas as corretas e nenhuma falsa** → 1,0.
+- Questões bônus somam por cima, de modo que a nota pode passar de 10,0 (EE1: Q11; EE2: Q11 e Q12).
 
 Como cada soma corresponde a uma única combinação de alternativas, o número escrito identifica exatamente o que foi marcado.
 
@@ -43,7 +45,7 @@ Para turmas grandes, a mesma avaliação é aplicada em quatro tipos paralelos. 
 | **A** | Versão base |
 | **B** | Reordenação das alternativas (o gabarito numérico muda automaticamente) |
 | **C** | Uma alternativa falsa substituída por outra mais sutil + reordenação |
-| **D** | Um elemento do cenário é alterado de modo a inverter o valor de verdade de uma ou mais alternativas + reordenação |
+| **D** | Um elemento do cenário é alterado de modo a inverter o valor de verdade de uma ou mais alternativas + reordenação. No EE1, isso mudou o número de corretas de algumas questões; no EE2, cada questão troca uma verdadeira por uma falsa e vice-versa, e as quatro versões mantêm o mesmo número de corretas |
 
 O tipo D é o mais instrutivo para estudo: compare-o com o A e observe como **uma única mudança no contexto** torna verdadeira uma afirmação que antes era falsa (ou o contrário). É exatamente esse raciocínio, ler o cenário e não decorar a resposta, que a avaliação procura medir.
 
@@ -51,7 +53,7 @@ O tipo D é o mais instrutivo para estudo: compare-o com o A e observe como **um
 
 ## Como estudar com este material
 
-1. **Resolva antes de olhar o espelho.** Escolha um tipo, cronometre 2 horas e responda sem consulta, como na prova real.
+1. **Resolva antes de olhar o espelho.** Escolha um tipo, cronometre o tempo da prova (EE1: 2h; EE2: 1h40) e responda sem consulta, como na prova real.
 2. **Corrija pelo espelho.** Para cada alternativa, o espelho indica se é verdadeira ou falsa e **por quê**. Leia as justificativas mesmo das alternativas que você acertou: acertar pelo motivo errado também é um erro.
 3. **Resolva outro tipo da mesma questão**, principalmente o D, e veja se o seu raciocínio se sustenta quando o cenário muda.
 4. **Leve para o projeto.** Os cenários são análogos fictícios ao projeto de extensão (ONG Raízes Urbanas) e ao estudo de caso PetFood. Pergunte-se onde a mesma decisão aparece no trabalho da sua equipe.
@@ -74,10 +76,14 @@ Fique à vontade para usar, adaptar e redistribuir as questões, nos termos da [
 exercicios-escolares/
 ├── README.md                          ← Você está aqui
 └── 2026-2/
-    └── EE1/
+    ├── EE1/
+    │   ├── README.md                  ← Escopo, temas e guia da avaliação
+    │   ├── CIN0136_2026_2_EE1.pdf          ← Prova (tipos A, B, C e D)
+    │   └── CIN0136_2026_2_EE1_Espelho.pdf  ← Espelho de correção comentado
+    └── EE2/
         ├── README.md                  ← Escopo, temas e guia da avaliação
-        ├── CIN0136_2026_2_EE1.pdf          ← Prova (tipos A, B, C e D)
-        └── CIN0136_2026_2_EE1_Espelho.pdf  ← Espelho de correção comentado
+        ├── CIN0136_2026_2_EE2.pdf          ← Prova (tipos A, B, C e D)
+        └── CIN0136_2026_2_EE2_Espelho.pdf  ← Espelho de correção comentado
 ```
 
 ---
