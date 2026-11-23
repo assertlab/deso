@@ -218,7 +218,7 @@ cin0136-2026-1/
 | [Sem 11](semanas/sem11/) | Qualidade arquitetural · Debugging · 👤 ✅ Sprint 3 |
 | [Sem 12](semanas/sem12/) | Code Review avançado · Documentação |
 | [Sem 13](semanas/sem14/) | Containerização (Docker) · Estabilização · 👤 ✅ Sprint 4 |
-| [Sem 14](semanas/sem14/) | Reflexão · ✏️ **Prova 2** · 👤 Entrega formal (feira) |
+| [Sem 14](semanas/sem13/) | Reflexão · ✏️ **Prova 2** · 👤 Entrega formal (feira) |
 | [Sem 15](semanas/sem15/) | 🎤 Apresentações acadêmicas · Segunda-chamada |
 | Sem 16 | ✏️ Prova Final *(sem material de aula)* |
 
